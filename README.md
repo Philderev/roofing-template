@@ -1,0 +1,46 @@
+# NovaRidge Roofing — Las Vegas (Demo Template)
+
+Fictional, futuristic roofing-company website for the Vegas Valley, built per the
+[Website Build SOP](https://docs.google.com/document/d/1O600R3HISuXLJumBvrtS0CZI8HaTCHjZExtLNCQleGM/).
+Fully static — deployable to any host (Hostinger FTP `public_html`, GitHub Pages staging, etc.).
+
+## Structure
+
+```
+index.html                  Home (hero video, trust bar, services, why-us, process, areas, reviews, CTA)
+services/<slug>/            4 service pages (replacement, repair, tile, flat-roof coatings)
+service-areas/<slug>/       3 area pages (Summerlin, Henderson, North Las Vegas)
+pricing/  about/  contact/  Core pages
+404.html                    Custom not-found (noindex)
+sitemap.xml  robots.txt     SEO plumbing (update domain in _build/build.js)
+assets/video/               hero.webm + hero.mp4 (H.264, iPhone/Mac-safe) + poster.jpg/webp
+assets/img/                 logo.svg, og-image.jpg, icon-512.png
+favicon.ico / .svg          + apple-touch-icon.png
+_build/                     Source of truth — never edit generated HTML by hand
+```
+
+## Build
+
+```
+node _build/build.js   # regenerates all pages, sitemap, robots, logo/favicon SVGs
+node _build/icons.js   # re-rasterizes favicon.ico / apple-touch-icon.png (pure node, no deps)
+node _build/audit.js   # link/schema/meta sanity check
+```
+
+All content, NAP, palette, and the placeholder domain live at the top of `_build/build.js`.
+CSS (`_build/styles.css`) is inlined into every page at build time — zero render-blocking requests.
+
+## Performance & SEO notes
+
+- Hero video lazy-loads after `window.load` (WebM first, MP4 fallback), `muted autoplay loop playsinline`,
+  skipped under `prefers-reduced-motion` / `Save-Data`. Poster JPG is the preloaded LCP.
+- JSON-LD: `RoofingContractor` sitewide, `BreadcrumbList` + `Service` + `FAQPage` on subpages.
+- Unique titles/descriptions/canonicals per page; 404 is `noindex`.
+- Media: video sourced from Pexels (free license, video #31025088), re-encoded with ffmpeg.
+
+## Production TODO (real client)
+
+- Replace placeholder domain `www.novaridgeroofing.com` in `_build/build.js`, rebuild.
+- Paste GA4 / GTM / GHL snippets at the marked comments in the `<head>` template.
+- Swap the demo lead form for the client's GHL form embed (marked in `_build/build.js`).
+- Replace fictional NAP/reviews with real, GBP-matching data.
