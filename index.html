@@ -171,9 +171,11 @@ a.card:hover{text-decoration:none}
 .faq .faq-a{padding:0 22px 20px;color:var(--muted);font-size:.95rem}
 
 /* pricing */
-.price-card{position:relative;background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;gap:0}
+.price-card{position:relative;background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;gap:0;transition:transform .2s,border-color .2s,box-shadow .2s}
+.price-card:hover{transform:translateY(-5px);border-color:var(--line2);box-shadow:var(--shadow)}
 .price-card.hot{border-color:rgba(0,229,255,.5);box-shadow:0 0 44px rgba(0,229,255,.12)}
-.price-card .tag{position:absolute;top:-13px;left:24px;background:var(--grad);color:#081018;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.35em .9em;border-radius:99px}
+.price-card.hot:hover{border-color:var(--cyan);box-shadow:0 0 60px rgba(0,229,255,.22)}
+.price-card .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--grad);color:#081018;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.35em .9em;border-radius:99px}
 .price-card h3{font-size:1.1rem}
 .price{font-size:2.1rem;font-weight:800;margin:.2em 0 .1em}
 .price small{font-size:.85rem;color:var(--muted);font-weight:500}
@@ -192,6 +194,7 @@ a.card:hover{text-decoration:none}
 .f-field input,.f-field select,.f-field textarea{width:100%;padding:.8em 1em;background:rgba(12,19,34,.85);border:1px solid var(--line2);border-radius:11px;color:var(--text);font:inherit;font-size:.95rem}
 .f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
 .form-note{font-size:.8rem;color:var(--muted);margin:10px 0 0}
+.form-consent{font-size:.72rem;line-height:1.5;opacity:.8}
 .form-ok{display:none;padding:14px 18px;border:1px solid rgba(0,229,255,.4);background:rgba(0,229,255,.08);border-radius:12px;color:var(--cyan);font-weight:600;margin-top:14px}
 .big-phone{display:inline-flex;align-items:center;gap:14px;margin-top:1.4em;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:var(--text)}
 .big-phone:hover{color:var(--cyan);text-decoration:none}
@@ -215,9 +218,10 @@ address{font-style:normal;color:#b9c7e2;font-size:.92rem;line-height:1.8}
 .prose ul{padding-left:1.2em}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+.rv:not(.in){opacity:0;transform:translateY(22px)}
+.rv.in{animation:rv-in .6s ease}
+@keyframes rv-in{from{opacity:0;transform:translateY(22px)}}
+@media(prefers-reduced-motion:reduce){.rv:not(.in){opacity:1;transform:none}.rv.in{animation:none}}
 
 /* responsive */
 @media(max-width:1020px){
@@ -245,7 +249,7 @@ address{font-style:normal;color:#b9c7e2;font-size:.92rem;line-height:1.8}
   .trust-row{justify-content:flex-start}
 }
 </style>
-<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+<noscript><style>.rv:not(.in){opacity:1;transform:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RoofingContractor","@id":"https://www.novaridgeroofing.com/#org","name":"NovaRidge Roofing","legalName":"NovaRidge Roofing LLC","url":"https://www.novaridgeroofing.com/","logo":"https://www.novaridgeroofing.com/assets/img/logo.svg","image":"https://www.novaridgeroofing.com/assets/img/og-image.jpg","telephone":"+1-702-555-0184","email":"hello@novaridgeroofing.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"7255 S Tenaya Way, Suite 140","addressLocality":"Las Vegas","addressRegion":"NV","postalCode":"89113","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":36.0563,"longitude":-115.2493},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"18:00"}],"areaServed":[{"@type":"City","name":"Las Vegas"},{"@type":"City","name":"Summerlin"},{"@type":"City","name":"Henderson"},{"@type":"City","name":"North Las Vegas"},{"@type":"City","name":"Spring Valley"},{"@type":"City","name":"Enterprise"},{"@type":"City","name":"Paradise"}],"sameAs":[]}</script>
 <!-- GA4: paste gtag.js snippet here (G-XXXXXXXXXX) -->
 <!-- GTM: paste container snippet here (GTM-XXXXXXX) -->
@@ -476,6 +480,7 @@ address{font-style:normal;color:#b9c7e2;font-size:.92rem;line-height:1.8}
       </div>
       <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
       <p class="form-note">Typical response: under 30 minutes during business hours.</p>
+      <p class="form-note form-consent">By submitting, you agree to our Privacy Policy and Terms of Service. We only use your details to contact you about your project.</p>
       <div class="form-ok" role="status">Thanks — your request is in. A NovaRidge specialist will call you shortly.</div>
     </form>
   </div>

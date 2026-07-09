@@ -211,7 +211,7 @@ function layout({ pathSeg, title, desc, body, schema, current }) {
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 ${current === 'HOME' ? `<link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">` : ''}<style>${CSS}</style>
-<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+<noscript><style>.rv:not(.in){opacity:1;transform:none}</style></noscript>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 <!-- GA4: paste gtag.js snippet here (G-XXXXXXXXXX) -->
 <!-- GTM: paste container snippet here (GTM-XXXXXXX) -->
@@ -376,6 +376,7 @@ const ctaBand = (heading, sub) => `
       </div>
       <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
       <p class="form-note">Typical response: under 30 minutes during business hours.</p>
+      <p class="form-note form-consent">By submitting, you agree to our Privacy Policy and Terms of Service. We only use your details to contact you about your project.</p>
       <div class="form-ok" role="status">Thanks — your request is in. A NovaRidge specialist will call you shortly.</div>
     </form>
   </div>
