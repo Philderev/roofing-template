@@ -261,7 +261,7 @@ details[open] summary .plus::after{transform:rotate(90deg)}
 .foot-about p{color:var(--inv-muted);font-size:.92rem;max-width:300px}
 address{font-style:normal;color:var(--inv-muted);font-size:.92rem;line-height:1.8}
 address a{color:var(--inv)}
-.foot-bottom{margin-top:clamp(30px,5vw,50px);border-top:1px solid rgba(255,251,236,.14);padding:20px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--inv-muted)}
+.foot-bottom{margin-top:clamp(30px,5vw,50px);border-top:1px solid rgba(255,251,236,.14);padding:20px 0 clamp(96px,12vw,124px);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--inv-muted)}
 .foot-bottom a{color:var(--inv-muted)}
 .foot-bottom a:hover{color:#ffd84d}
 .foot-legal{display:flex;gap:1.4em;flex-wrap:wrap}
