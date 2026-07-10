@@ -138,11 +138,15 @@ nav.main a[aria-current=page]::after{content:"";position:absolute;left:50%;botto
 .crumbs span[aria-current]{color:#fff}
 
 /* trust bar */
-.trust{border-block:1px solid rgba(43,36,5,.12);background:var(--bg-sun);padding:20px 0}
-.trust-row{display:flex;gap:clamp(18px,4vw,54px);align-items:center;justify-content:space-between;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;color:#3c3408}
+.trust{border-block:1px solid rgba(43,36,5,.12);background:var(--bg-sun);padding:20px 0;overflow:hidden}
+.trust-track{display:flex;width:max-content;animation:trust-marquee 28s linear infinite;will-change:transform}
+.trust-row{display:flex;gap:clamp(36px,5vw,76px);align-items:center;padding:0 clamp(18px,2.5vw,38px);flex:none}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;color:#3c3408;white-space:nowrap}
 .trust-item svg{flex:none}
 .stars{color:#a06d00;letter-spacing:2px}
+@keyframes trust-marquee{to{transform:translateX(-50%)}}
+@media(hover:hover){.trust:hover .trust-track{animation-play-state:paused}}
+@media(prefers-reduced-motion:reduce){.trust{overflow-x:auto}.trust-track{animation:none}.trust-row[aria-hidden=true]{display:none}}
 
 /* cards */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -388,7 +392,7 @@ address a{color:var(--inv)}
   .why-media img{aspect-ratio:16/9}
   .foot-grid{grid-template-columns:1fr}
   .phone-link{display:none}
-  .trust-row{justify-content:flex-start}
+  .trust-track{animation-duration:22s}
   .mini-stats{grid-template-columns:repeat(3,1fr);gap:.8rem}
   .contact-float{right:12px;bottom:12px}.contact-trigger-copy{display:none}.contact-trigger{min-width:58px;width:58px;height:58px;border-radius:50%;padding:8px}.contact-trigger-icon{width:40px;height:40px}.contact-pop{width:min(392px,calc(100vw - 24px))}.contact-actions{grid-template-columns:1fr}.contact-actions .contact-email{grid-column:auto}
   .cookie-banner{left:12px;bottom:82px;width:calc(100vw - 24px);padding:17px}.cookie-actions .btn{width:100%}

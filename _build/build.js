@@ -509,12 +509,14 @@ function homePage() {
 </section>
 
 <div class="trust">
-  <div class="wrap trust-row">
-    <span class="trust-item">${IC.badge} NV Licensed &amp; Bonded</span>
-    <span class="trust-item">${IC.shield} $2M Liability Insured</span>
-    <span class="trust-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 on Google</span>
-    <span class="trust-item">${IC.check} BBB A+ Accredited</span>
-    <span class="trust-item">${IC.bolt} Same-Week Starts</span>
+  <div class="trust-track">
+    ${[false, true].map((duplicate) => `<div class="trust-row"${duplicate ? ' aria-hidden="true"' : ''}>
+      <span class="trust-item">${IC.badge} NV Licensed &amp; Bonded</span>
+      <span class="trust-item">${IC.shield} $2M Liability Insured</span>
+      <span class="trust-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 on Google</span>
+      <span class="trust-item">${IC.check} BBB A+ Accredited</span>
+      <span class="trust-item">${IC.bolt} Same-Week Starts</span>
+    </div>`).join('')}
   </div>
 </div>
 
