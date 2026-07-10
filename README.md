@@ -7,14 +7,17 @@ Fully static — deployable to any host (Hostinger FTP `public_html`, GitHub Pag
 ## Structure
 
 ```
-index.html                  Home (hero video, trust bar, services, why-us, process, areas, reviews, CTA)
+index.html                  Home (hero video, trust bar, about, services, why-us, projects, process, areas, reviews, FAQ, CTA)
 services/<slug>/            4 service pages (replacement, repair, tile, flat-roof coatings)
 service-areas/<slug>/       3 area pages (Summerlin, Henderson, North Las Vegas)
 pricing/  about/  contact/  Core pages
+privacy/  terms/            Legal pages (linked from footer + form consent line)
+thank-you/                  Post-form-submit confirmation (noindex, robots-disallowed)
 404.html                    Custom not-found (noindex)
 sitemap.xml  robots.txt     SEO plumbing (update domain in _build/build.js)
 assets/video/               hero.webm + hero.mp4 (H.264, iPhone/Mac-safe) + poster.jpg/webp
-assets/img/                 logo.svg, og-image.jpg, icon-512.png
+assets/img/                 Photos (Pexels, WebP + JPG fallback), logo.svg, og-image.jpg, icon-512.png
+assets/fonts/               Space Grotesk (OFL) — preloaded, inlined @font-face
 favicon.ico / .svg          + apple-touch-icon.png
 _build/                     Source of truth — never edit generated HTML by hand
 ```
@@ -37,6 +40,11 @@ CSS (`_build/styles.css`) is inlined into every page at build time — zero rend
 - JSON-LD: `RoofingContractor` sitewide, `BreadcrumbList` + `Service` + `FAQPage` on subpages.
 - Unique titles/descriptions/canonicals per page; 404 is `noindex`.
 - Media: video sourced from Pexels (free license, video #31025088), re-encoded with ffmpeg.
+  Photos also Pexels (free license) — served as WebP with JPG fallback via `<picture>`.
+- Palette: cream/yellow backgrounds (`#fffbec` / `#fff3c4` / `#ffd84d`), green accents
+  (`#1e7a3e` / `#2fa45a` / `#7cb528`), deep pine footer (`#122e1c`).
+- Demo lead form redirects to `/thank-you/` on submit (GHL form replaces this in production;
+  point its redirect at the same URL).
 
 ## Production TODO (real client)
 

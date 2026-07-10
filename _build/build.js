@@ -21,34 +21,38 @@ const SITE = {
 };
 
 /* ---------- SVG bits ---------- */
-const MARK = (s = 44) => `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="g${s}" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient></defs><path d="M24 3.5 41.8 13.75v20.5L24 44.5 6.2 34.25v-20.5Z" stroke="rgba(148,184,255,.4)" stroke-width="1.6"/><path d="M11 30 24 17l13 13" stroke="url(#g${s})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 34.5 24 27l7.5 7.5" stroke="rgba(0,229,255,.45)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="2.6" fill="#FFB300"/><circle cx="11" cy="30" r="1.7" fill="#00E5FF"/><circle cx="37" cy="30" r="1.7" fill="#00E5FF"/></svg>`;
+let markId = 0;
+const MARK = (s = 44) => { const id = `mark-gradient-${++markId}`; return `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="${id}" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs><path d="M24 3.5 41.8 13.75v20.5L24 44.5 6.2 34.25v-20.5Z" stroke="rgba(124,181,40,.55)" stroke-width="1.6"/><path d="M11 30 24 17l13 13" stroke="url(#${id})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 34.5 24 27l7.5 7.5" stroke="rgba(47,164,90,.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="2.6" fill="#FFC907"/><circle cx="11" cy="30" r="1.7" fill="#2FA45A"/><circle cx="37" cy="30" r="1.7" fill="#2FA45A"/></svg>`; };
 
-const LOGO = `<a class="brand" href="{{home}}" aria-label="${SITE.name} — home">${MARK(44)}<span class="brand-name">NOVA<span class="grad-text">RIDGE</span><small>ROOFING &middot; LAS VEGAS</small></span></a>`;
+const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name} — home">${MARK(44)}<span class="brand-name">NOVA<span class="grad-text">RIDGE</span><small>ROOFING &middot; LAS VEGAS</small></span></a>`;
 
 const IC = {
-  bolt: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#00E5FF" stroke-width="1.8" stroke-linejoin="round"/></svg>',
-  shield: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#00E5FF" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#FFB300" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  home: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8" stroke="#FFB300" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5V21h13V9.5" stroke="#00E5FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  wrench: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.6L3 17.6 6.4 21l5.5-5.5a4.5 4.5 0 0 0 5.6-6l-3 3-2.5-.5-.5-2.5 3-3Z" stroke="#00E5FF" stroke-width="1.8" stroke-linejoin="round"/></svg>',
-  layers: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z" stroke="#00E5FF" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 12.6 7.5 4.2 7.5-4.2M4.5 16.6 12 20.8l7.5-4.2" stroke="#FFB300" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  sun: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="#FFB300" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="#00E5FF" stroke-width="1.8" stroke-linecap="round"/></svg>',
-  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="rgba(0,229,255,.4)" stroke-width="1.6"/><path d="m7.8 12.2 2.8 2.8 5.6-6" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#00E5FF" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#FFB300" stroke-width="1.8"/></svg>',
-  badge: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9.5" r="6" stroke="#FFB300" stroke-width="1.7"/><path d="m8.7 14.6-1.5 6 4.8-2.6 4.8 2.6-1.5-6" stroke="#00E5FF" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.8 9.4 1.6 1.6 3-3.2" stroke="#FFB300" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  bolt: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  shield: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#F0A500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  home: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8" stroke="#F0A500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5V21h13V9.5" stroke="#1E7A3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  wrench: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.6L3 17.6 6.4 21l5.5-5.5a4.5 4.5 0 0 0 5.6-6l-3 3-2.5-.5-.5-2.5 3-3Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  layers: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 12.6 7.5 4.2 7.5-4.2M4.5 16.6 12 20.8l7.5-4.2" stroke="#F0A500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sun: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="#F0A500" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="#1E7A3E" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="rgba(30,122,62,.4)" stroke-width="1.6"/><path d="m7.8 12.2 2.8 2.8 5.6-6" stroke="#1E7A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#1E7A3E" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#F0A500" stroke-width="1.8"/></svg>',
+  badge: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9.5" r="6" stroke="#F0A500" stroke-width="1.7"/><path d="m8.7 14.6-1.5 6 4.8-2.6 4.8 2.6-1.5-6" stroke="#1E7A3E" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.8 9.4 1.6 1.6 3-3.2" stroke="#F0A500" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  drone: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9 5 5m14 0-4 4m-6 6-4 4m14 0-4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="9" width="6" height="6" rx="1.6" stroke="#fff" stroke-width="1.8"/><circle cx="5" cy="5" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="19" cy="5" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="5" cy="19" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="19" cy="19" r="2" stroke="#fff" stroke-width="1.6"/></svg>',
+  shieldW: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  checkW: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 
 const VEGAS_MAP = `<svg viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized map of the Las Vegas Valley showing NovaRidge service areas">
-<defs><linearGradient id="mg" x1="0" y1="400" x2="520" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient>
-<radialGradient id="mglow" cx="50%" cy="45%" r="60%"><stop stop-color="rgba(0,229,255,.14)"/><stop offset="1" stop-color="rgba(0,229,255,0)"/></radialGradient></defs>
-<rect width="520" height="400" rx="14" fill="#0A101E"/><rect width="520" height="400" rx="14" fill="url(#mglow)"/>
-<g stroke="rgba(148,184,255,.09)"><path d="M0 80h520M0 160h520M0 240h520M0 320h520M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400"/></g>
-<path d="M60 40C90 120 70 210 110 300s150 70 230 60 190-60 160-160S420 40 330 60 120 10 60 40Z" stroke="rgba(0,229,255,.35)" stroke-width="1.6" stroke-dasharray="7 6"/>
-<path d="M100 330 250 60M250 60l170 250M130 200h280" stroke="rgba(148,184,255,.14)" stroke-width="1.4"/>
-<g font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600" fill="#c7d5ef">
-<circle cx="150" cy="130" r="7" fill="url(#mg)"/><circle cx="150" cy="130" r="13" stroke="rgba(0,229,255,.5)"/><text x="170" y="126">Summerlin</text>
-<circle cx="255" cy="205" r="9" fill="url(#mg)"/><circle cx="255" cy="205" r="17" stroke="rgba(255,179,0,.6)"/><text x="277" y="200">Las Vegas</text>
-<circle cx="272" cy="88" r="6" fill="url(#mg)"/><circle cx="272" cy="88" r="12" stroke="rgba(0,229,255,.5)"/><text x="290" y="84">North LV</text>
-<circle cx="352" cy="300" r="7" fill="url(#mg)"/><circle cx="352" cy="300" r="13" stroke="rgba(0,229,255,.5)"/><text x="372" y="296">Henderson</text>
+<defs><linearGradient id="mg" x1="0" y1="400" x2="520" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#1E7A3E"/><stop offset="1" stop-color="#F0A500"/></linearGradient>
+<radialGradient id="mglow" cx="50%" cy="45%" r="60%"><stop stop-color="rgba(255,201,7,.2)"/><stop offset="1" stop-color="rgba(255,201,7,0)"/></radialGradient></defs>
+<rect width="520" height="400" rx="14" fill="#FDF6DE"/><rect width="520" height="400" rx="14" fill="url(#mglow)"/>
+<g stroke="rgba(30,122,62,.12)"><path d="M0 80h520M0 160h520M0 240h520M0 320h520M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400"/></g>
+<path d="M60 40C90 120 70 210 110 300s150 70 230 60 190-60 160-160S420 40 330 60 120 10 60 40Z" stroke="rgba(30,122,62,.45)" stroke-width="1.6" stroke-dasharray="7 6"/>
+<path d="M100 330 250 60M250 60l170 250M130 200h280" stroke="rgba(30,122,62,.18)" stroke-width="1.4"/>
+<g font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="15" font-weight="600" fill="#2C4A33">
+<circle cx="150" cy="130" r="7" fill="url(#mg)"/><circle cx="150" cy="130" r="13" stroke="rgba(30,122,62,.5)"/><text x="170" y="126">Summerlin</text>
+<circle cx="255" cy="205" r="9" fill="url(#mg)"/><circle cx="255" cy="205" r="17" stroke="rgba(240,165,0,.65)"/><text x="277" y="200">Las Vegas</text>
+<circle cx="272" cy="88" r="6" fill="url(#mg)"/><circle cx="272" cy="88" r="12" stroke="rgba(30,122,62,.5)"/><text x="290" y="84">North LV</text>
+<circle cx="352" cy="300" r="7" fill="url(#mg)"/><circle cx="352" cy="300" r="13" stroke="rgba(30,122,62,.5)"/><text x="372" y="296">Henderson</text>
 <circle cx="205" cy="280" r="5" fill="url(#mg)"/><text x="220" y="284">Spring Valley</text>
 <circle cx="330" cy="170" r="5" fill="url(#mg)"/><text x="345" y="166">Sunrise Manor</text>
 </g></svg>`;
@@ -57,6 +61,7 @@ const VEGAS_MAP = `<svg viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.o
 const SERVICES = [
   {
     slug: 'roof-replacement', icon: 'home', name: 'Roof Replacement',
+    img: 'svc-replacement', imgAlt: 'Row of new metal roofs with dormer windows against a clear desert sky',
     short: 'Full tear-off and re-roof with drone inspection, 50-year materials, and a same-week start.',
     title: 'Roof Replacement in Las Vegas, NV',
     desc: 'Full roof replacement in Las Vegas with drone inspections, Class-A fire-rated materials engineered for desert heat, and workmanship warranties up to 25 years.',
@@ -76,6 +81,7 @@ const SERVICES = [
   },
   {
     slug: 'roof-repair', icon: 'wrench', name: 'Roof Repair & Leak Detection',
+    img: 'svc-repair', imgAlt: 'Hard hats and safety equipment staged on a light-colored metal roof',
     short: 'Thermal-imaging leak detection and same-day storm repair, with a 24/7 emergency line.',
     title: 'Roof Repair & Leak Detection in Las Vegas',
     desc: 'Fast roof leak detection and repair in Las Vegas. Thermal imaging, monsoon storm damage response, and same-day emergency tarping — call (702) 555-0184.',
@@ -95,6 +101,7 @@ const SERVICES = [
   },
   {
     slug: 'tile-roofing', icon: 'layers', name: 'Tile Roofing',
+    img: 'svc-tile', imgAlt: 'Aerial view of terracotta tile roofs with dormers across a neighborhood',
     short: 'Concrete and clay tile installation, re-felts, and color-matched repairs for desert homes.',
     title: 'Tile Roofing & Re-Felts in Las Vegas',
     desc: 'Concrete and clay tile roofing in Las Vegas: new installation, underlayment replacement (re-felts), and color-matched tile repair for HOA communities.',
@@ -114,6 +121,7 @@ const SERVICES = [
   },
   {
     slug: 'flat-roof-coatings', icon: 'sun', name: 'Flat Roofs & Cool Coatings',
+    img: 'svc-flat', imgAlt: 'Aerial view of a reflective white flat roof on a commercial building',
     short: 'Silicone restoration coatings and TPO systems that drop rooftop temps by up to 50°F.',
     title: 'Flat Roof & Silicone Coating Systems in Las Vegas',
     desc: 'Flat roof replacement, TPO, and silicone restoration coatings in Las Vegas. Reflective cool-roof systems that cut cooling costs and extend roof life 10–20 years.',
@@ -136,6 +144,7 @@ const SERVICES = [
 const AREAS = [
   {
     slug: 'summerlin', name: 'Summerlin',
+    photo: 'area-extra', photoAlt: 'Tile rooftops of a master-planned residential neighborhood',
     title: 'Roofing Company in Summerlin, Las Vegas',
     desc: 'NovaRidge Roofing serves Summerlin, The Ridges, Red Rock Country Club, and Sun City with tile re-felts, roof replacement, and HOA-approved repairs.',
     blurb: 'Tile re-felt specialists for Summerlin’s master-planned communities — from The Ridges to Sun City.',
@@ -148,6 +157,7 @@ const AREAS = [
   },
   {
     slug: 'henderson', name: 'Henderson',
+    photo: 'about2', photoAlt: 'Terracotta tile roof with a wooden dormer window',
     title: 'Roofing Company in Henderson, NV',
     desc: 'Roof replacement, repair, and flat-roof coatings in Henderson: Green Valley, Anthem, Inspirada, Lake Las Vegas, and MacDonald Ranch.',
     blurb: 'From Green Valley originals to new Inspirada builds — full-service roofing across Henderson.',
@@ -160,6 +170,7 @@ const AREAS = [
   },
   {
     slug: 'north-las-vegas', name: 'North Las Vegas',
+    photo: 'green-roof', photoAlt: 'Newly installed green glazed tile roof under a blue sky',
     title: 'Roofing Company in North Las Vegas, NV',
     desc: 'Roof repair, replacement, and storm damage response in North Las Vegas: Aliante, Eldorado, Craig Ranch, and the Apex industrial corridor.',
     blurb: 'Storm-response and replacement crews covering Aliante, Eldorado, Craig Ranch, and the Apex corridor.',
@@ -179,10 +190,29 @@ const REVIEWS = [
   ['Priya S.', 'Spring Valley', 'They coated the flat roof on our office off Durango with the silicone system. July power bill dropped almost 18% versus last year. The thermal scan report they left us was genuinely impressive.'],
 ];
 
+const PROJECTS = [
+  ['proj-replace', 'roof-replacement', 'Replacement', 'Modern', '2026-06-18', 'June 18, 2026', 'Full replacement, modern two-story — Henderson', 'New charcoal tile roof on a modern two-story home'],
+  ['proj-tile', 'tile-roofing', 'Tile', 'Re-Felt', '2026-05-30', 'May 30, 2026', 'Tile re-felt & relay — Summerlin', 'Rows of orange concrete tile on steep gables after a re-felt'],
+  ['proj-coating', 'flat-roof-coatings', 'Coating', 'Energy', '2026-05-12', 'May 12, 2026', 'Cool-roof tile & skylight package — Centennial Hills', 'Green tile roof with two new skylights'],
+  ['proj-repair', 'roof-repair', 'Repair', 'Storm', '2026-04-25', 'April 25, 2026', 'Storm damage rebuild — North Las Vegas', 'Roofers on scaffolding rebuilding a storm-damaged roof edge'],
+];
+
+const HOME_FAQS = [
+  ['Is the drone inspection really free?', 'Completely free, no strings. You get the full 4K photo report and moisture findings whether you hire us or not — most homeowners use it to make an informed decision, and about 7 in 10 come back to us.'],
+  ['How fast can you respond to a leak?', 'Emergency calls across Las Vegas, Henderson, North Las Vegas, and Summerlin are typically tarped the same day. Our 24/7 line — (702) 555-0184 — is answered by a person, not a voicemail.'],
+  ['Do you handle HOA approvals?', 'Yes. We prepare the full architectural submittal — tile profile, color match, and scope of work — and we maintain a boneyard of discontinued tile so repairs blend invisibly.'],
+  ['What warranties do you offer?', 'Manufacturer material warranties up to 50 years, and a NovaRidge workmanship warranty up to 25 years — registered digitally, transferable once, and backed by our Tenaya Way office.'],
+];
+
 /* ---------- helpers ---------- */
 const esc = (s) => s; // entities are authored correctly in source; never post-process (it corrupts inline JS)
 
-function layout({ pathSeg, title, desc, body, schema, current }) {
+const pic = (base, alt, w, h, eager = false) =>
+  `<picture><source srcset="{{rel}}assets/img/${base}.webp" type="image/webp"><img src="{{rel}}assets/img/${base}.jpg" alt="${alt}" width="${w}" height="${h}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}></picture>`;
+
+const tick = (html) => `<li>${IC.check}<span>${html}</span></li>`;
+
+function layout({ pathSeg, title, desc, body, schema, current, noindex }) {
   const depth = pathSeg ? pathSeg.split('/').length : 0;
   const rel = depth ? '../'.repeat(depth) : '';
   const home = rel || './';
@@ -196,8 +226,8 @@ function layout({ pathSeg, title, desc, body, schema, current }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
 <meta name="description" content="${desc}">
-<link rel="canonical" href="${url}">
-<meta name="theme-color" content="#060a14">
+${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="canonical" href="${url}">
+<meta name="theme-color" content="#fffbec">
 <link rel="icon" href="${rel}favicon.ico" sizes="32x32">
 <link rel="icon" href="${rel}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="${rel}apple-touch-icon.png">
@@ -210,7 +240,8 @@ function layout({ pathSeg, title, desc, body, schema, current }) {
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-${current === 'HOME' ? `<link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">` : ''}<style>${CSS}</style>
+<link rel="preload" href="${rel}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+${current === 'HOME' ? `<link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">` : ''}<style>${CSS.replaceAll('{{rel}}', rel)}</style>
 <noscript><style>.rv:not(.in){opacity:1;transform:none}</style></noscript>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 <!-- GA4: paste gtag.js snippet here (G-XXXXXXXXXX) -->
@@ -221,7 +252,7 @@ ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</s
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <div class="wrap nav-bar">
-    ${LOGO.replace('{{home}}', home)}
+    ${LOGO(home)}
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
     <nav class="main" id="mainnav" aria-label="Main">
       <ul>
@@ -249,7 +280,7 @@ ${body.replaceAll('{{rel}}', rel)}
 <footer class="site-foot">
   <div class="wrap foot-grid">
     <div class="foot-about">
-      ${LOGO.replace('{{home}}', home)}
+      ${LOGO(home)}
       <p style="margin-top:18px">${SITE.tagline}. Licensed, bonded, and insured. ${SITE.license}.</p>
     </div>
     <div>
@@ -270,9 +301,39 @@ ${body.replaceAll('{{rel}}', rel)}
   </div>
   <div class="wrap foot-bottom">
     <span>&copy; <span id="yr">2026</span> ${SITE.legal}. All rights reserved. Fictional demo website.</span>
-    <span><a href="${rel}sitemap.xml">Sitemap</a></span>
+    <span class="foot-legal"><a href="${rel}privacy/">Privacy Policy</a><a href="${rel}terms/">Terms of Service</a><button class="cookie-settings" type="button">Cookie settings</button><a href="${rel}sitemap.xml">Sitemap</a></span>
   </div>
 </footer>
+<aside class="contact-float" aria-label="Quick contact">
+  <div class="contact-pop" id="contact-pop" hidden>
+    <div class="contact-pop-head">
+      <span class="contact-status" aria-hidden="true">${MARK(32)}</span>
+      <div><strong>Roof help, without the runaround</strong><span>Local team &middot; replies during business hours</span></div>
+    </div>
+    <div class="contact-pop-body">
+      <p>Questions, leaks, or quote requests — choose the easiest way to reach our crew.</p>
+      <div class="contact-actions">
+        <a href="${SITE.phoneHref}"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z"/></svg></span><span><b>Call the office</b><small>${SITE.phone}</small></span></a>
+        <a href="sms:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10.8h8M8 8h5"/></svg></span><span><b>Send a text</b><small>Great for photos of damage</small></span></a>
+        <a class="contact-email" href="mailto:${SITE.email}"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span><b>Email our team</b><small>${SITE.email}</small></span></a>
+      </div>
+    </div>
+  </div>
+  <button class="contact-trigger" type="button" aria-expanded="false" aria-controls="contact-pop">
+    <span class="contact-trigger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10.8h8M8 8h5"/></svg></span>
+    <span class="contact-trigger-copy"><b>Talk to a roofer</b><small>We&rsquo;re here to help</small></span>
+    <span class="contact-close" aria-hidden="true"></span>
+  </button>
+</aside>
+<section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-copy">
+    <h2 id="cookie-title">Your privacy, your choice</h2>
+    <p>We use necessary cookies to keep this site working. With your permission, optional analytics can help us improve it. Read our <a href="${rel}privacy/">Privacy Policy</a>.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="btn btn-primary btn-sm" type="button" data-cookie-choice="acknowledged">Got it</button>
+  </div>
+</section>
 <script>
 (function(){
 var d=document;
@@ -286,7 +347,11 @@ if(v){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,sd=navigator
 if(!rm&&!sd){var load=function(){['webm','mp4'].forEach(function(f){var s=d.createElement('source');s.src=v.dataset.base+'.'+f;s.type='video/'+f;v.appendChild(s)});v.load();var p=v.play();if(p)p.catch(function(){});};
 if(d.readyState==='complete'){setTimeout(load,120)}else{addEventListener('load',function(){setTimeout(load,120)})}}}
 var f=d.getElementById('leadform');
-if(f){f.addEventListener('submit',function(e){e.preventDefault();f.querySelector('.form-ok').style.display='block';f.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});});}
+if(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});window.location.href=f.dataset.ty;});}
+var ct=d.querySelector('.contact-trigger'),cp=d.getElementById('contact-pop');
+if(ct&&cp){var toggleContact=function(open){cp.hidden=!open;ct.setAttribute('aria-expanded',open);document.querySelector('.contact-float').classList.toggle('is-open',open);if(open)cp.querySelector('a').focus()};ct.addEventListener('click',function(){toggleContact(ct.getAttribute('aria-expanded')!=='true')});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!cp.hidden){toggleContact(false);ct.focus()}});d.addEventListener('click',function(e){if(!cp.hidden&&!e.target.closest('.contact-float'))toggleContact(false)});}
+var cb=d.getElementById('cookie-banner'),cs=d.querySelector('.cookie-settings'),consentKey='novaridge-cookie-consent';
+if(cb){var getConsent=function(){try{return localStorage.getItem(consentKey)}catch(e){return null}},showConsent=function(){cb.hidden=false},saveConsent=function(choice){try{localStorage.setItem(consentKey,choice)}catch(e){}cb.hidden=true;window.dispatchEvent(new CustomEvent('novaridge:consent',{detail:{choice:choice}}))};if(!getConsent())showConsent();cb.querySelectorAll('[data-cookie-choice]').forEach(function(b){b.addEventListener('click',function(){saveConsent(b.dataset.cookieChoice)})});if(cs)cs.addEventListener('click',showConsent);}
 })();
 </script>
 </body>
@@ -354,41 +419,46 @@ const crumbsHtml = (rel, items) => `<nav class="crumbs" aria-label="Breadcrumb">
 const ctaBand = (heading, sub) => `
 <section class="cta-band" id="quote">
   <div class="wrap">
-    <div class="rv">
-      <p class="kicker">Free Inspection &middot; No Obligation</p>
-      <h2>${heading}</h2>
-      <p class="muted">${sub}</p>
-      <a class="big-phone" href="${SITE.phoneHref}">${IC.bolt} ${SITE.phone}</a>
-      <p class="muted" style="font-size:.85rem;margin-top:6px">${SITE.hours} &middot; 24/7 emergency line</p>
+    <div class="cta-card rv">
+      <div class="inner">
+        <div>
+          <p class="kicker">Free Inspection &middot; No Obligation</p>
+          <h2>${heading}</h2>
+          <p class="muted">${sub}</p>
+          <a class="big-phone" href="${SITE.phoneHref}">${IC.bolt} ${SITE.phone}</a>
+          <p class="muted" style="font-size:.85rem;margin-top:6px">${SITE.hours} &middot; 24/7 emergency line</p>
+        </div>
+        <form class="lead-form" id="leadform" data-ty="{{rel}}thank-you/">
+          <!-- GHL form embed replaces this block in production -->
+          <h3>Get your free roof analysis</h3>
+          <div class="f-row">
+            <div class="f-field"><label for="lf-name">Name</label><input id="lf-name" name="name" autocomplete="name" required></div>
+            <div class="f-field"><label for="lf-phone">Phone</label><input id="lf-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="f-field"><label for="lf-addr">Property address</label><input id="lf-addr" name="address" autocomplete="street-address"></div>
+          <div class="f-field"><label for="lf-svc">What do you need?</label>
+            <select id="lf-svc" name="service">
+              <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure — inspect it</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
+          <p class="form-note">Typical response: under 30 minutes during business hours.</p>
+          <p class="form-note form-consent">By submitting, you agree to our <a href="{{rel}}privacy/">Privacy Policy</a> and <a href="{{rel}}terms/">Terms of Service</a>. We only use your details to contact you about your project.</p>
+        </form>
+      </div>
     </div>
-    <form class="lead-form rv" id="leadform" novalidate>
-      <!-- GHL form embed replaces this block in production -->
-      <h3>Get your free roof analysis</h3>
-      <div class="f-row">
-        <div class="f-field"><label for="lf-name">Name</label><input id="lf-name" name="name" autocomplete="name" required></div>
-        <div class="f-field"><label for="lf-phone">Phone</label><input id="lf-phone" name="phone" type="tel" autocomplete="tel" required></div>
-      </div>
-      <div class="f-field"><label for="lf-addr">Property address</label><input id="lf-addr" name="address" autocomplete="street-address"></div>
-      <div class="f-field"><label for="lf-svc">What do you need?</label>
-        <select id="lf-svc" name="service">
-          <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure — inspect it</option>
-        </select>
-      </div>
-      <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
-      <p class="form-note">Typical response: under 30 minutes during business hours.</p>
-      <p class="form-note form-consent">By submitting, you agree to our Privacy Policy and Terms of Service. We only use your details to contact you about your project.</p>
-      <div class="form-ok" role="status">Thanks — your request is in. A NovaRidge specialist will call you shortly.</div>
-    </form>
   </div>
 </section>`;
 
 const reviewsHtml = () => `
 <section aria-labelledby="rv-h">
   <div class="wrap">
-    <div class="section-head rv">
-      <p class="kicker">Reviews</p>
-      <h2 id="rv-h">The valley vouches for us</h2>
-      <p class="muted">Rated 4.9 / 5 across 300+ verified reviews.</p>
+    <div class="section-head split rv">
+      <div>
+        <p class="kicker">Reviews</p>
+        <h2 id="rv-h">The valley vouches for us</h2>
+      </div>
+      <p class="muted">Rated 4.9 / 5 across 300+ verified reviews from homeowners and businesses.</p>
     </div>
     <div class="grid-2">
       ${REVIEWS.map(([name, area, text]) => `
@@ -401,12 +471,15 @@ const reviewsHtml = () => `
   </div>
 </section>`;
 
+const faqDetails = (faqs, open = -1) => faqs.map(([q, a], i) =>
+  `<details${i === open ? ' open' : ''}><summary>${q}<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">${a}</div></details>`).join('');
+
 const faqHtml = (faqs) => `
 <section aria-labelledby="faq-h">
   <div class="wrap">
     <div class="section-head rv"><p class="kicker">FAQ</p><h2 id="faq-h">Common questions</h2></div>
     <div class="faq rv">
-      ${faqs.map(([q, a]) => `<details><summary>${q}</summary><div class="faq-a">${a}</div></details>`).join('')}
+      ${faqDetails(faqs)}
     </div>
   </div>
 </section>`;
@@ -421,12 +494,12 @@ function homePage() {
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <p class="kicker">Las Vegas &middot; Licensed &amp; Insured</p>
-      <h1>Roofing, <span class="grad-text">engineered</span> for the desert.</h1>
+      <p class="hero-status"><span class="pulse" aria-hidden="true"></span> Crews on roofs now &middot; Las Vegas, NV</p>
+      <h1>Roofing, <span class="grad-text">engineered</span> for the desert</h1>
       <p class="lede">Drone inspections, thermal diagnostics, and 50-year materials — installed by the most advanced roofing crew in the Vegas Valley.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="contact/">Get a Free Quote</a>
-        <a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a>
+        <a class="btn btn-yellow" href="${SITE.phoneHref}">${SITE.phone}</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><b>2,400+</b><span>Roofs completed</span></div>
@@ -448,11 +521,45 @@ function homePage() {
   </div>
 </div>
 
-<section aria-labelledby="svc-h">
+<section aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      ${pic('about', 'NovaRidge crew installing a new roof on a Las Vegas home', 1100, 1400)}
+      <div class="float-chip chip-tr">
+        <span class="ico" aria-hidden="true">${IC.drone}</span>
+        <span><b>4K + FLIR</b><span>every inspection</span></span>
+      </div>
+      <div class="float-chip chip-bl">
+        <span class="ico" aria-hidden="true">${IC.shieldW}</span>
+        <span><b>25-yr</b><span>workmanship warranty</span></span>
+      </div>
+    </div>
+    <div class="rv">
+      <p class="kicker" id="about-h">Who we are</p>
+      <h2>Desert-grade roofing, <span class="grad-text">aerospace precision</span></h2>
+      <p class="muted">Founded by a former aerospace QA engineer, NovaRidge applies checklists, sensors, and documentation to a trade that usually runs on guesswork. Every truck carries a drone, a thermal camera, and a moisture meter — so nobody diagnoses your roof from a ladder.</p>
+      <ul class="checklist">
+        ${tick('<b>Drone-first inspections.</b> 4K aerial scans and thermal imaging on every estimate.')}
+        ${tick('<b>Radical documentation.</b> Before/after photo sets, moisture maps, and a signed QA checklist with every invoice.')}
+        ${tick('<b>Local &amp; accountable.</b> One office, one license, one warranty — backed from Tenaya Way, not a call center.')}
+      </ul>
+      <a class="btn btn-ghost" href="about/" style="margin-top:1.6em">More about us</a>
+      <div class="mini-stats">
+        <div><b>2,400+</b><span>Roofs completed</span></div>
+        <div><b>4.9</b><span>Google rating</span></div>
+        <div><b>2019</b><span>Founded in Vegas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-band" aria-labelledby="svc-h">
   <div class="wrap">
-    <div class="section-head rv">
-      <p class="kicker">What we do</p>
-      <h2 id="svc-h">Full-stack roofing services</h2>
+    <div class="section-head split rv">
+      <div>
+        <p class="kicker">What we do</p>
+        <h2 id="svc-h">Full-stack roofing services</h2>
+      </div>
       <p class="muted">Every project starts with a free drone inspection and a photo-documented report — so you see exactly what we see.</p>
     </div>
     <div class="grid-2" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
@@ -467,46 +574,63 @@ function homePage() {
   </div>
 </section>
 
-<section aria-labelledby="why-h" style="padding-top:0">
-  <div class="wrap split">
+<section aria-labelledby="why-h">
+  <div class="wrap about-grid">
     <div class="rv">
-      <p class="kicker">Why NovaRidge</p>
-      <h2 id="why-h">A roofing company that runs like a <span class="grad-text">flight crew</span></h2>
-      <p class="muted">Founded by a former aerospace QA engineer, NovaRidge applies checklists, sensors, and documentation to a trade that usually runs on guesswork.</p>
+      <p class="kicker" id="why-h">Why NovaRidge</p>
+      <h2>A roofing company that runs like a <span class="grad-text">flight crew</span></h2>
+      <p class="muted">Anyone can swap a tile. We engineer roofs: measured decks, verified ventilation math, and every job photographed before, during, and after.</p>
       <ul class="checklist">
-        <li>${IC.check}<span><b>Drone-first inspections.</b> 4K aerial scans and thermal imaging on every estimate — nobody guesses from a ladder.</span></li>
-        <li>${IC.check}<span><b>Desert-spec materials.</b> High-temp underlayments and Class-A systems chosen for 115&deg;F summers, not national averages.</span></li>
-        <li>${IC.check}<span><b>Radical documentation.</b> Before/after photo sets, moisture maps, and a signed QA checklist delivered with every invoice.</span></li>
-        <li>${IC.check}<span><b>Local &amp; accountable.</b> One office, one license, one warranty — backed from Tenaya Way, not a franchise call center.</span></li>
+        ${tick('<b>Desert-spec materials.</b> High-temp underlayments and Class-A systems chosen for 115&deg;F summers, not national averages.')}
+        ${tick('<b>Dedicated crews.</b> Daily magnet sweeps, protected landscaping, permits and inspections handled for you.')}
+        ${tick('<b>Warranty that means something.</b> Registered, transferable, and honored from one local office.')}
       </ul>
-    </div>
-    <div class="tech-panel rv">
-      <p class="kicker">Live project telemetry</p>
-      <div class="tech-rows">
-        <div class="tech-row"><span>Inspection method</span><b>4K drone + FLIR thermal</b></div>
-        <div class="tech-row"><span>Avg. replacement time</span><b>2.6 days</b></div>
-        <div class="tech-row"><span>Underlayment rating</span><b>265&deg;F high-temp</b></div>
-        <div class="tech-row"><span>Jobsite cleanup</span><b>Daily magnet sweep</b></div>
-        <div class="tech-row"><span>Warranty registration</span><b>Digital, transferable</b></div>
-        <div class="tech-row"><span>Emergency response</span><b>Same-day tarping</b></div>
+      <div class="mini-stats">
+        <div><b>2.6</b><span>Avg. days per replacement</span></div>
+        <div><b>&lt;1%</b><span>Callback rate</span></div>
+        <div><b>3,100+</b><span>Drone flight hours</span></div>
       </div>
+    </div>
+    <div class="why-media rv">
+      ${pic('whyus1', 'Triple gable roofs with new brown metal roofing against a blue sky', 1280, 660)}
+      ${pic('whyus2', 'Terracotta tile roof with a freshly flashed dormer window', 900, 770)}
+      ${pic('whyus3', 'Close-up of layered wooden roof shingles', 900, 770)}
     </div>
   </div>
 </section>
 
-<section aria-labelledby="proc-h" style="padding-top:0">
+<section class="alt-band" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="section-head split rv">
+      <div>
+        <p class="kicker">Featured projects</p>
+        <h2 id="proj-h">Recent work across the valley</h2>
+      </div>
+      <p class="muted">Replacement, re-felt, and rescue jobs from Summerlin to the Apex corridor — documented, photographed, and warrantied.</p>
+    </div>
+    <div class="proj-grid">${PROJECTS.map(([img, svc, tag1, tag2, dt, dateLabel, title, alt]) => `
+      <a class="proj rv" href="services/${svc}/">
+        ${pic(img, alt, 1000, 660)}
+        <div class="proj-tags" aria-hidden="true"><span>${tag1}</span><span>${tag2}</span></div>
+        <div class="proj-info"><time datetime="${dt}">${dateLabel}</time><h3>${title}</h3></div>
+      </a>`).join('')}
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="proc-h">
   <div class="wrap">
     <div class="section-head rv"><p class="kicker">Process</p><h2 id="proc-h">From scan to signed-off in four steps</h2></div>
     <div class="steps">
-      <div class="step rv"><h3>Drone scan</h3><p>Free 4K aerial + thermal inspection with a same-day photo report.</p></div>
-      <div class="step rv"><h3>Exact quote</h3><p>Line-item pricing from measured data. No allowances, no surprises.</p></div>
-      <div class="step rv"><h3>Build</h3><p>Dedicated crew, daily cleanup, permits and inspections handled.</p></div>
-      <div class="step rv"><h3>QA &amp; warranty</h3><p>Signed checklist, final drone pass, and your registered warranty.</p></div>
+      <div class="step rv"><span class="step-num" aria-hidden="true"></span><div><h3>Drone scan</h3><p>Free 4K aerial + thermal inspection with a same-day photo report.</p></div></div>
+      <div class="step rv"><span class="step-num" aria-hidden="true"></span><div><h3>Exact quote</h3><p>Line-item pricing from measured data. No allowances, no surprises.</p></div></div>
+      <div class="step rv"><span class="step-num" aria-hidden="true"></span><div><h3>Build</h3><p>Dedicated crew, daily cleanup, permits and inspections handled.</p></div></div>
+      <div class="step rv"><span class="step-num" aria-hidden="true"></span><div><h3>QA &amp; warranty</h3><p>Signed checklist, final drone pass, and your registered warranty.</p></div></div>
     </div>
   </div>
 </section>
 
-<section aria-labelledby="area-h" style="padding-top:0">
+<section class="alt-band" aria-labelledby="area-h">
   <div class="wrap area-flex">
     <div class="rv">
       <p class="kicker">Service Areas</p>
@@ -522,6 +646,21 @@ function homePage() {
 </section>
 
 ${reviewsHtml()}
+
+<section aria-labelledby="hfaq-h" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="rv">
+      <p class="kicker" id="hfaq-h">FAQ</p>
+      <h2>Straight answers, no upsell</h2>
+      <p class="muted" style="margin-bottom:1.8rem">The questions valley homeowners ask us most — answered the way we'd want them answered.</p>
+      <div class="faq-media">${pic('faq', 'Tile roof and brick chimney of a Las Vegas area home', 900, 1100)}</div>
+    </div>
+    <div class="rv">
+      ${faqDetails(HOME_FAQS, 0)}
+    </div>
+  </div>
+</section>
+
 ${ctaBand('Your roof, future-proofed.', 'Book a free drone inspection this week — get the full photo report whether you hire us or not.')}
 `;
   return layout({
@@ -529,11 +668,11 @@ ${ctaBand('Your roof, future-proofed.', 'Book a free drone inspection this week 
     title: 'NovaRidge Roofing | Las Vegas Roofing Company — Repair, Replacement & Tile',
     desc: 'Las Vegas roofing done right: drone inspections, roof replacement, tile re-felts, leak repair, and cool-roof coatings. Licensed & insured. Free quotes — (702) 555-0184.',
     body,
+    schema: [faqSchema(HOME_FAQS)],
   });
 }
 
 function servicePage(s) {
-  const crumbs = [['Home', ''], ['Services', null], [s.name, null]];
   const body = `
 <div class="sub-hero">
   <div class="hero-grid" aria-hidden="true"></div>
@@ -542,17 +681,18 @@ function servicePage(s) {
     <p class="kicker">Service</p>
     <h1>${s.hero.replace(/^(.+?)([\.\!])$/, '$1$2')}</h1>
     <p class="lede muted" style="max-width:640px;font-size:1.1rem">${s.lede}</p>
-    <div class="hero-ctas"><a class="btn btn-primary" href="{{rel}}contact/">Get a Free Quote</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
+    <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin:1.6em 0 2.6em"><a class="btn btn-yellow" href="{{rel}}contact/">Get a Free Quote</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
   </div>
 </div>
+<div class="wrap svc-hero-img rv">${pic(s.img, s.imgAlt, 1600, 700, true)}</div>
 <section style="padding-top:clamp(30px,5vw,54px)">
-  <div class="wrap split" style="align-items:start">
+  <div class="wrap about-grid" style="align-items:start">
     <div class="prose rv">
       ${s.body.map(([h, p]) => `<h2>${h}</h2><p>${p}</p>`).join('')}
     </div>
     <div class="tech-panel rv" style="position:sticky;top:96px">
       <h3>What's included</h3>
-      <ul class="checklist">${s.bullets.map((b) => `<li>${IC.check}<span>${b}</span></li>`).join('')}</ul>
+      <ul class="checklist">${s.bullets.map((b) => tick(b)).join('')}</ul>
       <a class="btn btn-primary" href="{{rel}}contact/" style="margin-top:22px;width:100%">Book Free Inspection</a>
     </div>
   </div>
@@ -588,18 +728,19 @@ function areaPage(a) {
     <p class="kicker">Service Area</p>
     <h1>Roofing in <span class="grad-text">${a.name}</span></h1>
     <p class="lede muted" style="max-width:640px;font-size:1.1rem">${a.blurb}</p>
-    <div class="hero-ctas"><a class="btn btn-primary" href="{{rel}}contact/">Get a Free Quote</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
+    <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin:1.6em 0 2.6em"><a class="btn btn-yellow" href="{{rel}}contact/">Get a Free Quote</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
   </div>
 </div>
+<div class="wrap svc-hero-img rv">${pic(a.photo, a.photoAlt, 1000, 660, true)}</div>
 <section style="padding-top:clamp(30px,5vw,54px)">
-  <div class="wrap split" style="align-items:start">
+  <div class="wrap about-grid" style="align-items:start">
     <div class="prose rv">
       ${a.body.map(([h, p]) => `<h2>${h}</h2><p>${p}</p>`).join('')}
       <h2>ZIP codes we cover in ${a.name}</h2><p>${a.zips}</p>
     </div>
     <div class="tech-panel rv" style="position:sticky;top:96px">
       <h3>Services in ${a.name}</h3>
-      <ul class="checklist">${SERVICES.map((s) => `<li>${IC.check}<span><a href="{{rel}}services/${s.slug}/">${s.name}</a></span></li>`).join('')}</ul>
+      <ul class="checklist">${SERVICES.map((s) => tick(`<a href="{{rel}}services/${s.slug}/">${s.name}</a>`)).join('')}</ul>
       <a class="btn btn-primary" href="{{rel}}contact/" style="margin-top:22px;width:100%">Book Free Inspection</a>
     </div>
   </div>
@@ -631,7 +772,7 @@ function pricingPage() {
     <p class="lede muted" style="max-width:640px;font-size:1.1rem">Roofing quotes shouldn't be a mystery. Here's where our most common projects start — your exact price comes from drone-measured data.</p>
   </div>
 </div>
-<section style="padding-top:clamp(30px,5vw,54px)">
+<section style="padding-top:clamp(44px,6vw,64px)">
   <div class="wrap">
     <div class="grid-3" style="align-items:stretch">
       <div class="price-card rv">
@@ -683,12 +824,14 @@ function aboutPage() {
     <p class="lede muted" style="max-width:640px;font-size:1.1rem">NovaRidge was founded on a simple bet: treat roofing like aerospace — measure everything, document everything — and customers will never go back to guesswork.</p>
   </div>
 </div>
+<div class="wrap svc-hero-img rv">${pic('about', 'NovaRidge roofers installing a new roof system', 1100, 1400, true)}</div>
 <section style="padding-top:clamp(30px,5vw,54px)">
-  <div class="wrap split" style="align-items:start">
+  <div class="wrap about-grid" style="align-items:start">
     <div class="prose rv">
       <h2>Our story</h2>
       <p>NovaRidge Roofing was started in 2019 by Adrian Vale, a former aerospace quality-assurance engineer who watched three different contractors misdiagnose the same leak on his mother's Henderson home. The problem wasn't skill — it was process. Nobody measured. Nobody documented. Everybody guessed.</p>
       <p>So he built the roofing company he couldn't hire: drone scans instead of ladder glances, thermal imaging instead of hunches, signed QA checklists instead of "trust me." Six years later, NovaRidge has completed 2,400+ projects across the Vegas Valley with a 4.9-star average — and still photographs every single deck before a shingle goes on.</p>
+      ${pic('about2', 'Terracotta tile roof with a restored wooden dormer, a recent NovaRidge tile project', 1000, 700)}
       <h2>What we believe</h2>
       <ul>
         <li><b>Data beats opinion.</b> Every quote is built from measured, photographed evidence you can see yourself.</li>
@@ -762,6 +905,140 @@ ${ctaBand('Talk to a roofing specialist now.', 'Or send the form and we’ll cal
   });
 }
 
+/* ---------- legal pages ---------- */
+const LEGAL_UPDATED = 'July 10, 2026';
+
+function privacyPage() {
+  const body = `
+<div class="sub-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    ${crumbsHtml('{{rel}}', [['Home', ''], ['Privacy Policy', null]])}
+    <p class="kicker">Legal</p>
+    <h1>Privacy <span class="grad-text">Policy</span></h1>
+    <p class="lede muted" style="max-width:640px;font-size:1.05rem">How ${SITE.legal} collects, uses, and protects your information.</p>
+  </div>
+</div>
+<section class="legal">
+  <div class="wrap">
+    <div class="prose rv">
+      <p class="updated">Last updated: ${LEGAL_UPDATED}</p>
+      <h2>1. Who we are</h2>
+      <p>${SITE.legal} ("NovaRidge," "we," "us") operates this website and provides roofing services in the Las Vegas Valley. Our office is located at ${SITE.street}, ${SITE.city}, ${SITE.state} ${SITE.zip}. For any privacy question, contact <a href="mailto:${SITE.email}">${SITE.email}</a> or call ${SITE.phone}.</p>
+      <h2>2. Information we collect</h2>
+      <p>When you request a quote, call us, or fill out a form, we collect the information you provide: your name, phone number, email address, property address, and details about your roofing project. Our website also collects standard technical data — IP address, browser type, pages visited, and referring site — through cookies and analytics tools.</p>
+      <h2>3. How we use your information</h2>
+      <ul>
+        <li>To respond to your inquiry, schedule inspections, and prepare quotes.</li>
+        <li>To perform and document contracted work, including permits and warranty registration.</li>
+        <li>To send appointment reminders and service follow-ups you'd reasonably expect.</li>
+        <li>To measure and improve our website and advertising with aggregated analytics.</li>
+      </ul>
+      <p>We do not sell your personal information, and we do not share it with third parties for their own marketing.</p>
+      <h2>4. Cookies &amp; analytics</h2>
+      <p>This site uses cookies and similar technologies (such as Google Analytics and advertising pixels) to understand site traffic and measure campaigns. You can block cookies in your browser settings; the site will continue to work. Analytics data is aggregated and does not identify you personally.</p>
+      <h2>5. SMS &amp; phone communications</h2>
+      <p>By submitting your phone number, you agree that we may call or text you about your project. Message and data rates may apply. Reply STOP to any text to opt out at any time — opting out will not affect your service.</p>
+      <h2>6. Sharing with service providers</h2>
+      <p>We share information only with vendors who help us operate: our CRM and scheduling platform, payment processors, financing partners you ask to be connected with, and permitting authorities. Each is bound to use your data only to deliver their service to us.</p>
+      <h2>7. Data retention &amp; security</h2>
+      <p>Project records, photos, and warranty registrations are retained for the life of the warranty plus applicable legal periods. Data is stored on access-controlled systems; only staff who need your information to do their job can view it.</p>
+      <h2>8. Your rights</h2>
+      <p>You may request a copy of the personal information we hold about you, ask us to correct it, or ask us to delete it (subject to records we must keep by law, such as invoices and warranty documents). Email <a href="mailto:${SITE.email}">${SITE.email}</a> and we'll respond within 30 days.</p>
+      <h2>9. Children's privacy</h2>
+      <p>Our services and website are directed to adults. We do not knowingly collect information from anyone under 16.</p>
+      <h2>10. Changes to this policy</h2>
+      <p>If we make material changes, we'll update this page and revise the "last updated" date above. Continued use of the site after changes means you accept the updated policy.</p>
+    </div>
+  </div>
+</section>
+`;
+  return layout({
+    pathSeg: 'privacy', current: '',
+    title: `Privacy Policy | ${SITE.name}`,
+    desc: 'How NovaRidge Roofing collects, uses, and protects your personal information, including cookies, analytics, and your data rights.',
+    body,
+    schema: [crumbsSchema([['Home', '/'], ['Privacy Policy', '/privacy/']])],
+  });
+}
+
+function termsPage() {
+  const body = `
+<div class="sub-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    ${crumbsHtml('{{rel}}', [['Home', ''], ['Terms of Service', null]])}
+    <p class="kicker">Legal</p>
+    <h1>Terms of <span class="grad-text">Service</span></h1>
+    <p class="lede muted" style="max-width:640px;font-size:1.05rem">The ground rules for using this website and working with ${SITE.legal}.</p>
+  </div>
+</div>
+<section class="legal">
+  <div class="wrap">
+    <div class="prose rv">
+      <p class="updated">Last updated: ${LEGAL_UPDATED}</p>
+      <h2>1. Agreement</h2>
+      <p>By using this website or requesting services from ${SITE.legal} ("NovaRidge," "we," "us"), you agree to these terms. If you sign a written service contract with us, that contract governs the work itself; these terms cover the website and pre-contract interactions like quotes and inspections.</p>
+      <h2>2. Estimates &amp; quotes</h2>
+      <p>Free inspections and drone reports are provided without obligation. Written quotes are valid for 30 days and are based on conditions observable at the time of inspection. Hidden conditions discovered during work — such as rotted decking beneath tile — are documented with photos and priced by change order before we proceed.</p>
+      <h2>3. Scheduling &amp; weather</h2>
+      <p>Roofing is weather-dependent. High winds, rain, or extreme heat advisories can shift start dates; we'll communicate schedule changes as soon as we know them, and we never leave a roof exposed overnight without weatherproofing.</p>
+      <h2>4. Warranties</h2>
+      <p>Workmanship warranties (up to 25 years, by project type) are registered digitally at completion and are transferable once to a subsequent homeowner. Manufacturer material warranties are separate and subject to the manufacturer's terms. Warranty claims require reasonable access to the roof and are void where third parties have altered our work.</p>
+      <h2>5. Payment</h2>
+      <p>Residential projects are typically invoiced with a deposit at scheduling and balance on completion. We accept major cards, checks, ACH, and financing through our lending partners. Late balances may accrue interest at the maximum rate allowed by Nevada law.</p>
+      <h2>6. Website content</h2>
+      <p>Content on this site — text, photos, graphics, and pricing indications — is provided for general information and may change without notice. "Starting at" prices are floors from recent representative projects, not binding offers; your quote is the binding document.</p>
+      <h2>7. Limitation of liability</h2>
+      <p>To the fullest extent permitted by law, NovaRidge's liability arising from use of this website is limited to direct damages and capped at $100. This does not limit liability under a signed service contract, which contains its own terms, or any liability that cannot be limited under Nevada law.</p>
+      <h2>8. Disputes</h2>
+      <p>These terms are governed by the laws of the State of Nevada. Any dispute arising from website use will be resolved in the state or federal courts of Clark County, Nevada, and both parties waive trial by jury to the extent permitted.</p>
+      <h2>9. Contact</h2>
+      <p>Questions about these terms: <a href="mailto:${SITE.email}">${SITE.email}</a>, ${SITE.phone}, or ${SITE.street}, ${SITE.city}, ${SITE.state} ${SITE.zip}. ${SITE.license}.</p>
+    </div>
+  </div>
+</section>
+`;
+  return layout({
+    pathSeg: 'terms', current: '',
+    title: `Terms of Service | ${SITE.name}`,
+    desc: 'Terms of service for the NovaRidge Roofing website: estimates, scheduling, warranties, payment, and dispute resolution.',
+    body,
+    schema: [crumbsSchema([['Home', '/'], ['Terms of Service', '/terms/']])],
+  });
+}
+
+function thankYouPage() {
+  const body = `
+<section class="ty-hero">
+  <div class="wrap">
+    <div class="rv" style="max-width:640px">
+      <span class="ty-check">${IC.checkW}</span>
+      <p class="kicker">Request received</p>
+      <h1>Thank you — <span class="grad-text">we're on it</span></h1>
+      <p class="lede muted" style="font-size:1.1rem">Your request just landed at our Tenaya Way office. During business hours, a NovaRidge specialist typically calls back within <b>30 minutes</b>.</p>
+      <div class="steps" style="margin:2em 0">
+        <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>We call you</h3><p>A specialist confirms your address and what you're seeing.</p></div></div>
+        <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>Drone scan</h3><p>We schedule your free 4K aerial + thermal inspection.</p></div></div>
+        <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>Your report</h3><p>Photo report and line-item quote — yours to keep either way.</p></div></div>
+      </div>
+      <p class="muted">Active leak right now? Don't wait for the callback:</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:1em">
+        <a class="btn btn-yellow" href="${SITE.phoneHref}">${IC.bolt} ${SITE.phone}</a>
+        <a class="btn btn-ghost" href="{{rel}}">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+  return layout({
+    pathSeg: 'thank-you', current: '', noindex: true,
+    title: `Thank You — Request Received | ${SITE.name}`,
+    desc: 'Your request has been received. A NovaRidge Roofing specialist will call you back shortly.',
+    body,
+  });
+}
+
 function notFoundPage() {
   const body = `
 <div class="sub-hero" style="min-height:60svh;display:flex;align-items:center">
@@ -770,15 +1047,15 @@ function notFoundPage() {
     <p class="kicker">404</p>
     <h1>This page blew off in the <span class="grad-text">monsoon</span></h1>
     <p class="lede muted" style="max-width:560px;font-size:1.1rem">The page you're looking for doesn't exist — but your roof still might need us.</p>
-    <div class="hero-ctas"><a class="btn btn-primary" href="/">Back to Home</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
+    <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:1.6em"><a class="btn btn-yellow" href="/">Back to Home</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
   </div>
 </div>`;
   return layout({
-    pathSeg: '', current: '',
+    pathSeg: '', current: '', noindex: true,
     title: `Page Not Found | ${SITE.name}`,
     desc: 'The page you requested could not be found. NovaRidge Roofing — Las Vegas roof repair and replacement.',
     body,
-  }).replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"');
+  });
 }
 
 /* ---------- emit ---------- */
@@ -789,6 +1066,9 @@ const OUT = [
   ['pricing/index.html', pricingPage()],
   ['about/index.html', aboutPage()],
   ['contact/index.html', contactPage()],
+  ['privacy/index.html', privacyPage()],
+  ['terms/index.html', termsPage()],
+  ['thank-you/index.html', thankYouPage()],
   ['404.html', notFoundPage()],
 ];
 
@@ -799,7 +1079,7 @@ for (const [rel, html] of OUT) {
 }
 
 /* sitemap + robots */
-const urls = ['', ...SERVICES.map((s) => `services/${s.slug}/`), ...AREAS.map((a) => `service-areas/${a.slug}/`), 'pricing/', 'about/', 'contact/'];
+const urls = ['', ...SERVICES.map((s) => `services/${s.slug}/`), ...AREAS.map((a) => `service-areas/${a.slug}/`), 'pricing/', 'about/', 'contact/', 'privacy/', 'terms/'];
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
 `<?xml version="1.0" encoding="UTF-8"?>
@@ -810,6 +1090,7 @@ ${urls.map((u) => `  <url><loc>${SITE.domain}/${u}</loc><lastmod>${today}</lastm
 fs.writeFileSync(path.join(ROOT, 'robots.txt'),
 `User-agent: *
 Allow: /
+Disallow: /thank-you/
 
 Sitemap: ${SITE.domain}/sitemap.xml
 `);
@@ -817,25 +1098,25 @@ fs.writeFileSync(path.join(ROOT, '.nojekyll'), '');
 
 /* standalone logo + favicon svg */
 const LOGO_SVG = `<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NovaRidge Roofing logo">
-<defs><linearGradient id="lg" x1="16" y1="66" x2="72" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient>
-<linearGradient id="lt" x1="150" y1="0" x2="290" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient></defs>
-<rect width="360" height="96" rx="18" fill="#060A14"/>
-<path d="M44 11.5 76.7 30.25v37.5L44 86.5 11.3 67.75v-37.5Z" stroke="rgba(148,184,255,.4)" stroke-width="2.4"/>
+<defs><linearGradient id="lg" x1="16" y1="66" x2="72" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient>
+<linearGradient id="lt" x1="150" y1="0" x2="290" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2FA45A"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs>
+<rect width="360" height="96" rx="18" fill="#122E1C"/>
+<path d="M44 11.5 76.7 30.25v37.5L44 86.5 11.3 67.75v-37.5Z" stroke="rgba(124,181,40,.55)" stroke-width="2.4"/>
 <path d="M21 60 44 37l23 23" stroke="url(#lg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M31 68 44 55l13 13" stroke="rgba(0,229,255,.45)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="44" cy="37" r="4.4" fill="#FFB300"/><circle cx="21" cy="60" r="3" fill="#00E5FF"/><circle cx="67" cy="60" r="3" fill="#00E5FF"/>
-<text x="96" y="52" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" letter-spacing="4" fill="#E8EFFB">NOVA<tspan fill="url(#lt)">RIDGE</tspan></text>
-<text x="98" y="74" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="7" fill="#9AABC6">ROOFING &#183; LAS VEGAS</text>
+<path d="M31 68 44 55l13 13" stroke="rgba(47,164,90,.6)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="44" cy="37" r="4.4" fill="#FFC907"/><circle cx="21" cy="60" r="3" fill="#2FA45A"/><circle cx="67" cy="60" r="3" fill="#2FA45A"/>
+<text x="96" y="52" font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="4" fill="#F3F8EF">NOVA<tspan fill="url(#lt)">RIDGE</tspan></text>
+<text x="98" y="74" font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="7" fill="#B7CBB9">ROOFING &#183; LAS VEGAS</text>
 </svg>`;
 fs.mkdirSync(path.join(ROOT, 'assets/img'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'assets/img/logo.svg'), LOGO_SVG);
 
 const FAV_SVG = `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="g" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient></defs>
-<rect width="48" height="48" rx="10" fill="#060A14"/>
+<defs><linearGradient id="g" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs>
+<rect width="48" height="48" rx="10" fill="#122E1C"/>
 <path d="M10 31 24 17l14 14" stroke="url(#g)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.5 35.5 24 28l7.5 7.5" stroke="rgba(0,229,255,.5)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="24" cy="17" r="3" fill="#FFB300"/></svg>`;
+<path d="M16.5 35.5 24 28l7.5 7.5" stroke="rgba(47,164,90,.6)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="24" cy="17" r="3" fill="#FFC907"/></svg>`;
 fs.writeFileSync(path.join(ROOT, 'favicon.svg'), FAV_SVG);
 
 console.log(`Built ${OUT.length} pages + sitemap.xml + robots.txt + logo assets.`);

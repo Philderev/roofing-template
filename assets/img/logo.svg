@@ -1,11 +1,11 @@
 <svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NovaRidge Roofing logo">
-<defs><linearGradient id="lg" x1="16" y1="66" x2="72" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient>
-<linearGradient id="lt" x1="150" y1="0" x2="290" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#FFB300"/></linearGradient></defs>
-<rect width="360" height="96" rx="18" fill="#060A14"/>
-<path d="M44 11.5 76.7 30.25v37.5L44 86.5 11.3 67.75v-37.5Z" stroke="rgba(148,184,255,.4)" stroke-width="2.4"/>
+<defs><linearGradient id="lg" x1="16" y1="66" x2="72" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient>
+<linearGradient id="lt" x1="150" y1="0" x2="290" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2FA45A"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs>
+<rect width="360" height="96" rx="18" fill="#122E1C"/>
+<path d="M44 11.5 76.7 30.25v37.5L44 86.5 11.3 67.75v-37.5Z" stroke="rgba(124,181,40,.55)" stroke-width="2.4"/>
 <path d="M21 60 44 37l23 23" stroke="url(#lg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M31 68 44 55l13 13" stroke="rgba(0,229,255,.45)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="44" cy="37" r="4.4" fill="#FFB300"/><circle cx="21" cy="60" r="3" fill="#00E5FF"/><circle cx="67" cy="60" r="3" fill="#00E5FF"/>
-<text x="96" y="52" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" letter-spacing="4" fill="#E8EFFB">NOVA<tspan fill="url(#lt)">RIDGE</tspan></text>
-<text x="98" y="74" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="7" fill="#9AABC6">ROOFING &#183; LAS VEGAS</text>
+<path d="M31 68 44 55l13 13" stroke="rgba(47,164,90,.6)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="44" cy="37" r="4.4" fill="#FFC907"/><circle cx="21" cy="60" r="3" fill="#2FA45A"/><circle cx="67" cy="60" r="3" fill="#2FA45A"/>
+<text x="96" y="52" font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="4" fill="#F3F8EF">NOVA<tspan fill="url(#lt)">RIDGE</tspan></text>
+<text x="98" y="74" font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="7" fill="#B7CBB9">ROOFING &#183; LAS VEGAS</text>
 </svg>

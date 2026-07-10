@@ -37,7 +37,7 @@ function segDist(px, py, ax, ay, bx, by) {
   return Math.hypot(px - qx, py - qy);
 }
 // palette
-const INK = [6, 10, 20], CYAN = [0, 229, 255], AMBER = [255, 179, 0];
+const INK = [18, 46, 28], CYAN = [124, 181, 40], AMBER = [255, 201, 7];
 
 function render(size) {
   const S = 4; // supersample
