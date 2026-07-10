@@ -44,6 +44,9 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%;overflow-x:clip}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}}
+picture{display:block;overflow:hidden;border-radius:var(--r)}
+picture img{display:block;transition:transform .65s var(--ease)}
+@media(hover:hover) and (pointer:fine){picture:hover img{transform:scale(1.06)}}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.02rem/1.65 var(--font);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 img,svg,video{max-width:100%;height:auto;display:block}
 a{color:var(--green);text-decoration:none}
@@ -79,9 +82,10 @@ section{padding:clamp(56px,9vw,104px) 0;position:relative;overflow:clip}
 .brand-name small{display:block;font-size:.58rem;letter-spacing:.42em;color:var(--green);font-weight:600;margin-top:2px}
 nav.main{margin-left:auto}
 nav.main ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;align-items:center}
-nav.main a,.drop-btn{display:block;padding:.55em .8em;color:var(--ink);font-size:.93rem;font-weight:600;border-radius:10px;background:none;border:0;cursor:pointer;font-family:inherit;line-height:1.4;white-space:nowrap}
+nav.main a,.drop-btn{display:block;padding:.55em .8em;color:var(--ink);font-size:.93rem;font-weight:600;border-radius:10px;background:none;border:0;cursor:pointer;font-family:inherit;line-height:1.4;white-space:nowrap;position:relative}
 nav.main a:hover,.drop-btn:hover{background:rgba(255,216,77,.4);text-decoration:none}
-nav.main a[aria-current=page]{color:var(--green);box-shadow:inset 0 -2px 0 var(--yellow)}
+nav.main a[aria-current=page]{color:var(--green);background:linear-gradient(135deg,rgba(255,216,77,.26),rgba(124,181,40,.1));text-decoration:none}
+nav.main a[aria-current=page]::after{content:"";position:absolute;left:50%;bottom:2px;width:24px;height:3px;border-radius:99px;background:var(--grad);transform:translateX(-50%);box-shadow:0 2px 7px rgba(124,181,40,.28)}
 .has-drop{position:relative}
 .drop-btn::after{content:"";display:inline-block;margin-left:.45em;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
 .drop{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
@@ -210,7 +214,8 @@ a.card:hover{text-decoration:none}
 
 /* areas */
 .area-flex{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
-.map-panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow)}
+.map-panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow);overflow:hidden}
+.map-panel iframe{display:block;width:100%;height:400px;border:0;border-radius:14px;background:#fdf6de}
 .area-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.4em}
 .area-chip{display:flex;align-items:center;gap:10px;padding:13px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-weight:600;font-size:.93rem;transition:.2s var(--ease)}
 .area-chip:hover{border-color:var(--green);text-decoration:none;transform:translateY(-3px);box-shadow:var(--shadow);color:var(--green)}
@@ -369,6 +374,7 @@ address a{color:var(--inv)}
   nav.main.open{transform:none}
   nav.main ul{flex-direction:column;align-items:stretch;gap:2px}
   nav.main a,.drop-btn{padding:.8em .6em;font-size:1.02rem;width:100%;text-align:left}
+  nav.main a[aria-current=page]::after{left:.6em;bottom:3px;width:30px;transform:none}
   .drop{position:static;opacity:1;visibility:visible;transform:none;display:none;border:0;background:rgba(255,216,77,.18);box-shadow:none;margin:4px 0 8px}
   .has-drop.open .drop{display:block}
   .head-cta .btn{display:none}
@@ -609,21 +615,12 @@ address a{color:var(--inv)}
         <a class="area-chip" href="contact/"><span class="dot"></span>Las Vegas &amp; Spring Valley</a>
       </div>
     </div>
-    <div class="map-panel rv"><svg viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized map of the Las Vegas Valley showing NovaRidge service areas">
-<defs><linearGradient id="mg" x1="0" y1="400" x2="520" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#1E7A3E"/><stop offset="1" stop-color="#F0A500"/></linearGradient>
-<radialGradient id="mglow" cx="50%" cy="45%" r="60%"><stop stop-color="rgba(255,201,7,.2)"/><stop offset="1" stop-color="rgba(255,201,7,0)"/></radialGradient></defs>
-<rect width="520" height="400" rx="14" fill="#FDF6DE"/><rect width="520" height="400" rx="14" fill="url(#mglow)"/>
-<g stroke="rgba(30,122,62,.12)"><path d="M0 80h520M0 160h520M0 240h520M0 320h520M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400"/></g>
-<path d="M60 40C90 120 70 210 110 300s150 70 230 60 190-60 160-160S420 40 330 60 120 10 60 40Z" stroke="rgba(30,122,62,.45)" stroke-width="1.6" stroke-dasharray="7 6"/>
-<path d="M100 330 250 60M250 60l170 250M130 200h280" stroke="rgba(30,122,62,.18)" stroke-width="1.4"/>
-<g font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="15" font-weight="600" fill="#2C4A33">
-<circle cx="150" cy="130" r="7" fill="url(#mg)"/><circle cx="150" cy="130" r="13" stroke="rgba(30,122,62,.5)"/><text x="170" y="126">Summerlin</text>
-<circle cx="255" cy="205" r="9" fill="url(#mg)"/><circle cx="255" cy="205" r="17" stroke="rgba(240,165,0,.65)"/><text x="277" y="200">Las Vegas</text>
-<circle cx="272" cy="88" r="6" fill="url(#mg)"/><circle cx="272" cy="88" r="12" stroke="rgba(30,122,62,.5)"/><text x="290" y="84">North LV</text>
-<circle cx="352" cy="300" r="7" fill="url(#mg)"/><circle cx="352" cy="300" r="13" stroke="rgba(30,122,62,.5)"/><text x="372" y="296">Henderson</text>
-<circle cx="205" cy="280" r="5" fill="url(#mg)"/><text x="220" y="284">Spring Valley</text>
-<circle cx="330" cy="170" r="5" fill="url(#mg)"/><text x="345" y="166">Sunrise Manor</text>
-</g></svg></div>
+    <div class="map-panel rv"><iframe
+  title="Interactive map of NovaRidge Roofing's Las Vegas Valley service area"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=-115.42%2C35.91%2C-114.94%2C36.35&amp;layer=mapnik&amp;marker=36.0563%2C-115.2493"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  allowfullscreen></iframe></div>
   </div>
 </section>
 

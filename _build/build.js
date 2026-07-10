@@ -41,21 +41,12 @@ const IC = {
   checkW: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 
-const VEGAS_MAP = `<svg viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized map of the Las Vegas Valley showing NovaRidge service areas">
-<defs><linearGradient id="mg" x1="0" y1="400" x2="520" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#1E7A3E"/><stop offset="1" stop-color="#F0A500"/></linearGradient>
-<radialGradient id="mglow" cx="50%" cy="45%" r="60%"><stop stop-color="rgba(255,201,7,.2)"/><stop offset="1" stop-color="rgba(255,201,7,0)"/></radialGradient></defs>
-<rect width="520" height="400" rx="14" fill="#FDF6DE"/><rect width="520" height="400" rx="14" fill="url(#mglow)"/>
-<g stroke="rgba(30,122,62,.12)"><path d="M0 80h520M0 160h520M0 240h520M0 320h520M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400"/></g>
-<path d="M60 40C90 120 70 210 110 300s150 70 230 60 190-60 160-160S420 40 330 60 120 10 60 40Z" stroke="rgba(30,122,62,.45)" stroke-width="1.6" stroke-dasharray="7 6"/>
-<path d="M100 330 250 60M250 60l170 250M130 200h280" stroke="rgba(30,122,62,.18)" stroke-width="1.4"/>
-<g font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="15" font-weight="600" fill="#2C4A33">
-<circle cx="150" cy="130" r="7" fill="url(#mg)"/><circle cx="150" cy="130" r="13" stroke="rgba(30,122,62,.5)"/><text x="170" y="126">Summerlin</text>
-<circle cx="255" cy="205" r="9" fill="url(#mg)"/><circle cx="255" cy="205" r="17" stroke="rgba(240,165,0,.65)"/><text x="277" y="200">Las Vegas</text>
-<circle cx="272" cy="88" r="6" fill="url(#mg)"/><circle cx="272" cy="88" r="12" stroke="rgba(30,122,62,.5)"/><text x="290" y="84">North LV</text>
-<circle cx="352" cy="300" r="7" fill="url(#mg)"/><circle cx="352" cy="300" r="13" stroke="rgba(30,122,62,.5)"/><text x="372" y="296">Henderson</text>
-<circle cx="205" cy="280" r="5" fill="url(#mg)"/><text x="220" y="284">Spring Valley</text>
-<circle cx="330" cy="170" r="5" fill="url(#mg)"/><text x="345" y="166">Sunrise Manor</text>
-</g></svg>`;
+const VEGAS_MAP = `<iframe
+  title="Interactive map of NovaRidge Roofing's Las Vegas Valley service area"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=-115.42%2C35.91%2C-114.94%2C36.35&amp;layer=mapnik&amp;marker=${SITE.geo.lat}%2C${SITE.geo.lng}"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  allowfullscreen></iframe>`;
 
 /* ---------- data ---------- */
 const SERVICES = [
