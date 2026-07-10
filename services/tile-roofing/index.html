@@ -21,7 +21,7 @@
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta property="og:image:alt" content="NovaRidge Roofing logo">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <link rel="preload" href="../../assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <style>/* NOVARIDGE ROOFING — design system
    Palette: warm cream & solar yellow backgrounds · fairway greens · deep pine footer */
@@ -56,8 +56,7 @@ h2{font-size:clamp(1.7rem,3.8vw,2.7rem);text-transform:uppercase}
 h3{font-size:1.2rem}
 p{margin:0 0 1em}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,28px)}
-.kicker{display:inline-flex;align-items:center;gap:.55em;font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--green);border:1px solid var(--line2);border-radius:999px;padding:.45em 1.1em;margin-bottom:1.3em;background:rgba(255,216,77,.25)}
-.kicker::before{content:"";width:8px;height:8px;background:var(--grad);transform:rotate(45deg);flex:none}
+.kicker{display:inline-flex;align-items:center;font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#ffd84d;border:1px solid rgba(255,216,77,.32);border-radius:999px;padding:.5em 1.15em;margin-bottom:1.3em;background:rgba(18,46,28,.94)}
 .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
 .muted{color:var(--muted)}
 section{padding:clamp(56px,9vw,104px) 0;position:relative;overflow:clip}
@@ -117,7 +116,7 @@ nav.main a[aria-current=page]{color:var(--green);box-shadow:inset 0 -2px 0 var(-
 .pulse{position:relative;width:9px;height:9px;border-radius:50%;background:#8ee85f}
 .pulse::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(142,232,95,.55);animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(.6);opacity:1}70%,100%{transform:scale(2);opacity:0}}
-.hero .grad-text{background:linear-gradient(100deg,#ffd84d,#ffc907 40%,#9fd44a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .grad-text,.sub-hero .grad-text{background:linear-gradient(100deg,#ffd84d,#ffc907 40%,#9fd44a);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lede{font-size:clamp(1.02rem,2vw,1.2rem);color:#e4eedd;max-width:560px;border-left:3px solid var(--yellow);padding-left:1.1rem}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:1.7em 0 2.3em}
 .hero-stats{display:flex;gap:clamp(16px,3vw,40px);flex-wrap:wrap}
@@ -260,7 +259,6 @@ details[open] summary .plus::after{transform:rotate(90deg)}
 .cta-card{position:relative;overflow:hidden;border-radius:26px;padding:clamp(28px,5vw,60px);color:#fff;background:radial-gradient(110% 160% at 85% -30%,rgba(255,201,7,.3),transparent 55%),radial-gradient(90% 140% at 8% 130%,rgba(124,181,40,.35),transparent 55%),linear-gradient(120deg,#123420,#1c5230)}
 .cta-card::before{content:"";position:absolute;inset:0;opacity:.35;pointer-events:none;background:linear-gradient(rgba(255,216,77,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,216,77,.12) 1px,transparent 1px);background-size:46px 46px}
 .cta-card .inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
-.cta-card .kicker{color:#ffe9a1;border-color:rgba(255,216,77,.4);background:rgba(255,216,77,.12)}
 .cta-card .muted{color:#cfdcc8}
 .big-phone{display:inline-flex;align-items:center;gap:14px;margin-top:1.2em;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;color:#fff}
 .big-phone:hover{color:var(--yellow);text-decoration:none}
