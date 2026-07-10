@@ -56,7 +56,8 @@ h2{font-size:clamp(1.7rem,3.8vw,2.7rem);text-transform:uppercase}
 h3{font-size:1.2rem}
 p{margin:0 0 1em}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,28px)}
-.kicker{display:inline-flex;align-items:center;font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#ffd84d;border:1px solid rgba(255,216,77,.32);border-radius:999px;padding:.5em 1.15em;margin-bottom:1.3em;background:rgba(18,46,28,.94)}
+.kicker{display:inline-flex;align-items:center;font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:1.3em}
+.cta-card .kicker{color:#ffd84d}
 .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
 .muted{color:var(--muted)}
 section{padding:clamp(56px,9vw,104px) 0;position:relative;overflow:clip}
@@ -90,12 +91,12 @@ nav.main a[aria-current=page]{color:var(--green);box-shadow:inset 0 -2px 0 var(-
 .head-cta{display:flex;align-items:center;gap:14px}
 .phone-link{font-weight:700;font-size:.95rem;color:var(--ink);white-space:nowrap}
 .phone-link:hover{color:var(--green);text-decoration:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.9em 1.7em;border-radius:999px;font-weight:600;font-size:.97rem;border:0;cursor:pointer;font-family:inherit;transition:transform .2s var(--ease),box-shadow .2s var(--ease);white-space:nowrap}
-.btn:hover{text-decoration:none;transform:translateY(-2px)}
-.btn-primary{background:linear-gradient(135deg,#1e7a3e,#2fa45a);color:#fff;box-shadow:0 8px 26px rgba(30,122,62,.35)}
-.btn-primary:hover{box-shadow:0 14px 36px rgba(30,122,62,.45)}
-.btn-yellow{background:linear-gradient(135deg,#ffd84d,#f5b301);color:#2a2405;box-shadow:0 8px 26px rgba(240,165,0,.35)}
-.btn-yellow:hover{box-shadow:0 14px 36px rgba(240,165,0,.5)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.9em 1.7em;border-radius:999px;font-weight:600;font-size:.97rem;border:0;cursor:pointer;font-family:inherit;transition:outline-color .2s var(--ease);outline:2px solid transparent;outline-offset:2px;white-space:nowrap}
+.btn:hover{text-decoration:none}
+.btn-primary{background:linear-gradient(135deg,#1e7a3e,#2fa45a);color:#fff}
+.btn-primary:hover{outline-color:#1e7a3e}
+.btn-yellow{background:linear-gradient(135deg,#ffd84d,#f5b301);color:#2a2405}
+.btn-yellow:hover{outline-color:#f0a500}
 .btn-ghost{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid var(--line2)}
 .btn-ghost:hover{border-color:var(--green);color:var(--green);background:#fff}
 .hero .btn-ghost,.sub-hero .btn-ghost{background:rgba(255,251,236,.12);color:#fff;border-color:rgba(255,251,236,.4)}
@@ -112,7 +113,7 @@ nav.main a[aria-current=page]{color:var(--green);box-shadow:inset 0 -2px 0 var(-
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,31,17,.92) 18%,rgba(10,31,17,.66) 52%,rgba(10,31,17,.3)),linear-gradient(0deg,rgba(10,31,17,.55),transparent 40%)}
 .hero-grid{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,216,77,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,216,77,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 70% at 30% 40%,#000 30%,transparent 100%);-webkit-mask-image:radial-gradient(70% 70% at 30% 40%,#000 30%,transparent 100%)}
 .hero-inner{max-width:760px;color:#fff}
-.hero-status{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#ffe9a1;border:1px solid rgba(255,216,77,.4);background:rgba(10,31,17,.6);padding:.5rem 1.1rem;border-radius:999px;margin-bottom:1.5rem}
+.hero-status{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#ffe9a1;margin-bottom:1.5rem}
 .pulse{position:relative;width:9px;height:9px;border-radius:50%;background:#8ee85f}
 .pulse::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(142,232,95,.55);animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(.6);opacity:1}70%,100%{transform:scale(2);opacity:0}}
@@ -270,6 +271,11 @@ details[open] summary .plus::after{transform:rotate(90deg)}
 .f-field input,.f-field select,.f-field textarea{width:100%;padding:.8em 1em;background:#fff;border:1px solid var(--line2);border-radius:11px;color:var(--ink);font:inherit;font-size:.95rem}
 .f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(47,164,90,.2)}
 .form-note{font-size:.8rem;color:var(--muted);margin:10px 0 0}
+.sms-consent{display:flex;align-items:flex-start;gap:10px;margin:4px 0 16px;color:var(--muted);font-size:.76rem;line-height:1.5;cursor:pointer}
+.sms-consent input{width:17px;height:17px;flex:0 0 17px;margin:2px 0 0;accent-color:var(--green)}
+.form-legal{display:flex;justify-content:center;gap:10px;margin:14px 0 0;font-size:.8rem}
+.form-legal a{color:var(--green-dark);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.form-legal span{color:var(--line2)}
 .form-consent{font-size:.72rem;line-height:1.5}
 .form-consent a{font-weight:600}
 .form-ok{display:none;padding:14px 18px;border:1px solid rgba(30,122,62,.4);background:rgba(47,164,90,.12);border-radius:12px;color:var(--green);font-weight:600;margin-top:14px}
@@ -451,9 +457,13 @@ address a{color:var(--inv)}
               <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure — inspect it</option>
             </select>
           </div>
+          <label class="sms-consent">
+            <input type="checkbox" name="sms_consent" value="yes">
+            <span>I consent to receive SMS notifications, project updates, and occasional marketing communications from NovaRidge Roofing. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe at any time.</span>
+          </label>
           <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
           <p class="form-note">Typical response: under 30 minutes during business hours.</p>
-          <p class="form-note form-consent">By submitting, you agree to our <a href="../privacy/">Privacy Policy</a> and <a href="../terms/">Terms of Service</a>. We only use your details to contact you about your project.</p>
+          <p class="form-legal"><a href="../privacy/">Privacy Policy</a><span aria-hidden="true">|</span><a href="../terms/">Terms of Service</a></p>
         </form>
       </div>
     </div>

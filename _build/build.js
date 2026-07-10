@@ -444,9 +444,13 @@ const ctaBand = (heading, sub) => `
               <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure — inspect it</option>
             </select>
           </div>
+          <label class="sms-consent">
+            <input type="checkbox" name="sms_consent" value="yes">
+            <span>I consent to receive SMS notifications, project updates, and occasional marketing communications from ${SITE.name}. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe at any time.</span>
+          </label>
           <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
           <p class="form-note">Typical response: under 30 minutes during business hours.</p>
-          <p class="form-note form-consent">By submitting, you agree to our <a href="{{rel}}privacy/">Privacy Policy</a> and <a href="{{rel}}terms/">Terms of Service</a>. We only use your details to contact you about your project.</p>
+          <p class="form-legal"><a href="{{rel}}privacy/">Privacy Policy</a><span aria-hidden="true">|</span><a href="{{rel}}terms/">Terms of Service</a></p>
         </form>
       </div>
     </div>
@@ -497,7 +501,6 @@ function homePage() {
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <p class="hero-status"><span class="pulse" aria-hidden="true"></span> Crews on roofs now &middot; Las Vegas, NV</p>
       <h1>Roofing, <span class="grad-text">engineered</span> for the desert</h1>
       <p class="lede">Drone inspections, thermal diagnostics, and 50-year materials — installed by the most advanced roofing crew in the Vegas Valley.</p>
       <div class="hero-ctas">
