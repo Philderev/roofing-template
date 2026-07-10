@@ -8,7 +8,7 @@ const CSS = fs.readFileSync(path.join(__dirname, 'styles.css'), 'utf8');
 const SITE = {
   name: 'NovaRidge Roofing',
   legal: 'NovaRidge Roofing LLC',
-  domain: 'https://www.novaridgeroofing.com',
+  domain: 'https://philderev.github.io/roofing-template',
   phone: '(702) 555-0184',
   phoneHref: 'tel:+17025550184',
   email: 'hello@novaridgeroofing.com',
@@ -237,8 +237,11 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="canonical
 <meta property="og:description" content="${desc}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE.domain}/assets/img/og-image.jpg">
+<meta property="og:image:secure_url" content="${SITE.domain}/assets/img/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${SITE.name} — next-generation roofing for the Vegas Valley">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="${rel}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 ${current === 'HOME' ? `<link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">` : ''}<style>${CSS.replaceAll('{{rel}}', rel)}</style>

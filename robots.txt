@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you/
 
-Sitemap: https://www.novaridgeroofing.com/sitemap.xml
+Sitemap: https://philderev.github.io/roofing-template/sitemap.xml
