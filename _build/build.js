@@ -236,12 +236,12 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="canonical
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${SITE.domain}/assets/img/og-image.jpg">
-<meta property="og:image:secure_url" content="${SITE.domain}/assets/img/og-image.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="${SITE.name} — next-generation roofing for the Vegas Valley">
+<meta property="og:image" content="${SITE.domain}/assets/img/icon-512.png">
+<meta property="og:image:secure_url" content="${SITE.domain}/assets/img/icon-512.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="${SITE.name} logo">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="${rel}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 ${current === 'HOME' ? `<link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">` : ''}<style>${CSS.replaceAll('{{rel}}', rel)}</style>
