@@ -510,7 +510,7 @@ function homePage() {
 
 <div class="trust">
   <div class="trust-track">
-    ${[false, true].map((duplicate) => `<div class="trust-row"${duplicate ? ' aria-hidden="true"' : ''}>
+    ${Array.from({ length: 4 }, (_, index) => `<div class="trust-row"${index ? ' aria-hidden="true"' : ''}>
       <span class="trust-item">NV Licensed &amp; Bonded</span>
       <span class="trust-item">$2M Liability Insured</span>
       <span class="trust-item">4.9 on Google</span>
