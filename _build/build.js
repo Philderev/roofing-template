@@ -233,7 +233,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="canonical
 <meta property="og:image:height" content="2550">
 <meta property="og:image:alt" content="${SITE.name} logo">
 <meta name="twitter:card" content="summary">
-<link rel="preload" href="${rel}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${rel}assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
 ${current === 'HOME' ? `<link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">` : ''}<style>${CSS.replaceAll('{{rel}}', rel)}</style>
 <noscript><style>.rv:not(.in){opacity:1;transform:none}</style></noscript>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
@@ -243,6 +243,12 @@ ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</s
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<aside class="announcement" aria-label="Announcement">
+  <div class="wrap announcement-rotator">
+    <div class="announcement-item"><strong>Free drone roof inspections across the Las Vegas Valley.</strong><a href="${rel}contact/">Book yours today</a></div>
+    <div class="announcement-item"><strong>Roof leak or storm damage? Same-week service is available.</strong><a href="${rel}services/roof-repair/">Get roof help</a></div>
+  </div>
+</aside>
 <header class="site-head">
   <div class="wrap nav-bar">
     ${LOGO(home)}

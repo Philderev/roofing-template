@@ -17,7 +17,7 @@ thank-you/                  Post-form-submit confirmation (noindex, robots-disal
 sitemap.xml  robots.txt     SEO plumbing (update domain in _build/build.js)
 assets/video/               hero.webm + hero.mp4 (H.264, iPhone/Mac-safe) + poster.jpg/webp
 assets/img/                 Photos (WebP + JPG fallback), current logo and social-preview images
-assets/fonts/               Space Grotesk (OFL) — preloaded, inlined @font-face
+assets/fonts/               Self-hosted Roboto 400/500/700 — preloaded and inlined with @font-face
 assets/img/nrr-2.png        Browser favicon and transparent brand mark
 assets/img/nrr.png          Apple touch icon and social-preview image
 _build/                     Source of truth — never edit generated HTML by hand

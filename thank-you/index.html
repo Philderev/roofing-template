@@ -22,11 +22,12 @@
 <meta property="og:image:height" content="2550">
 <meta property="og:image:alt" content="NovaRidge Roofing logo">
 <meta name="twitter:card" content="summary">
-<link rel="preload" href="../assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
 <style>/* NOVARIDGE ROOFING — design system
    Palette: Sage Hint · Mint · Sage · Moss · Evergreen */
-@font-face{font-family:"Space Grotesk";src:url("../assets/fonts/space-grotesk.woff2") format("woff2");font-weight:300 700;font-display:swap}
-@font-face{font-family:"SG Fallback";src:local("Arial");size-adjust:101%;ascent-override:98%;descent-override:29%}
+@font-face{font-family:"Roboto";src:url("../assets/fonts/roboto-400.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Roboto";src:url("../assets/fonts/roboto-500.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:"Roboto";src:url("../assets/fonts/roboto-700.ttf") format("truetype");font-style:normal;font-weight:700;font-display:swap}
 :root{
   --bg:#CFD8CB;--bg-warm:#B7C9B8;--bg-sun:#B7C9B8;
   --card:#ffffff;--foot:#344C3D;--foot-2:#293D31;
@@ -38,8 +39,8 @@
   --r:18px;--maxw:1180px;
   --shadow:0 18px 44px rgba(52,76,61,.14);
   --shadow-lg:0 26px 60px rgba(52,76,61,.2);
-  --font-body:"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-  --font-display:"Space Grotesk","SG Fallback","Arial Narrow",Arial,sans-serif;
+  --font-body:"Roboto","Segoe UI",Arial,sans-serif;
+  --font-display:"Roboto","Segoe UI",Arial,sans-serif;
   --ease:cubic-bezier(.22,.61,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -54,13 +55,13 @@ a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
 ::selection{background:rgba(142,165,142,.55);color:#344C3D}
 :focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
-h1,h2,h3,h4{font-family:var(--font-display);line-height:1.04;margin:0 0 .5em;font-weight:650;letter-spacing:-.035em;text-wrap:balance}
-h1{font-size:clamp(2.2rem,5.6vw,4rem);text-transform:uppercase}
-h2{font-size:clamp(1.7rem,3.8vw,2.7rem);text-transform:uppercase}
-h3{font-size:1.2rem}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.16;margin:0 0 .55em;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(2.25rem,5.2vw,3.75rem);text-transform:capitalize}
+h2{font-size:clamp(1.75rem,3.5vw,2.5rem);text-transform:capitalize}
+h3{font-size:1.25rem;line-height:1.3}
 p{margin:0 0 1em}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,28px)}
-.kicker{display:inline-flex;align-items:center;font-family:var(--font-display);font-size:.73rem;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.3em}
+.kicker{display:inline-flex;align-items:center;font-family:var(--font-display);font-size:.75rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:1.3em}
 .cta-card .kicker{color:#B7C9B8}
 .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
 .muted{color:var(--muted)}
@@ -75,6 +76,16 @@ section{padding:clamp(56px,9vw,104px) 0;position:relative;overflow:clip}
 .skip:focus{left:8px}
 
 /* header */
+.announcement{position:relative;z-index:51;background:var(--green);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
+.announcement .wrap{min-height:38px;text-align:center;font-size:.8rem;line-height:1.35}
+.announcement-rotator{position:relative;height:38px;overflow:hidden}
+.announcement-item{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;opacity:0;transform:translateY(12px);animation:announcement-cycle 10s ease-in-out infinite}
+.announcement-item:nth-child(2){animation-delay:5s}
+.announcement strong{font-weight:700}
+.announcement a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.announcement a:hover{color:var(--bg-warm)}
+@keyframes announcement-cycle{0%{opacity:0;transform:translateY(12px)}4%,46%{opacity:1;transform:none}50%,100%{opacity:0;transform:translateY(-12px)}}
+@media(prefers-reduced-motion:reduce){.announcement-item{animation:none;opacity:1;transform:none}.announcement-item:nth-child(2){display:none}}
 .site-head{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(207,216,203,.88);border-bottom:1px solid var(--line)}
 .nav-bar{display:flex;align-items:center;gap:20px;min-height:76px}
 .brand{display:flex;align-items:center;color:var(--ink);flex:none}
@@ -383,6 +394,9 @@ address a{color:var(--inv)}
   .hero{min-height:78svh;padding:90px 0 70px}
 }
 @media(max-width:560px){
+  .announcement .wrap{min-height:54px;font-size:.73rem}
+  .announcement-rotator{height:54px}
+  .announcement-item{gap:5px;flex-direction:column;padding:6px 0}
   .grid-4,.area-list,.f-row,.why-media{grid-template-columns:1fr}
   .why-media img{aspect-ratio:16/9}
   .foot-grid{grid-template-columns:1fr}
@@ -401,6 +415,12 @@ address a{color:var(--inv)}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<aside class="announcement" aria-label="Announcement">
+  <div class="wrap announcement-rotator">
+    <div class="announcement-item"><strong>Free drone roof inspections across the Las Vegas Valley.</strong><a href="../contact/">Book yours today</a></div>
+    <div class="announcement-item"><strong>Roof leak or storm damage? Same-week service is available.</strong><a href="../services/roof-repair/">Get roof help</a></div>
+  </div>
+</aside>
 <header class="site-head">
   <div class="wrap nav-bar">
     <a class="brand" href="../" aria-label="NovaRidge Roofing — home"><img class="brand-logo" src="../assets/img/nrr-2.png" width="3231" height="2550" alt="NovaRidge Roofing"></a>
