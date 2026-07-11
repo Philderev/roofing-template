@@ -53,7 +53,7 @@ const SERVICES = [
   {
     slug: 'roof-replacement', icon: 'home', name: 'Roof Replacement',
     img: 'svc-replacement', imgAlt: 'Row of new metal roofs with dormer windows against a clear desert sky',
-    short: 'Full tear-off and re-roof with drone inspection, 50-year materials, and a same-week start.',
+    short: 'A complete, code-ready roof system built for extreme heat, high winds, and decades of dependable protection.',
     title: 'Roof Replacement in Las Vegas, NV',
     desc: 'Full roof replacement in Las Vegas with drone inspections, Class-A fire-rated materials engineered for desert heat, and workmanship warranties up to 25 years.',
     hero: 'A brand-new roof, engineered for the desert.',
@@ -73,7 +73,7 @@ const SERVICES = [
   {
     slug: 'roof-repair', icon: 'wrench', name: 'Roof Repair & Leak Detection',
     img: 'svc-repair', imgAlt: 'Hard hats and safety equipment staged on a light-colored metal roof',
-    short: 'Thermal-imaging leak detection and same-day storm repair, with a 24/7 emergency line.',
+    short: 'We trace the true source of leaks, document the damage, and make targeted repairs that last.',
     title: 'Roof Repair & Leak Detection in Las Vegas',
     desc: 'Fast roof leak detection and repair in Las Vegas. Thermal imaging, monsoon storm damage response, and same-day emergency tarping — call (702) 555-0184.',
     hero: 'Find the leak. Fix it once.',
@@ -93,7 +93,7 @@ const SERVICES = [
   {
     slug: 'tile-roofing', icon: 'layers', name: 'Tile Roofing',
     img: 'svc-tile', imgAlt: 'Aerial view of terracotta tile roofs with dormers across a neighborhood',
-    short: 'Concrete and clay tile installation, re-felts, and color-matched repairs for desert homes.',
+    short: 'New tile, underlayment renewal, and careful repairs that preserve the character of your home.',
     title: 'Tile Roofing & Re-Felts in Las Vegas',
     desc: 'Concrete and clay tile roofing in Las Vegas: new installation, underlayment replacement (re-felts), and color-matched tile repair for HOA communities.',
     hero: 'The desert standard, done right.',
@@ -113,7 +113,7 @@ const SERVICES = [
   {
     slug: 'flat-roof-coatings', icon: 'sun', name: 'Flat Roofs & Cool Coatings',
     img: 'svc-flat', imgAlt: 'Aerial view of a reflective white flat roof on a commercial building',
-    short: 'Silicone restoration coatings and TPO systems that drop rooftop temps by up to 50°F.',
+    short: 'Reflective silicone and TPO systems that protect low-slope roofs while reducing heat gain.',
     title: 'Flat Roof & Silicone Coating Systems in Las Vegas',
     desc: 'Flat roof replacement, TPO, and silicone restoration coatings in Las Vegas. Reflective cool-roof systems that cut cooling costs and extend roof life 10–20 years.',
     hero: 'Turn your flat roof into a cool roof.',
@@ -554,20 +554,23 @@ function homePage() {
 
 <section class="alt-band" aria-labelledby="svc-h">
   <div class="wrap">
-    <div class="section-head split rv">
+    <div class="section-head service-intro rv">
       <div>
-        <p class="kicker">What we do</p>
-        <h2 id="svc-h">Full-stack roofing services</h2>
+        <p class="kicker">Roofing solutions</p>
+        <h2 id="svc-h">The right solution for every roof</h2>
+        <p class="muted">From a stubborn leak to a complete replacement, we start with a thorough inspection and give you a clear recommendation—supported by photos, not pressure.</p>
       </div>
-      <p class="muted">Every project starts with a free drone inspection and a photo-documented report — so you see exactly what we see.</p>
     </div>
-    <div class="grid-2" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
-      ${SERVICES.map((s) => `
-      <a class="card rv" href="services/${s.slug}/">
-        <span class="icon">${IC[s.icon]}</span>
-        <h3>${s.name}</h3>
-        <p>${s.short}</p>
-        <span class="go">Explore ${s.name.split(' ')[0].toLowerCase()} &rarr;</span>
+    <div class="service-card-grid">
+      ${SERVICES.map((s, i) => `
+      <a class="service-card rv" href="services/${s.slug}/">
+        <span class="service-card-media">${pic(s.img, s.imgAlt, 900, 600)}<span class="service-number">0${i + 1}</span></span>
+        <span class="service-card-body">
+          <span class="service-label">${IC[s.icon]}<span>${i === 0 ? 'Start fresh' : i === 1 ? 'Stop the damage' : i === 2 ? 'Restore or renew' : 'Protect & cool'}</span></span>
+          <h3>${s.name}</h3>
+          <p>${s.short}</p>
+          <span class="go">View service <span aria-hidden="true">&rarr;</span></span>
+        </span>
       </a>`).join('')}
     </div>
   </div>
