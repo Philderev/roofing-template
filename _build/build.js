@@ -460,8 +460,8 @@ const reviewsHtml = () => `
       <div>
         <p class="kicker">Reviews</p>
         <h2 id="rv-h">The valley vouches for us</h2>
+        <p class="muted">Rated 4.9 / 5 across 300+ verified reviews from homeowners and businesses.</p>
       </div>
-      <p class="muted">Rated 4.9 / 5 across 300+ verified reviews from homeowners and businesses.</p>
     </div>
     <div class="grid-2">
       ${REVIEWS.map(([name, area, text], i) => `
@@ -607,8 +607,8 @@ function homePage() {
       <div>
         <p class="kicker">Featured projects</p>
         <h2 id="proj-h">Recent work across the valley</h2>
+        <p class="muted">Replacement, re-felt, and rescue jobs from Summerlin to the Apex corridor — documented, photographed, and warrantied.</p>
       </div>
-      <p class="muted">Replacement, re-felt, and rescue jobs from Summerlin to the Apex corridor — documented, photographed, and warrantied.</p>
     </div>
     <div class="proj-grid">${PROJECTS.map(([img, svc, tag1, tag2, dt, dateLabel, title, alt]) => `
       <a class="proj rv" href="services/${svc}/">
