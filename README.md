@@ -16,17 +16,17 @@ thank-you/                  Post-form-submit confirmation (noindex, robots-disal
 404.html                    Custom not-found (noindex)
 sitemap.xml  robots.txt     SEO plumbing (update domain in _build/build.js)
 assets/video/               hero.webm + hero.mp4 (H.264, iPhone/Mac-safe) + poster.jpg/webp
-assets/img/                 Photos (Pexels, WebP + JPG fallback), logo.svg, og-image.jpg, icon-512.png
+assets/img/                 Photos (WebP + JPG fallback), current logo and social-preview images
 assets/fonts/               Space Grotesk (OFL) — preloaded, inlined @font-face
-favicon.ico / .svg          + apple-touch-icon.png
+assets/img/nrr-2.png        Browser favicon and transparent brand mark
+assets/img/nrr.png          Apple touch icon and social-preview image
 _build/                     Source of truth — never edit generated HTML by hand
 ```
 
 ## Build
 
 ```
-node _build/build.js   # regenerates all pages, sitemap, robots, logo/favicon SVGs
-node _build/icons.js   # re-rasterizes favicon.ico / apple-touch-icon.png (pure node, no deps)
+node _build/build.js   # regenerates all pages, sitemap, and robots
 node _build/audit.js   # link/schema/meta sanity check
 ```
 

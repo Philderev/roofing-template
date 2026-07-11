@@ -22,20 +22,20 @@ const SITE = {
 
 /* ---------- SVG bits ---------- */
 let markId = 0;
-const MARK = (s = 44) => { const id = `mark-gradient-${++markId}`; return `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="${id}" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs><path d="M24 3.5 41.8 13.75v20.5L24 44.5 6.2 34.25v-20.5Z" stroke="rgba(124,181,40,.55)" stroke-width="1.6"/><path d="M11 30 24 17l13 13" stroke="url(#${id})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 34.5 24 27l7.5 7.5" stroke="rgba(47,164,90,.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="2.6" fill="#FFC907"/><circle cx="11" cy="30" r="1.7" fill="#2FA45A"/><circle cx="37" cy="30" r="1.7" fill="#2FA45A"/></svg>`; };
+const MARK = (s = 44) => { const id = `mark-gradient-${++markId}`; return `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="${id}" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#8EA58E"/><stop offset="1" stop-color="#8EA58E"/></linearGradient></defs><path d="M24 3.5 41.8 13.75v20.5L24 44.5 6.2 34.25v-20.5Z" stroke="rgba(142,165,142,.55)" stroke-width="1.6"/><path d="M11 30 24 17l13 13" stroke="url(#${id})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 34.5 24 27l7.5 7.5" stroke="rgba(115,138,110,.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="2.6" fill="#8EA58E"/><circle cx="11" cy="30" r="1.7" fill="#738A6E"/><circle cx="37" cy="30" r="1.7" fill="#738A6E"/></svg>`; };
 
-const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name} — home">${MARK(44)}<span class="brand-name">NOVA<span class="grad-text">RIDGE</span><small>ROOFING &middot; LAS VEGAS</small></span></a>`;
+const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name} — home"><img class="brand-logo" src="${home}assets/img/nrr-2.png" width="3231" height="2550" alt="${SITE.name}"></a>`;
 
 const IC = {
-  bolt: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/></svg>',
-  shield: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#F0A500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  home: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8" stroke="#F0A500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5V21h13V9.5" stroke="#1E7A3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  wrench: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.6L3 17.6 6.4 21l5.5-5.5a4.5 4.5 0 0 0 5.6-6l-3 3-2.5-.5-.5-2.5 3-3Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/></svg>',
-  layers: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z" stroke="#1E7A3E" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 12.6 7.5 4.2 7.5-4.2M4.5 16.6 12 20.8l7.5-4.2" stroke="#F0A500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  sun: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="#F0A500" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="#1E7A3E" stroke-width="1.8" stroke-linecap="round"/></svg>',
-  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="rgba(30,122,62,.4)" stroke-width="1.6"/><path d="m7.8 12.2 2.8 2.8 5.6-6" stroke="#1E7A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#1E7A3E" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#F0A500" stroke-width="1.8"/></svg>',
-  badge: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9.5" r="6" stroke="#F0A500" stroke-width="1.7"/><path d="m8.7 14.6-1.5 6 4.8-2.6 4.8 2.6-1.5-6" stroke="#1E7A3E" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.8 9.4 1.6 1.6 3-3.2" stroke="#F0A500" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  bolt: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  shield: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  home: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5V21h13V9.5" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  wrench: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.6L3 17.6 6.4 21l5.5-5.5a4.5 4.5 0 0 0 5.6-6l-3 3-2.5-.5-.5-2.5 3-3Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  layers: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 12.6 7.5 4.2 7.5-4.2M4.5 16.6 12 20.8l7.5-4.2" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sun: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="#738A6E" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="rgba(52,76,61,.4)" stroke-width="1.6"/><path d="m7.8 12.2 2.8 2.8 5.6-6" stroke="#344C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#344C3D" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#738A6E" stroke-width="1.8"/></svg>',
+  badge: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9.5" r="6" stroke="#738A6E" stroke-width="1.7"/><path d="m8.7 14.6-1.5 6 4.8-2.6 4.8 2.6-1.5-6" stroke="#344C3D" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.8 9.4 1.6 1.6 3-3.2" stroke="#738A6E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   drone: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9 5 5m14 0-4 4m-6 6-4 4m14 0-4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="9" width="6" height="6" rx="1.6" stroke="#fff" stroke-width="1.8"/><circle cx="5" cy="5" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="19" cy="5" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="5" cy="19" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="19" cy="19" r="2" stroke="#fff" stroke-width="1.6"/></svg>',
   shieldW: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   checkW: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -218,20 +218,19 @@ function layout({ pathSeg, title, desc, body, schema, current, noindex }) {
 <title>${title}</title>
 <meta name="description" content="${desc}">
 ${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="canonical" href="${url}">
-<meta name="theme-color" content="#fffbec">
-<link rel="icon" href="${rel}favicon.ico" sizes="32x32">
-<link rel="icon" href="${rel}favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="${rel}apple-touch-icon.png">
+<meta name="theme-color" content="#CFD8CB">
+<link rel="icon" href="${rel}assets/img/nrr-2.png" type="image/png">
+<link rel="apple-touch-icon" href="${rel}assets/img/nrr.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${SITE.name}">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${SITE.domain}/assets/img/icon-512.png">
-<meta property="og:image:secure_url" content="${SITE.domain}/assets/img/icon-512.png">
+<meta property="og:image" content="${SITE.domain}/assets/img/nrr.png">
+<meta property="og:image:secure_url" content="${SITE.domain}/assets/img/nrr.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
+<meta property="og:image:width" content="3231">
+<meta property="og:image:height" content="2550">
 <meta property="og:image:alt" content="${SITE.name} logo">
 <meta name="twitter:card" content="summary">
 <link rel="preload" href="${rel}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
@@ -301,7 +300,7 @@ ${body.replaceAll('{{rel}}', rel)}
 <aside class="contact-float" aria-label="Quick contact">
   <div class="contact-pop" id="contact-pop" hidden>
     <div class="contact-pop-head">
-      <span class="contact-status" aria-hidden="true">${MARK(32)}</span>
+      <span class="contact-status" aria-hidden="true"><img src="${rel}assets/img/nrr-2.png" width="3231" height="2550" alt=""></span>
       <div><strong>Roof help, without the runaround</strong><span>Local team &middot; replies during business hours</span></div>
     </div>
     <div class="contact-pop-body">
@@ -360,8 +359,8 @@ function baseSchema() {
     name: SITE.name,
     legalName: SITE.legal,
     url: SITE.domain + '/',
-    logo: SITE.domain + '/assets/img/logo.svg',
-    image: SITE.domain + '/assets/img/og-image.jpg',
+    logo: SITE.domain + '/assets/img/nrr-2.png',
+    image: SITE.domain + '/assets/img/nrr.png',
     telephone: '+1-702-555-0184',
     email: SITE.email,
     priceRange: '$$',
@@ -459,11 +458,12 @@ const reviewsHtml = () => `
       <p class="muted">Rated 4.9 / 5 across 300+ verified reviews from homeowners and businesses.</p>
     </div>
     <div class="grid-2">
-      ${REVIEWS.map(([name, area, text]) => `
+      ${REVIEWS.map(([name, area, text], i) => `
       <article class="review-card rv">
+        <div class="reviewer"><div class="avatar" aria-hidden="true">${name[0]}</div><div><b>${name}</b><span>${area} &middot; ${['3 weeks ago', '1 month ago', '2 months ago', '3 months ago'][i]}</span></div></div>
         <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>&ldquo;${text}&rdquo;</p>
-        <div class="reviewer"><div class="avatar" aria-hidden="true">${name[0]}</div><div><b>${name}</b><span>${area}</span></div></div>
+        <footer class="review-foot"><span>Posted on Google</span><a href="https://www.google.com/search?q=NovaRidge+Roofing+Las+Vegas+reviews" target="_blank" rel="noopener">Read on Google</a></footer>
       </article>`).join('')}
     </div>
   </div>
@@ -489,7 +489,7 @@ function homePage() {
   <div class="hero-media">
     <video id="heroVid" data-base="assets/video/hero" autoplay muted loop playsinline preload="none" poster="assets/video/poster.jpg" width="1280" height="720" aria-hidden="true" tabindex="-1"></video>
   </div>
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     <div class="hero-inner">
       <h1>Roofing, <span class="grad-text">engineered</span> for the desert</h1>
@@ -498,12 +498,6 @@ function homePage() {
         <a class="btn btn-primary" href="contact/">Get a Free Quote</a>
         <a class="btn btn-yellow" href="${SITE.phoneHref}">${SITE.phone}</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><b>2,400+</b><span>Roofs completed</span></div>
-        <div class="stat"><b>4.9&#9733;</b><span>300+ reviews</span></div>
-        <div class="stat"><b>25-yr</b><span>Workmanship warranty</span></div>
-        <div class="stat"><b>24/7</b><span>Storm response</span></div>
-      </div>
     </div>
   </div>
 </section>
@@ -511,11 +505,11 @@ function homePage() {
 <div class="trust">
   <div class="trust-track">
     ${[false, true].map((duplicate) => `<div class="trust-row"${duplicate ? ' aria-hidden="true"' : ''}>
-      <span class="trust-item">${IC.badge} NV Licensed &amp; Bonded</span>
-      <span class="trust-item">${IC.shield} $2M Liability Insured</span>
-      <span class="trust-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 on Google</span>
-      <span class="trust-item">${IC.check} BBB A+ Accredited</span>
-      <span class="trust-item">${IC.bolt} Same-Week Starts</span>
+      <span class="trust-item">NV Licensed &amp; Bonded</span>
+      <span class="trust-item">$2M Liability Insured</span>
+      <span class="trust-item">4.9 on Google</span>
+      <span class="trust-item">BBB A+ Accredited</span>
+      <span class="trust-item">Same-Week Starts</span>
     </div>`).join('')}
   </div>
 </div>
@@ -674,7 +668,7 @@ ${ctaBand('Your roof, future-proofed.', 'Book a free drone inspection this week 
 function servicePage(s) {
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], [s.name, null]])}
     <p class="kicker">Service</p>
@@ -721,7 +715,7 @@ ${ctaBand(`Ready for ${s.name.toLowerCase()}?`, 'Free drone inspection, photo re
 function areaPage(a) {
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], [a.name, null]])}
     <p class="kicker">Service Area</p>
@@ -763,7 +757,7 @@ function pricingPage() {
   ];
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], ['Pricing', null]])}
     <p class="kicker">Pricing</p>
@@ -815,7 +809,7 @@ ${ctaBand('Want a real number?', 'Free drone measurement and a line-item quote �
 function aboutPage() {
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], ['About', null]])}
     <p class="kicker">About Us</p>
@@ -870,7 +864,7 @@ ${ctaBand('Meet us on your roof.', 'Book a free inspection and see the NovaRidge
 function contactPage() {
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], ['Contact', null]])}
     <p class="kicker">Contact</p>
@@ -910,7 +904,7 @@ const LEGAL_UPDATED = 'July 10, 2026';
 function privacyPage() {
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], ['Privacy Policy', null]])}
     <p class="kicker">Legal</p>
@@ -964,7 +958,7 @@ function privacyPage() {
 function termsPage() {
   const body = `
 <div class="sub-hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     ${crumbsHtml('{{rel}}', [['Home', ''], ['Terms of Service', null]])}
     <p class="kicker">Legal</p>
@@ -1041,7 +1035,7 @@ function thankYouPage() {
 function notFoundPage() {
   const body = `
 <div class="sub-hero" style="min-height:60svh;display:flex;align-items:center">
-  <div class="hero-grid" aria-hidden="true"></div>
+
   <div class="wrap">
     <p class="kicker">404</p>
     <h1>This page blew off in the <span class="grad-text">monsoon</span></h1>
@@ -1095,27 +1089,6 @@ Sitemap: ${SITE.domain}/sitemap.xml
 `);
 fs.writeFileSync(path.join(ROOT, '.nojekyll'), '');
 
-/* standalone logo + favicon svg */
-const LOGO_SVG = `<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NovaRidge Roofing logo">
-<defs><linearGradient id="lg" x1="16" y1="66" x2="72" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient>
-<linearGradient id="lt" x1="150" y1="0" x2="290" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2FA45A"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs>
-<rect width="360" height="96" rx="18" fill="#122E1C"/>
-<path d="M44 11.5 76.7 30.25v37.5L44 86.5 11.3 67.75v-37.5Z" stroke="rgba(124,181,40,.55)" stroke-width="2.4"/>
-<path d="M21 60 44 37l23 23" stroke="url(#lg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M31 68 44 55l13 13" stroke="rgba(47,164,90,.6)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="44" cy="37" r="4.4" fill="#FFC907"/><circle cx="21" cy="60" r="3" fill="#2FA45A"/><circle cx="67" cy="60" r="3" fill="#2FA45A"/>
-<text x="96" y="52" font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="4" fill="#F3F8EF">NOVA<tspan fill="url(#lt)">RIDGE</tspan></text>
-<text x="98" y="74" font-family="Space Grotesk,Segoe UI,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="7" fill="#B7CBB9">ROOFING &#183; LAS VEGAS</text>
-</svg>`;
 fs.mkdirSync(path.join(ROOT, 'assets/img'), { recursive: true });
-fs.writeFileSync(path.join(ROOT, 'assets/img/logo.svg'), LOGO_SVG);
 
-const FAV_SVG = `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="g" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#7CB528"/><stop offset="1" stop-color="#FFC907"/></linearGradient></defs>
-<rect width="48" height="48" rx="10" fill="#122E1C"/>
-<path d="M10 31 24 17l14 14" stroke="url(#g)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.5 35.5 24 28l7.5 7.5" stroke="rgba(47,164,90,.6)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="24" cy="17" r="3" fill="#FFC907"/></svg>`;
-fs.writeFileSync(path.join(ROOT, 'favicon.svg'), FAV_SVG);
-
-console.log(`Built ${OUT.length} pages + sitemap.xml + robots.txt + logo assets.`);
+console.log(`Built ${OUT.length} pages + sitemap.xml + robots.txt.`);
