@@ -34,5 +34,5 @@ for (const p of pages) {
   if (!/<html lang="en">/.test(html)) errs.push(`${p}: no lang`);
   if (!/<h1[\s>]/.test(html)) errs.push(`${p}: no h1`);
 }
-console.log(errs.length ? errs.join('\n') : `ALL CLEAN: ${pages.length} pages — JSON-LD parses, all local refs resolve, canonical/meta/h1/lang present`);
+console.log(errs.length ? errs.join('\n') : `ALL CLEAN: ${pages.length} pages, JSON-LD parses, all local refs resolve, canonical/meta/h1/lang present`);
 if (errs.length) process.exitCode = 1;

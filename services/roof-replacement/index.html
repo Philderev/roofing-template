@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="NovaRidge Roofing logo">
 <meta name="twitter:card" content="summary">
 <link rel="preload" href="../../assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
-<style>/* NOVARIDGE ROOFING — design system
+<style>/* NOVARIDGE ROOFING , design system
    Palette: Sage Hint · Mint · Sage · Moss · Evergreen */
 @font-face{font-family:"Roboto";src:url("../../assets/fonts/roboto-400.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:"Roboto";src:url("../../assets/fonts/roboto-500.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
@@ -126,6 +126,14 @@ nav.main a[aria-current=page]::after{content:"";position:absolute;left:50%;botto
 .hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(41,61,49,.92) 18%,rgba(41,61,49,.66) 52%,rgba(41,61,49,.3)),linear-gradient(0deg,rgba(41,61,49,.55),transparent 40%)}
 .hero-inner{max-width:760px;color:#fff}
+.hero-layout,.sub-hero-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:clamp(32px,6vw,80px);align-items:center}
+.sub-hero-layout{align-items:start}
+.hero-form{padding:clamp(20px,2.5vw,28px);max-width:480px;justify-self:end;width:100%}
+.hero-form h2{font-size:1.15rem;margin-bottom:.3em;color:var(--ink)}
+.hero-form>p{font-size:.82rem;color:var(--muted);margin:0 0 14px}
+.hero-form .f-field{margin-bottom:9px}
+.hero-form .sms-consent{font-size:.67rem;margin-bottom:12px}
+.hero-form .btn{width:100%}
 .hero-status{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#B7C9B8;margin-bottom:1.5rem}
 .pulse{position:relative;width:9px;height:9px;border-radius:50%;background:#B7C9B8}
 .pulse::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(183,201,184,.55);animation:pulse 2s infinite}
@@ -411,7 +419,8 @@ address a{color:var(--inv)}
   .head-cta .btn{display:none}
   .grid-3,.grid-2,.proj-grid{grid-template-columns:1fr}
   .service-card-grid{grid-template-columns:1fr}
-  .about-grid,.area-flex,.cta-card .inner,.faq-grid{grid-template-columns:1fr}
+  .about-grid,.area-flex,.cta-card .inner,.faq-grid,.hero-layout,.sub-hero-layout{grid-template-columns:1fr}
+  .hero-form{justify-self:start;max-width:620px}
   .chip-tr{right:.6rem}.chip-bl{left:-.4rem}
   .hero{min-height:78svh;padding:90px 0 70px}
 }
@@ -433,7 +442,7 @@ address a{color:var(--inv)}
 <noscript><style>.rv:not(.in){opacity:1;transform:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RoofingContractor","@id":"https://philderev.github.io/roofing-template/#org","name":"NovaRidge Roofing","legalName":"NovaRidge Roofing LLC","url":"https://philderev.github.io/roofing-template/","logo":"https://philderev.github.io/roofing-template/assets/img/nrr-2.png","image":"https://philderev.github.io/roofing-template/assets/img/nrr.png","telephone":"+1-702-555-0184","email":"hello@novaridgeroofing.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"7255 S Tenaya Way, Suite 140","addressLocality":"Las Vegas","addressRegion":"NV","postalCode":"89113","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":36.0563,"longitude":-115.2493},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"18:00"}],"areaServed":[{"@type":"City","name":"Las Vegas"},{"@type":"City","name":"Summerlin"},{"@type":"City","name":"Henderson"},{"@type":"City","name":"North Las Vegas"},{"@type":"City","name":"Spring Valley"},{"@type":"City","name":"Enterprise"},{"@type":"City","name":"Paradise"}],"sameAs":[]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://philderev.github.io/roofing-template/"},{"@type":"ListItem","position":2,"name":"Services"},{"@type":"ListItem","position":3,"name":"Roof Replacement","item":"https://philderev.github.io/roofing-template/services/roof-replacement/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does a full roof replacement take?","acceptedAnswer":{"@type":"Answer","text":"Most single-family homes in the Vegas Valley are completed in 2–4 days: one day of tear-off and deck repair, then installation. Tile and metal systems can take a few days longer."}},{"@type":"Question","name":"Do I need a permit in Clark County?","acceptedAnswer":{"@type":"Answer","text":"Yes — and we pull it for you. Re-roofing in unincorporated Clark County, Las Vegas, North Las Vegas, and Henderson requires a permit and inspection, which we schedule and attend."}},{"@type":"Question","name":"Can you install over my existing shingles?","acceptedAnswer":{"@type":"Answer","text":"We don’t recommend overlays in our climate and in most cases code prohibits a second layer over tile. A full tear-off lets us verify the decking — that’s where hidden monsoon damage lives."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does a full roof replacement take?","acceptedAnswer":{"@type":"Answer","text":"Most single-family homes in the Vegas Valley are completed in 2-4 days: one day of tear-off and deck repair, then installation. Tile and metal systems can take a few days longer."}},{"@type":"Question","name":"Do I need a permit in Clark County?","acceptedAnswer":{"@type":"Answer","text":"Yes, and we pull it for you. Re-roofing in unincorporated Clark County, Las Vegas, North Las Vegas, and Henderson requires a permit and inspection, which we schedule and attend."}},{"@type":"Question","name":"Can you install over my existing shingles?","acceptedAnswer":{"@type":"Answer","text":"We don’t recommend overlays in our climate and in most cases code prohibits a second layer over tile. A full tear-off lets us verify the decking, that’s where hidden monsoon damage lives."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Roof Replacement","serviceType":"Roof Replacement","provider":{"@id":"https://philderev.github.io/roofing-template/#org"},"areaServed":{"@type":"City","name":"Las Vegas"},"description":"Full roof replacement in Las Vegas with drone inspections, Class-A fire-rated materials engineered for desert heat, and workmanship warranties up to 25 years."}</script>
 <!-- GA4: paste gtag.js snippet here (G-XXXXXXXXXX) -->
 <!-- GTM: paste container snippet here (GTM-XXXXXXX) -->
@@ -449,7 +458,7 @@ address a{color:var(--inv)}
 </aside>
 <header class="site-head">
   <div class="wrap nav-bar">
-    <a class="brand" href="../../" aria-label="NovaRidge Roofing — home"><img class="brand-logo" src="../../assets/img/nrr-2.png" width="3231" height="2550" alt="NovaRidge Roofing"></a>
+    <a class="brand" href="../../" aria-label="NovaRidge Roofing, home"><img class="brand-logo" src="../../assets/img/nrr-2.png" width="3231" height="2550" alt="NovaRidge Roofing"></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
     <nav class="main" id="mainnav" aria-label="Main">
       <ul>
@@ -475,19 +484,35 @@ address a{color:var(--inv)}
 
 <div class="sub-hero">
 
-  <div class="wrap">
+  <div class="wrap sub-hero-layout">
+    <div>
     <nav class="crumbs" aria-label="Breadcrumb"><span aria-current="page">Home</span> &nbsp;/&nbsp; <span aria-current="page">Roof Replacement</span></nav>
     <p class="kicker">Service</p>
     <h1>A brand-new roof, engineered for the desert.</h1>
-    <p class="lede muted" style="max-width:640px;font-size:1.1rem">When repair stops making sense, NovaRidge replaces your entire roof system — decking to ridge — with materials rated for 115°F summers and monsoon winds.</p>
+    <p class="lede muted" style="max-width:640px;font-size:1.1rem">When repair stops making sense, NovaRidge replaces your entire roof system, decking to ridge, with materials rated for 115°F summers and monsoon winds.</p>
     <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin:1.6em 0 2.6em"><a class="btn btn-yellow" href="../../contact/">Get a Free Quote</a><a class="btn btn-ghost" href="tel:+17025550184">(702) 555-0184</a></div>
+    </div>
+    
+<form class="lead-form hero-form" id="service-roof-replacement-hero-form" data-ty="../../thank-you/">
+  <h2>Get a free roof analysis</h2>
+  <p>Tell us where to inspect. We typically respond within 30 minutes.</p>
+  <div class="f-row">
+    <div class="f-field"><label for="service-roof-replacement-hero-form-name">Name</label><input id="service-roof-replacement-hero-form-name" name="name" autocomplete="name" required></div>
+    <div class="f-field"><label for="service-roof-replacement-hero-form-phone">Phone</label><input id="service-roof-replacement-hero-form-phone" name="phone" type="tel" autocomplete="tel" required></div>
+  </div>
+  <div class="f-field"><label for="service-roof-replacement-hero-form-addr">Property address</label><input id="service-roof-replacement-hero-form-addr" name="address" autocomplete="street-address"></div>
+  <div class="f-field"><label for="service-roof-replacement-hero-form-svc">What do you need?</label><select id="service-roof-replacement-hero-form-svc" name="service"><option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure, inspect it</option></select></div>
+  <label class="sms-consent"><input type="checkbox" name="sms_consent" value="yes"><span>I consent to receive SMS notifications, project updates, and occasional marketing communications from NovaRidge Roofing. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe.</span></label>
+  <button class="btn btn-primary" type="submit">Request Free Quote</button>
+  <p class="form-legal"><a href="../../privacy/">Privacy Policy</a><span aria-hidden="true">|</span><a href="../../terms/">Terms of Service</a></p>
+</form>
   </div>
 </div>
 <div class="wrap svc-hero-img rv"><picture><source srcset="../../assets/img/svc-replacement.webp" type="image/webp"><img src="../../assets/img/svc-replacement.jpg" alt="Row of new metal roofs with dormer windows against a clear desert sky" width="1600" height="700" fetchpriority="high"></picture></div>
 <section style="padding-top:clamp(30px,5vw,54px)">
   <div class="wrap about-grid" style="align-items:start">
     <div class="prose rv">
-      <h2>Built for the Mojave, not the Midwest</h2><p>Most roofing failures in the Vegas Valley come from thermal cycling: 40-degree temperature swings that crack underlayment and curl shingles years ahead of schedule. Our replacement systems pair high-temp synthetic underlayment with Class-A fire-rated shingles or concrete tile, ventilated to shed attic heat and cut your cooling bills.</p><h2>What a NovaRidge replacement includes</h2><p>Every project starts with a 4K drone scan and a moisture map of your decking. We tear off to the deck, replace compromised sheathing, and rebuild with ice-and-water shield at penetrations, new flashing and drip edge, and ridge ventilation sized to your attic volume. The site is magnet-swept daily and hauled clean at completion.</p><h2>Warranty that outlives the loan</h2><p>Materials carry manufacturer warranties up to 50 years. Our workmanship warranty runs up to 25 years and is registered, transferable once, and backed by a local company — not a P.O. box.</p>
+      <h2>Built for the Mojave, not the Midwest</h2><p>Most roofing failures in the Vegas Valley come from thermal cycling: 40-degree temperature swings that crack underlayment and curl shingles years ahead of schedule. Our replacement systems pair high-temp synthetic underlayment with Class-A fire-rated shingles or concrete tile, ventilated to shed attic heat and cut your cooling bills.</p><h2>What a NovaRidge replacement includes</h2><p>Every project starts with a 4K drone scan and a moisture map of your decking. We tear off to the deck, replace compromised sheathing, and rebuild with ice-and-water shield at penetrations, new flashing and drip edge, and ridge ventilation sized to your attic volume. The site is magnet-swept daily and hauled clean at completion.</p><h2>Warranty that outlives the loan</h2><p>Materials carry manufacturer warranties up to 50 years. Our workmanship warranty runs up to 25 years and is registered, transferable once, and backed by a local company, not a P.O. box.</p>
     </div>
     <div class="tech-panel rv" style="position:sticky;top:96px">
       <h3>What's included</h3>
@@ -501,7 +526,7 @@ address a{color:var(--inv)}
   <div class="wrap">
     <div class="section-head rv"><p class="kicker">FAQ</p><h2 id="faq-h">Common questions</h2></div>
     <div class="faq rv">
-      <details><summary>How long does a full roof replacement take?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">Most single-family homes in the Vegas Valley are completed in 2–4 days: one day of tear-off and deck repair, then installation. Tile and metal systems can take a few days longer.</div></details><details><summary>Do I need a permit in Clark County?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">Yes — and we pull it for you. Re-roofing in unincorporated Clark County, Las Vegas, North Las Vegas, and Henderson requires a permit and inspection, which we schedule and attend.</div></details><details><summary>Can you install over my existing shingles?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">We don’t recommend overlays in our climate and in most cases code prohibits a second layer over tile. A full tear-off lets us verify the decking — that’s where hidden monsoon damage lives.</div></details>
+      <details><summary>How long does a full roof replacement take?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">Most single-family homes in the Vegas Valley are completed in 2-4 days: one day of tear-off and deck repair, then installation. Tile and metal systems can take a few days longer.</div></details><details><summary>Do I need a permit in Clark County?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">Yes, and we pull it for you. Re-roofing in unincorporated Clark County, Las Vegas, North Las Vegas, and Henderson requires a permit and inspection, which we schedule and attend.</div></details><details><summary>Can you install over my existing shingles?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a">We don’t recommend overlays in our climate and in most cases code prohibits a second layer over tile. A full tear-off lets us verify the decking, that’s where hidden monsoon damage lives.</div></details>
     </div>
   </div>
 </section>
@@ -513,9 +538,9 @@ address a{color:var(--inv)}
         <div>
           <p class="kicker">Free Inspection &middot; No Obligation</p>
           <h2>Ready for roof replacement?</h2>
-          <p class="muted">Free drone inspection, photo report, and a line-item quote — usually within 48 hours.</p>
+          <p class="muted">Free drone inspection, photo report, and a line-item quote, usually within 48 hours.</p>
           <a class="big-phone" href="tel:+17025550184"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg> (702) 555-0184</a>
-          <p class="muted" style="font-size:.85rem;margin-top:6px">Mon–Sat: 7:00 AM – 6:00 PM &middot; 24/7 emergency line</p>
+          <p class="muted" style="font-size:.85rem;margin-top:6px">Mon-Sat: 7:00 AM - 6:00 PM &middot; 24/7 emergency line</p>
         </div>
         <form class="lead-form" id="leadform" data-ty="../../thank-you/">
           <!-- GHL form embed replaces this block in production -->
@@ -527,7 +552,7 @@ address a{color:var(--inv)}
           <div class="f-field"><label for="lf-addr">Property address</label><input id="lf-addr" name="address" autocomplete="street-address"></div>
           <div class="f-field"><label for="lf-svc">What do you need?</label>
             <select id="lf-svc" name="service">
-              <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure — inspect it</option>
+              <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure, inspect it</option>
             </select>
           </div>
           <label class="sms-consent">
@@ -547,7 +572,7 @@ address a{color:var(--inv)}
 <footer class="site-foot">
   <div class="wrap foot-grid">
     <div class="foot-about">
-      <a class="brand" href="../../" aria-label="NovaRidge Roofing — home"><img class="brand-logo" src="../../assets/img/nrr-2.png" width="3231" height="2550" alt="NovaRidge Roofing"></a>
+      <a class="brand" href="../../" aria-label="NovaRidge Roofing, home"><img class="brand-logo" src="../../assets/img/nrr-2.png" width="3231" height="2550" alt="NovaRidge Roofing"></a>
       <p style="margin-top:18px">Next-generation roofing for the Vegas Valley. Licensed, bonded, and insured. NV Contractor Lic. #0091337.</p>
     </div>
     <div>
@@ -563,7 +588,7 @@ address a{color:var(--inv)}
       <h4>Contact</h4>
       <address>7255 S Tenaya Way, Suite 140<br>Las Vegas, NV 89113<br>
       <a href="tel:+17025550184">(702) 555-0184</a><br>
-      <a href="mailto:hello@novaridgeroofing.com">hello@novaridgeroofing.com</a><br>Mon–Sat: 7:00 AM – 6:00 PM</address>
+      <a href="mailto:hello@novaridgeroofing.com">hello@novaridgeroofing.com</a><br>Mon-Sat: 7:00 AM - 6:00 PM</address>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -578,7 +603,7 @@ address a{color:var(--inv)}
       <div><strong>Roof help, without the runaround</strong><span>Local team &middot; replies during business hours</span></div>
     </div>
     <div class="contact-pop-body">
-      <p>Questions, leaks, or quote requests — choose the easiest way to reach our crew.</p>
+      <p>Questions, leaks, or quote requests, choose the easiest way to reach our crew.</p>
       <div class="contact-actions">
         <a href="tel:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z"/></svg></span><span><b>Call the office</b><small>(702) 555-0184</small></span></a>
         <a href="sms:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10.8h8M8 8h5"/></svg></span><span><b>Send a text</b><small>Great for photos of damage</small></span></a>
@@ -613,8 +638,7 @@ var v=d.getElementById('heroVid');
 if(v){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,sd=navigator.connection&&navigator.connection.saveData;
 if(!rm&&!sd){var load=function(){['webm','mp4'].forEach(function(f){var s=d.createElement('source');s.src=v.dataset.base+'.'+f;s.type='video/'+f;v.appendChild(s)});v.load();var p=v.play();if(p)p.catch(function(){});};
 if(d.readyState==='complete'){setTimeout(load,120)}else{addEventListener('load',function(){setTimeout(load,120)})}}}
-var f=d.getElementById('leadform');
-if(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});window.location.href=f.dataset.ty;});}
+d.querySelectorAll('.lead-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});window.location.href=f.dataset.ty;});});
 var ct=d.querySelector('.contact-trigger'),cp=d.getElementById('contact-pop');
 if(ct&&cp){var toggleContact=function(open){cp.hidden=!open;ct.setAttribute('aria-expanded',open);document.querySelector('.contact-float').classList.toggle('is-open',open);if(open)cp.querySelector('a').focus()};ct.addEventListener('click',function(){toggleContact(ct.getAttribute('aria-expanded')!=='true')});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!cp.hidden){toggleContact(false);ct.focus()}});d.addEventListener('click',function(e){if(!cp.hidden&&!e.target.closest('.contact-float'))toggleContact(false)});}
 var cb=d.getElementById('cookie-banner'),cs=d.querySelector('.cookie-settings'),consentKey='novaridge-cookie-consent';

@@ -1,8 +1,8 @@
-# NovaRidge Roofing — Las Vegas (Demo Template)
+# NovaRidge Roofing, Las Vegas (Demo Template)
 
 Fictional, futuristic roofing-company website for the Vegas Valley, built per the
 [Website Build SOP](https://docs.google.com/document/d/1O600R3HISuXLJumBvrtS0CZI8HaTCHjZExtLNCQleGM/).
-Fully static — deployable to any host (Hostinger FTP `public_html`, GitHub Pages staging, etc.).
+Fully static, deployable to any host (Hostinger FTP `public_html`, GitHub Pages staging, etc.).
 
 ## Structure
 
@@ -17,10 +17,10 @@ thank-you/                  Post-form-submit confirmation (noindex, robots-disal
 sitemap.xml  robots.txt     SEO plumbing (update domain in _build/build.js)
 assets/video/               hero.webm + hero.mp4 (H.264, iPhone/Mac-safe) + poster.jpg/webp
 assets/img/                 Photos (WebP + JPG fallback), current logo and social-preview images
-assets/fonts/               Self-hosted Roboto 400/500/700 — preloaded and inlined with @font-face
+assets/fonts/               Self-hosted Roboto 400/500/700, preloaded and inlined with @font-face
 assets/img/nrr-2.png        Browser favicon and transparent brand mark
 assets/img/nrr.png          Apple touch icon and social-preview image
-_build/                     Source of truth — never edit generated HTML by hand
+_build/                     Source of truth, never edit generated HTML by hand
 ```
 
 ## Build
@@ -31,7 +31,7 @@ node _build/audit.js   # link/schema/meta sanity check
 ```
 
 All content, NAP, palette, and the placeholder domain live at the top of `_build/build.js`.
-CSS (`_build/styles.css`) is inlined into every page at build time — zero render-blocking requests.
+CSS (`_build/styles.css`) is inlined into every page at build time, zero render-blocking requests.
 
 ## Performance & SEO notes
 
@@ -40,7 +40,7 @@ CSS (`_build/styles.css`) is inlined into every page at build time — zero rend
 - JSON-LD: `RoofingContractor` sitewide, `BreadcrumbList` + `Service` + `FAQPage` on subpages.
 - Unique titles/descriptions/canonicals per page; 404 is `noindex`.
 - Media: video sourced from Pexels (free license, video #31025088), re-encoded with ffmpeg.
-  Photos also Pexels (free license) — served as WebP with JPG fallback via `<picture>`.
+  Photos also Pexels (free license), served as WebP with JPG fallback via `<picture>`.
 - Palette: cream/yellow backgrounds (`#fffbec` / `#fff3c4` / `#ffd84d`), green accents
   (`#1e7a3e` / `#2fa45a` / `#7cb528`), deep pine footer (`#122e1c`).
 - Demo lead form redirects to `/thank-you/` on submit (GHL form replaces this in production;

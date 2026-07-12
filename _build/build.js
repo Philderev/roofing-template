@@ -1,4 +1,4 @@
-/* NOVARIDGE ROOFING — static site generator */
+/* NOVARIDGE ROOFING, static site generator */
 const fs = require('fs');
 const path = require('path');
 
@@ -14,7 +14,7 @@ const SITE = {
   email: 'hello@novaridgeroofing.com',
   street: '7255 S Tenaya Way, Suite 140',
   city: 'Las Vegas', state: 'NV', zip: '89113',
-  hours: 'Mon–Sat: 7:00 AM – 6:00 PM',
+  hours: 'Mon-Sat: 7:00 AM - 6:00 PM',
   license: 'NV Contractor Lic. #0091337',
   geo: { lat: 36.0563, lng: -115.2493 },
   tagline: 'Next-generation roofing for the Vegas Valley',
@@ -24,7 +24,7 @@ const SITE = {
 let markId = 0;
 const MARK = (s = 44) => { const id = `mark-gradient-${++markId}`; return `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="${id}" x1="8" y1="34" x2="40" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#8EA58E"/><stop offset="1" stop-color="#8EA58E"/></linearGradient></defs><path d="M24 3.5 41.8 13.75v20.5L24 44.5 6.2 34.25v-20.5Z" stroke="rgba(142,165,142,.55)" stroke-width="1.6"/><path d="M11 30 24 17l13 13" stroke="url(#${id})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 34.5 24 27l7.5 7.5" stroke="rgba(115,138,110,.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="2.6" fill="#8EA58E"/><circle cx="11" cy="30" r="1.7" fill="#738A6E"/><circle cx="37" cy="30" r="1.7" fill="#738A6E"/></svg>`; };
 
-const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name} — home"><img class="brand-logo" src="${home}assets/img/nrr-2.png" width="3231" height="2550" alt="${SITE.name}"></a>`;
+const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name}, home"><img class="brand-logo" src="${home}assets/img/nrr-2.png" width="3231" height="2550" alt="${SITE.name}"></a>`;
 
 const IC = {
   bolt: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg>',
@@ -57,17 +57,17 @@ const SERVICES = [
     title: 'Roof Replacement in Las Vegas, NV',
     desc: 'Full roof replacement in Las Vegas with drone inspections, Class-A fire-rated materials engineered for desert heat, and workmanship warranties up to 25 years.',
     hero: 'A brand-new roof, engineered for the desert.',
-    lede: 'When repair stops making sense, NovaRidge replaces your entire roof system — decking to ridge — with materials rated for 115°F summers and monsoon winds.',
+    lede: 'When repair stops making sense, NovaRidge replaces your entire roof system, decking to ridge, with materials rated for 115°F summers and monsoon winds.',
     body: [
       ['Built for the Mojave, not the Midwest', 'Most roofing failures in the Vegas Valley come from thermal cycling: 40-degree temperature swings that crack underlayment and curl shingles years ahead of schedule. Our replacement systems pair high-temp synthetic underlayment with Class-A fire-rated shingles or concrete tile, ventilated to shed attic heat and cut your cooling bills.'],
       ['What a NovaRidge replacement includes', 'Every project starts with a 4K drone scan and a moisture map of your decking. We tear off to the deck, replace compromised sheathing, and rebuild with ice-and-water shield at penetrations, new flashing and drip edge, and ridge ventilation sized to your attic volume. The site is magnet-swept daily and hauled clean at completion.'],
-      ['Warranty that outlives the loan', 'Materials carry manufacturer warranties up to 50 years. Our workmanship warranty runs up to 25 years and is registered, transferable once, and backed by a local company — not a P.O. box.'],
+      ['Warranty that outlives the loan', 'Materials carry manufacturer warranties up to 50 years. Our workmanship warranty runs up to 25 years and is registered, transferable once, and backed by a local company, not a P.O. box.'],
     ],
     bullets: ['4K drone inspection + moisture mapping', 'Tear-off to deck with sheathing replacement', 'High-temp synthetic underlayment', 'Class-A fire-rated shingle, tile, or metal', 'Ridge ventilation engineered for desert attics', 'Up to 25-year transferable workmanship warranty'],
     faqs: [
-      ['How long does a full roof replacement take?', 'Most single-family homes in the Vegas Valley are completed in 2–4 days: one day of tear-off and deck repair, then installation. Tile and metal systems can take a few days longer.'],
-      ['Do I need a permit in Clark County?', 'Yes — and we pull it for you. Re-roofing in unincorporated Clark County, Las Vegas, North Las Vegas, and Henderson requires a permit and inspection, which we schedule and attend.'],
-      ['Can you install over my existing shingles?', 'We don’t recommend overlays in our climate and in most cases code prohibits a second layer over tile. A full tear-off lets us verify the decking — that’s where hidden monsoon damage lives.'],
+      ['How long does a full roof replacement take?', 'Most single-family homes in the Vegas Valley are completed in 2-4 days: one day of tear-off and deck repair, then installation. Tile and metal systems can take a few days longer.'],
+      ['Do I need a permit in Clark County?', 'Yes, and we pull it for you. Re-roofing in unincorporated Clark County, Las Vegas, North Las Vegas, and Henderson requires a permit and inspection, which we schedule and attend.'],
+      ['Can you install over my existing shingles?', 'We don’t recommend overlays in our climate and in most cases code prohibits a second layer over tile. A full tear-off lets us verify the decking, that’s where hidden monsoon damage lives.'],
     ],
   },
   {
@@ -75,11 +75,11 @@ const SERVICES = [
     img: 'svc-repair', imgAlt: 'Hard hats and safety equipment staged on a light-colored metal roof',
     short: 'We trace the true source of leaks, document the damage, and make targeted repairs that last.',
     title: 'Roof Repair & Leak Detection in Las Vegas',
-    desc: 'Fast roof leak detection and repair in Las Vegas. Thermal imaging, monsoon storm damage response, and same-day emergency tarping — call (702) 555-0184.',
+    desc: 'Fast roof leak detection and repair in Las Vegas. Thermal imaging, monsoon storm damage response, and same-day emergency tarping, call (702) 555-0184.',
     hero: 'Find the leak. Fix it once.',
-    lede: 'Water travels. The stain on your ceiling is rarely under the hole in your roof. We use thermal imaging and moisture meters to trace leaks to their true source — then repair the cause, not the symptom.',
+    lede: 'Water travels. The stain on your ceiling is rarely under the hole in your roof. We use thermal imaging and moisture meters to trace leaks to their true source, then repair the cause, not the symptom.',
     body: [
-      ['Diagnosis before demolition', 'Our technicians scan the roof plane and attic with FLIR thermal cameras to locate trapped moisture, then verify with pin meters. You get photo documentation of exactly what failed and why — no guesswork, no "replace it all" upsell when a $600 repair solves it.'],
+      ['Diagnosis before demolition', 'Our technicians scan the roof plane and attic with FLIR thermal cameras to locate trapped moisture, then verify with pin meters. You get photo documentation of exactly what failed and why, no guesswork, no "replace it all" upsell when a $600 repair solves it.'],
       ['Monsoon season response', 'From July through September, wind-driven rain finds every unsealed penetration in the valley. We run extended crews during monsoon season with same-day tarping and next-day permanent repair on most calls.'],
       ['Common repairs we handle', 'Cracked or slipped tiles, wind-lifted shingles, failed pipe-jack boots, deteriorated flashing at walls and chimneys, punctured flat-roof membranes, and clogged scuppers or drains on parapet roofs.'],
     ],
@@ -97,17 +97,17 @@ const SERVICES = [
     title: 'Tile Roofing & Re-Felts in Las Vegas',
     desc: 'Concrete and clay tile roofing in Las Vegas: new installation, underlayment replacement (re-felts), and color-matched tile repair for HOA communities.',
     hero: 'The desert standard, done right.',
-    lede: 'Tile is the signature roof of the Vegas Valley — and the most misunderstood. The tile itself lasts 75 years; the felt underneath it doesn’t. We specialize in re-felts that give your existing tile a whole new life.',
+    lede: 'Tile is the signature roof of the Vegas Valley, and the most misunderstood. The tile itself lasts 75 years; the felt underneath it doesn’t. We specialize in re-felts that give your existing tile a whole new life.',
     body: [
-      ['The re-felt: your tile’s second act', 'On most valley homes built in the 90s and 2000s, the original 30-lb felt under the tile is past its service life even though the tile looks perfect. We lift and rack your existing tile, install modern high-temp synthetic underlayment with new flashings and bird stops, then relay the tile — replacing broken pieces with color-matched stock.'],
+      ['The re-felt: your tile’s second act', 'On most valley homes built in the 90s and 2000s, the original 30-lb felt under the tile is past its service life even though the tile looks perfect. We lift and rack your existing tile, install modern high-temp synthetic underlayment with new flashings and bird stops, then relay the tile, replacing broken pieces with color-matched stock.'],
       ['New tile installation', 'For new builds and full conversions we install concrete and clay systems from Eagle, Boral, and Westlake, with foam or mechanical attachment engineered for our wind zone, and battens vented to cut attic temperatures.'],
-      ['HOA-friendly, color-matched', 'We maintain relationships with valley HOAs and a boneyard of discontinued tile profiles, so repairs blend in — and approvals go through the first time.'],
+      ['HOA-friendly, color-matched', 'We maintain relationships with valley HOAs and a boneyard of discontinued tile profiles, so repairs blend in, and approvals go through the first time.'],
     ],
     bullets: ['Tile re-felts (underlayment replacement)', 'New concrete & clay tile installation', 'Color-matched repairs from discontinued-tile stock', 'Bird stop, ridge, and mortar rework', 'HOA architectural approval support', 'Wind-zone engineered attachment'],
     faqs: [
       ['How do I know my tile roof needs a re-felt?', 'Age is the best indicator: original felt from before ~2005 is due. Leaks at valleys and penetrations, debris in gutters that looks like felt granules, and slipped tiles are the visible symptoms.'],
-      ['Can you reuse my existing tile?', 'Usually yes — 85–90% of tile survives a careful lift-and-relay. We source color-matched replacements for the rest from our discontinued-profile inventory.'],
-      ['How much does a re-felt cost versus full replacement?', 'A re-felt typically runs 55–70% of the cost of a comparable new tile roof because the tile — the most expensive component — is reused.'],
+      ['Can you reuse my existing tile?', 'Usually yes, 85-90% of tile survives a careful lift-and-relay. We source color-matched replacements for the rest from our discontinued-profile inventory.'],
+      ['How much does a re-felt cost versus full replacement?', 'A re-felt typically runs 55-70% of the cost of a comparable new tile roof because the tile, the most expensive component, is reused.'],
     ],
   },
   {
@@ -115,19 +115,19 @@ const SERVICES = [
     img: 'svc-flat', imgAlt: 'Aerial view of a reflective white flat roof on a commercial building',
     short: 'Reflective silicone and TPO systems that protect low-slope roofs while reducing heat gain.',
     title: 'Flat Roof & Silicone Coating Systems in Las Vegas',
-    desc: 'Flat roof replacement, TPO, and silicone restoration coatings in Las Vegas. Reflective cool-roof systems that cut cooling costs and extend roof life 10–20 years.',
+    desc: 'Flat roof replacement, TPO, and silicone restoration coatings in Las Vegas. Reflective cool-roof systems that cut cooling costs and extend roof life 10-20 years.',
     hero: 'Turn your flat roof into a cool roof.',
-    lede: 'Vegas rooftops hit 170°F in July. A reflective silicone coating system drops that by up to 50°F, extends your roof’s life by 10–20 years, and costs a fraction of replacement.',
+    lede: 'Vegas rooftops hit 170°F in July. A reflective silicone coating system drops that by up to 50°F, extends your roof’s life by 10-20 years, and costs a fraction of replacement.',
     body: [
       ['Restoration first, replacement last', 'If your flat or low-slope roof is dry and structurally sound, a fluid-applied silicone system renews it seamlessly: we clean and prime, reinforce seams and penetrations, then apply a monolithic reflective membrane rated for permanent ponding water. No tear-off, no landfill, no weeks of noise.'],
       ['When replacement is the answer', 'Saturated insulation can’t be coated over. Where moisture scans show the roof is past saving, we install 60-mil TPO or modified bitumen systems with tapered insulation to finally solve chronic ponding.'],
-      ['The energy math', 'Reflective coatings raise solar reflectance from roughly 0.10 (aged cap sheet) to 0.85+. On valley homes and commercial buildings, that typically translates to 10–20% off summer cooling loads — the roof pays itself down every July.'],
+      ['The energy math', 'Reflective coatings raise solar reflectance from roughly 0.10 (aged cap sheet) to 0.85+. On valley homes and commercial buildings, that typically translates to 10-20% off summer cooling loads, the roof pays itself down every July.'],
     ],
-    bullets: ['Silicone restoration coating systems', '60-mil TPO installation', 'Tapered insulation for ponding correction', 'Moisture scans before we quote', 'Title 24-grade reflectivity (SRI 100+)', '10–20 year renewable warranties'],
+    bullets: ['Silicone restoration coating systems', '60-mil TPO installation', 'Tapered insulation for ponding correction', 'Moisture scans before we quote', 'Title 24-grade reflectivity (SRI 100+)', '10-20 year renewable warranties'],
     faqs: [
-      ['How long does a silicone coating last?', 'Systems are warrantied 10–20 years depending on applied thickness, and they’re renewable: a maintenance recoat at the end of the term restarts the clock without another tear-off.'],
+      ['How long does a silicone coating last?', 'Systems are warrantied 10-20 years depending on applied thickness, and they’re renewable: a maintenance recoat at the end of the term restarts the clock without another tear-off.'],
       ['Can you coat over ponding water areas?', 'Silicone is one of the only technologies rated for permanent ponding. We still correct severe ponding with tapered insulation or added drains, because standing water hides other problems.'],
-      ['Do coatings work on residential flat roofs?', 'Absolutely — thousands of valley homes have flat or low-slope sections. The same commercial-grade system scales down, and the cooling savings are just as real.'],
+      ['Do coatings work on residential flat roofs?', 'Absolutely, thousands of valley homes have flat or low-slope sections. The same commercial-grade system scales down, and the cooling savings are just as real.'],
     ],
   },
 ];
@@ -138,10 +138,10 @@ const AREAS = [
     photo: 'area-extra', photoAlt: 'Tile rooftops of a master-planned residential neighborhood',
     title: 'Roofing Company in Summerlin, Las Vegas',
     desc: 'NovaRidge Roofing serves Summerlin, The Ridges, Red Rock Country Club, and Sun City with tile re-felts, roof replacement, and HOA-approved repairs.',
-    blurb: 'Tile re-felt specialists for Summerlin’s master-planned communities — from The Ridges to Sun City.',
+    blurb: 'Tile re-felt specialists for Summerlin’s master-planned communities, from The Ridges to Sun City.',
     body: [
-      ['Roofing built for Summerlin homes', 'Summerlin’s housing stock is overwhelmingly concrete tile installed between 1992 and 2008 — which means the original underlayment across the community is reaching end-of-life on a schedule. Our crews perform tile lift-and-relay re-felts weekly in The Ridges, Red Rock Country Club, The Paseos, Summerlin Centre, and Sun City Summerlin.'],
-      ['HOA approvals, handled', 'Every Summerlin village runs architectural review. We prepare the submittal package — tile profile, color match, and scope — and we’ve yet to have one bounced. Repairs use color-matched tile from our discontinued-profile inventory so patches don’t show.'],
+      ['Roofing built for Summerlin homes', 'Summerlin’s housing stock is overwhelmingly concrete tile installed between 1992 and 2008, which means the original underlayment across the community is reaching end-of-life on a schedule. Our crews perform tile lift-and-relay re-felts weekly in The Ridges, Red Rock Country Club, The Paseos, Summerlin Centre, and Sun City Summerlin.'],
+      ['HOA approvals, handled', 'Every Summerlin village runs architectural review. We prepare the submittal package, tile profile, color match, and scope, and we’ve yet to have one bounced. Repairs use color-matched tile from our discontinued-profile inventory so patches don’t show.'],
       ['Wind exposure on the west rim', 'Homes along the 215 and against Red Rock take the valley’s strongest gusts. We upgrade ridge attachment and edge metal on every west-side project accordingly.'],
     ],
     zips: '89134, 89135, 89138, 89144, 89145',
@@ -151,9 +151,9 @@ const AREAS = [
     photo: 'about2', photoAlt: 'Terracotta tile roof with a wooden dormer window',
     title: 'Roofing Company in Henderson, NV',
     desc: 'Roof replacement, repair, and flat-roof coatings in Henderson: Green Valley, Anthem, Inspirada, Lake Las Vegas, and MacDonald Ranch.',
-    blurb: 'From Green Valley originals to new Inspirada builds — full-service roofing across Henderson.',
+    blurb: 'From Green Valley originals to new Inspirada builds, full-service roofing across Henderson.',
     body: [
-      ['Henderson’s roofing mix', 'Henderson spans thirty years of construction: Green Valley’s early-90s shingle and tile, Anthem and Seven Hills’ early-2000s tile, and new stucco-and-flat-roof product in Inspirada and Cadence. We service all of it — re-felts in Anthem, shingle replacement in Green Valley, and silicone coatings on newer flat sections.'],
+      ['Henderson’s roofing mix', 'Henderson spans thirty years of construction: Green Valley’s early-90s shingle and tile, Anthem and Seven Hills’ early-2000s tile, and new stucco-and-flat-roof product in Inspirada and Cadence. We service all of it, re-felts in Anthem, shingle replacement in Green Valley, and silicone coatings on newer flat sections.'],
       ['Elevation and heat', 'Anthem and Black Mountain sit 800+ feet above the valley floor: more wind, more UV, faster underlayment fatigue on south faces. Our inspections map sun-side wear separately so you replace what’s tired, not the whole roof, when repair still makes sense.'],
       ['Commercial and multi-family', 'Our flat-roof division maintains retail and office roofs along the Eastern and St. Rose corridors with moisture surveys and restoration coatings that avoid tenant-disrupting tear-offs.'],
     ],
@@ -167,7 +167,7 @@ const AREAS = [
     blurb: 'Storm-response and replacement crews covering Aliante, Eldorado, Craig Ranch, and the Apex corridor.',
     body: [
       ['Fast response north of the 215', 'North Las Vegas takes the brunt of summer microbursts rolling off the Sheep Range. When monsoon cells drop wind shear over Aliante and Eldorado, our tarping crews stage from the Craig Road corridor for same-day response.'],
-      ['Value without corner-cutting', 'Much of NLV’s housing was built fast in the 2000s boom — builder-grade felt, minimal flashing. Our replacement packages fix the shortcuts: real starter courses, sealed penetrations, and ventilation that was never installed the first time.'],
+      ['Value without corner-cutting', 'Much of NLV’s housing was built fast in the 2000s boom, builder-grade felt, minimal flashing. Our replacement packages fix the shortcuts: real starter courses, sealed penetrations, and ventilation that was never installed the first time.'],
       ['Industrial & warehouse roofing', 'From Cheyenne to Apex, we survey, coat, and re-membrane large low-slope industrial roofs with scheduled maintenance programs that keep tenants dry and warranties valid.'],
     ],
     zips: '89030, 89031, 89032, 89081, 89084, 89085, 89086',
@@ -176,23 +176,23 @@ const AREAS = [
 
 const REVIEWS = [
   ['Marcus T.', 'Summerlin', 'NovaRidge re-felted our tile roof in The Paseos in three days. Drone footage before and after, HOA paperwork handled, yard spotless. It genuinely felt like dealing with a tech company that happens to do roofing.'],
-  ['Alicia R.', 'Henderson', 'A monsoon cell ripped up our ridge caps on a Friday night. They tarped Saturday morning and had the roof permanently repaired by Tuesday — insurance photos and all. Can’t recommend them enough.'],
+  ['Alicia R.', 'Henderson', 'A monsoon cell ripped up our ridge caps on a Friday night. They tarped Saturday morning and had the roof permanently repaired by Tuesday, insurance photos and all. Can’t recommend them enough.'],
   ['David & June K.', 'North Las Vegas', 'Full replacement on our 2004 build in Aliante. Crew showed up at 6 AM, done in two days, and our upstairs is noticeably cooler with the new ventilation. Worth every penny.'],
   ['Priya S.', 'Spring Valley', 'They coated the flat roof on our office off Durango with the silicone system. July power bill dropped almost 18% versus last year. The thermal scan report they left us was genuinely impressive.'],
 ];
 
 const PROJECTS = [
-  ['proj-replace', 'roof-replacement', 'Replacement', 'Modern', '2026-06-18', 'June 18, 2026', 'Full replacement, modern two-story — Henderson', 'New charcoal tile roof on a modern two-story home'],
-  ['proj-tile', 'tile-roofing', 'Tile', 'Re-Felt', '2026-05-30', 'May 30, 2026', 'Tile re-felt & relay — Summerlin', 'Rows of orange concrete tile on steep gables after a re-felt'],
-  ['proj-coating', 'flat-roof-coatings', 'Coating', 'Energy', '2026-05-12', 'May 12, 2026', 'Cool-roof tile & skylight package — Centennial Hills', 'Green tile roof with two new skylights'],
-  ['proj-repair', 'roof-repair', 'Repair', 'Storm', '2026-04-25', 'April 25, 2026', 'Storm damage rebuild — North Las Vegas', 'Roofers on scaffolding rebuilding a storm-damaged roof edge'],
+  ['proj-replace', 'roof-replacement', 'Replacement', 'Modern', '2026-06-18', 'June 18, 2026', 'Full replacement, modern two-story, Henderson', 'New charcoal tile roof on a modern two-story home'],
+  ['proj-tile', 'tile-roofing', 'Tile', 'Re-Felt', '2026-05-30', 'May 30, 2026', 'Tile re-felt & relay, Summerlin', 'Rows of orange concrete tile on steep gables after a re-felt'],
+  ['proj-coating', 'flat-roof-coatings', 'Coating', 'Energy', '2026-05-12', 'May 12, 2026', 'Cool-roof tile & skylight package, Centennial Hills', 'Green tile roof with two new skylights'],
+  ['proj-repair', 'roof-repair', 'Repair', 'Storm', '2026-04-25', 'April 25, 2026', 'Storm damage rebuild, North Las Vegas', 'Roofers on scaffolding rebuilding a storm-damaged roof edge'],
 ];
 
 const HOME_FAQS = [
-  ['Is the drone inspection really free?', 'Completely free, no strings. You get the full 4K photo report and moisture findings whether you hire us or not — most homeowners use it to make an informed decision, and about 7 in 10 come back to us.'],
-  ['How fast can you respond to a leak?', 'Emergency calls across Las Vegas, Henderson, North Las Vegas, and Summerlin are typically tarped the same day. Our 24/7 line — (702) 555-0184 — is answered by a person, not a voicemail.'],
-  ['Do you handle HOA approvals?', 'Yes. We prepare the full architectural submittal — tile profile, color match, and scope of work — and we maintain a boneyard of discontinued tile so repairs blend invisibly.'],
-  ['What warranties do you offer?', 'Manufacturer material warranties up to 50 years, and a NovaRidge workmanship warranty up to 25 years — registered digitally, transferable once, and backed by our Tenaya Way office.'],
+  ['Is the drone inspection really free?', 'Completely free, no strings. You get the full 4K photo report and moisture findings whether you hire us or not, most homeowners use it to make an informed decision, and about 7 in 10 come back to us.'],
+  ['How fast can you respond to a leak?', 'Emergency calls across Las Vegas, Henderson, North Las Vegas, and Summerlin are typically tarped the same day. Our 24/7 line, (702) 555-0184, is answered by a person, not a voicemail.'],
+  ['Do you handle HOA approvals?', 'Yes. We prepare the full architectural submittal, tile profile, color match, and scope of work, and we maintain a boneyard of discontinued tile so repairs blend invisibly.'],
+  ['What warranties do you offer?', 'Manufacturer material warranties up to 50 years, and a NovaRidge workmanship warranty up to 25 years, registered digitally, transferable once, and backed by our Tenaya Way office.'],
 ];
 
 /* ---------- helpers ---------- */
@@ -310,7 +310,7 @@ ${body.replaceAll('{{rel}}', rel)}
       <div><strong>Roof help, without the runaround</strong><span>Local team &middot; replies during business hours</span></div>
     </div>
     <div class="contact-pop-body">
-      <p>Questions, leaks, or quote requests — choose the easiest way to reach our crew.</p>
+      <p>Questions, leaks, or quote requests, choose the easiest way to reach our crew.</p>
       <div class="contact-actions">
         <a href="${SITE.phoneHref}"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z"/></svg></span><span><b>Call the office</b><small>${SITE.phone}</small></span></a>
         <a href="sms:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10.8h8M8 8h5"/></svg></span><span><b>Send a text</b><small>Great for photos of damage</small></span></a>
@@ -345,8 +345,7 @@ var v=d.getElementById('heroVid');
 if(v){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,sd=navigator.connection&&navigator.connection.saveData;
 if(!rm&&!sd){var load=function(){['webm','mp4'].forEach(function(f){var s=d.createElement('source');s.src=v.dataset.base+'.'+f;s.type='video/'+f;v.appendChild(s)});v.load();var p=v.play();if(p)p.catch(function(){});};
 if(d.readyState==='complete'){setTimeout(load,120)}else{addEventListener('load',function(){setTimeout(load,120)})}}}
-var f=d.getElementById('leadform');
-if(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});window.location.href=f.dataset.ty;});}
+d.querySelectorAll('.lead-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});window.location.href=f.dataset.ty;});});
 var ct=d.querySelector('.contact-trigger'),cp=d.getElementById('contact-pop');
 if(ct&&cp){var toggleContact=function(open){cp.hidden=!open;ct.setAttribute('aria-expanded',open);document.querySelector('.contact-float').classList.toggle('is-open',open);if(open)cp.querySelector('a').focus()};ct.addEventListener('click',function(){toggleContact(ct.getAttribute('aria-expanded')!=='true')});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!cp.hidden){toggleContact(false);ct.focus()}});d.addEventListener('click',function(e){if(!cp.hidden&&!e.target.closest('.contact-float'))toggleContact(false)});}
 var cb=d.getElementById('cookie-banner'),cs=d.querySelector('.cookie-settings'),consentKey='novaridge-cookie-consent';
@@ -437,7 +436,7 @@ const ctaBand = (heading, sub) => `
           <div class="f-field"><label for="lf-addr">Property address</label><input id="lf-addr" name="address" autocomplete="street-address"></div>
           <div class="f-field"><label for="lf-svc">What do you need?</label>
             <select id="lf-svc" name="service">
-              <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure — inspect it</option>
+              <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure, inspect it</option>
             </select>
           </div>
           <label class="sms-consent">
@@ -452,6 +451,21 @@ const ctaBand = (heading, sub) => `
     </div>
   </div>
 </section>`;
+
+const heroForm = (id = 'heroform') => `
+<form class="lead-form hero-form" id="${id}" data-ty="{{rel}}thank-you/">
+  <h2>Get a free roof analysis</h2>
+  <p>Tell us where to inspect. We typically respond within 30 minutes.</p>
+  <div class="f-row">
+    <div class="f-field"><label for="${id}-name">Name</label><input id="${id}-name" name="name" autocomplete="name" required></div>
+    <div class="f-field"><label for="${id}-phone">Phone</label><input id="${id}-phone" name="phone" type="tel" autocomplete="tel" required></div>
+  </div>
+  <div class="f-field"><label for="${id}-addr">Property address</label><input id="${id}-addr" name="address" autocomplete="street-address"></div>
+  <div class="f-field"><label for="${id}-svc">What do you need?</label><select id="${id}-svc" name="service"><option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure, inspect it</option></select></div>
+  <label class="sms-consent"><input type="checkbox" name="sms_consent" value="yes"><span>I consent to receive SMS notifications, project updates, and occasional marketing communications from ${SITE.name}. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe.</span></label>
+  <button class="btn btn-primary" type="submit">Request Free Quote</button>
+  <p class="form-legal"><a href="{{rel}}privacy/">Privacy Policy</a><span aria-hidden="true">|</span><a href="{{rel}}terms/">Terms of Service</a></p>
+</form>`;
 
 const reviewsHtml = () => `
 <section aria-labelledby="rv-h">
@@ -496,15 +510,16 @@ function homePage() {
     <video id="heroVid" data-base="assets/video/hero" autoplay muted loop playsinline preload="none" poster="assets/video/poster.jpg" width="1280" height="720" aria-hidden="true" tabindex="-1"></video>
   </div>
 
-  <div class="wrap">
+  <div class="wrap hero-layout">
     <div class="hero-inner">
       <h1>Roofing, <span class="grad-text">engineered</span> for the desert</h1>
-      <p class="lede">Drone inspections, thermal diagnostics, and 50-year materials — installed by the most advanced roofing crew in the Vegas Valley.</p>
+      <p class="lede">Drone inspections, thermal diagnostics, and 50-year materials, installed by the most advanced roofing crew in the Vegas Valley.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="contact/">Get a Free Quote</a>
         <a class="btn btn-yellow" href="${SITE.phoneHref}">${SITE.phone}</a>
       </div>
     </div>
+    ${heroForm('home-hero-form')}
   </div>
 </section>
 
@@ -536,11 +551,11 @@ function homePage() {
     <div class="rv">
       <p class="kicker" id="about-h">Who we are</p>
       <h2>Desert-grade roofing, <span class="grad-text">aerospace precision</span></h2>
-      <p class="muted">Founded by a former aerospace QA engineer, NovaRidge applies checklists, sensors, and documentation to a trade that usually runs on guesswork. Every truck carries a drone, a thermal camera, and a moisture meter — so nobody diagnoses your roof from a ladder.</p>
+      <p class="muted">Founded by a former aerospace QA engineer, NovaRidge applies checklists, sensors, and documentation to a trade that usually runs on guesswork. Every truck carries a drone, a thermal camera, and a moisture meter, so nobody diagnoses your roof from a ladder.</p>
       <ul class="checklist">
         ${tick('<b>Drone-first inspections.</b> 4K aerial scans and thermal imaging on every estimate.')}
         ${tick('<b>Radical documentation.</b> Before/after photo sets, moisture maps, and a signed QA checklist with every invoice.')}
-        ${tick('<b>Local &amp; accountable.</b> One office, one license, one warranty — backed from Tenaya Way, not a call center.')}
+        ${tick('<b>Local &amp; accountable.</b> One office, one license, one warranty, backed from Tenaya Way, not a call center.')}
       </ul>
       <a class="btn btn-ghost" href="about/" style="margin-top:1.6em">More about us</a>
       <div class="mini-stats">
@@ -558,7 +573,7 @@ function homePage() {
       <div>
         <p class="kicker">Roofing solutions</p>
         <h2 id="svc-h">The right solution for every roof</h2>
-        <p class="muted">From a stubborn leak to a complete replacement, we start with a thorough inspection and give you a clear recommendation—supported by photos, not pressure.</p>
+        <p class="muted">From a stubborn leak to a complete replacement, we start with a thorough inspection and give you a clear recommendation,supported by photos, not pressure.</p>
       </div>
     </div>
     <div class="service-card-grid">
@@ -607,7 +622,7 @@ function homePage() {
       <div>
         <p class="kicker">Featured projects</p>
         <h2 id="proj-h">Recent work across the valley</h2>
-        <p class="muted">Replacement, re-felt, and rescue jobs from Summerlin to the Apex corridor — documented, photographed, and warrantied.</p>
+        <p class="muted">Replacement, re-felt, and rescue jobs from Summerlin to the Apex corridor, documented, photographed, and warrantied.</p>
       </div>
     </div>
     <div class="proj-grid">${PROJECTS.map(([img, svc, tag1, tag2, dt, dateLabel, title, alt]) => `
@@ -654,7 +669,7 @@ ${reviewsHtml()}
     <div class="rv">
       <p class="kicker" id="hfaq-h">FAQ</p>
       <h2>Straight answers, no upsell</h2>
-      <p class="muted" style="margin-bottom:1.8rem">The questions valley homeowners ask us most — answered the way we'd want them answered.</p>
+      <p class="muted" style="margin-bottom:1.8rem">The questions valley homeowners ask us most, answered the way we'd want them answered.</p>
       <div class="faq-media">${pic('faq', 'Tile roof and brick chimney of a Las Vegas area home', 900, 1100)}</div>
     </div>
     <div class="rv">
@@ -663,12 +678,12 @@ ${reviewsHtml()}
   </div>
 </section>
 
-${ctaBand('Your roof, future-proofed.', 'Book a free drone inspection this week — get the full photo report whether you hire us or not.')}
+${ctaBand('Your roof, future-proofed.', 'Book a free drone inspection this week, get the full photo report whether you hire us or not.')}
 `;
   return layout({
     pathSeg: '', current: 'HOME',
-    title: 'NovaRidge Roofing | Las Vegas Roofing Company — Repair, Replacement & Tile',
-    desc: 'Las Vegas roofing done right: drone inspections, roof replacement, tile re-felts, leak repair, and cool-roof coatings. Licensed & insured. Free quotes — (702) 555-0184.',
+    title: 'NovaRidge Roofing | Las Vegas Roofing Company, Repair, Replacement & Tile',
+    desc: 'Las Vegas roofing done right: drone inspections, roof replacement, tile re-felts, leak repair, and cool-roof coatings. Licensed & insured. Free quotes, (702) 555-0184.',
     body,
     schema: [faqSchema(HOME_FAQS)],
   });
@@ -678,12 +693,15 @@ function servicePage(s) {
   const body = `
 <div class="sub-hero">
 
-  <div class="wrap">
+  <div class="wrap sub-hero-layout">
+    <div>
     ${crumbsHtml('{{rel}}', [['Home', ''], [s.name, null]])}
     <p class="kicker">Service</p>
     <h1>${s.hero.replace(/^(.+?)([\.\!])$/, '$1$2')}</h1>
     <p class="lede muted" style="max-width:640px;font-size:1.1rem">${s.lede}</p>
     <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin:1.6em 0 2.6em"><a class="btn btn-yellow" href="{{rel}}contact/">Get a Free Quote</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
+    </div>
+    ${heroForm(`service-${s.slug}-hero-form`)}
   </div>
 </div>
 <div class="wrap svc-hero-img rv">${pic(s.img, s.imgAlt, 1600, 700, true)}</div>
@@ -700,7 +718,7 @@ function servicePage(s) {
   </div>
 </section>
 ${faqHtml(s.faqs)}
-${ctaBand(`Ready for ${s.name.toLowerCase()}?`, 'Free drone inspection, photo report, and a line-item quote — usually within 48 hours.')}
+${ctaBand(`Ready for ${s.name.toLowerCase()}?`, 'Free drone inspection, photo report, and a line-item quote, usually within 48 hours.')}
 `;
   return layout({
     pathSeg: 'services/' + s.slug, current: '',
@@ -725,12 +743,15 @@ function areaPage(a) {
   const body = `
 <div class="sub-hero">
 
-  <div class="wrap">
+  <div class="wrap sub-hero-layout">
+    <div>
     ${crumbsHtml('{{rel}}', [['Home', ''], [a.name, null]])}
     <p class="kicker">Service Area</p>
     <h1>Roofing in <span class="grad-text">${a.name}</span></h1>
     <p class="lede muted" style="max-width:640px;font-size:1.1rem">${a.blurb}</p>
     <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin:1.6em 0 2.6em"><a class="btn btn-yellow" href="{{rel}}contact/">Get a Free Quote</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
+    </div>
+    ${heroForm(`area-${a.slug}-hero-form`)}
   </div>
 </div>
 <div class="wrap svc-hero-img rv">${pic(a.photo, a.photoAlt, 1000, 660, true)}</div>
@@ -747,7 +768,7 @@ function areaPage(a) {
     </div>
   </div>
 </section>
-${ctaBand(`Need a roofer in ${a.name}?`, 'Crews staged nearby — free drone inspection and same-day storm response.')}
+${ctaBand(`Need a roofer in ${a.name}?`, 'Crews staged nearby, free drone inspection and same-day storm response.')}
 `;
   return layout({
     pathSeg: 'service-areas/' + a.slug, current: '',
@@ -760,8 +781,8 @@ ${ctaBand(`Need a roofer in ${a.name}?`, 'Crews staged nearby — free drone ins
 
 function pricingPage() {
   const faqs = [
-    ['Why "starting at" prices?', 'Every roof differs in pitch, layers, decking condition, and access. These floors reflect real, recent Vegas Valley jobs — your drone-measured quote is exact and line-itemed.'],
-    ['Do you offer financing?', 'Yes — 12-month same-as-cash and longer fixed-rate terms through our lending partners, with instant soft-pull prequalification that doesn’t affect your credit.'],
+    ['Why "starting at" prices?', 'Every roof differs in pitch, layers, decking condition, and access. These floors reflect real, recent Vegas Valley jobs, your drone-measured quote is exact and line-itemed.'],
+    ['Do you offer financing?', 'Yes, 12-month same-as-cash and longer fixed-rate terms through our lending partners, with instant soft-pull prequalification that doesn’t affect your credit.'],
     ['Is the inspection really free?', 'Completely. You get the full drone photo report and moisture findings whether you hire us or not. No conditions.'],
   ];
   const body = `
@@ -771,7 +792,7 @@ function pricingPage() {
     ${crumbsHtml('{{rel}}', [['Home', ''], ['Pricing', null]])}
     <p class="kicker">Pricing</p>
     <h1>Transparent, measured, <span class="grad-text">no surprises</span></h1>
-    <p class="lede muted" style="max-width:640px;font-size:1.1rem">Roofing quotes shouldn't be a mystery. Here's where our most common projects start — your exact price comes from drone-measured data.</p>
+    <p class="lede muted" style="max-width:640px;font-size:1.1rem">Roofing quotes shouldn't be a mystery. Here's where our most common projects start, your exact price comes from drone-measured data.</p>
   </div>
 </div>
 <section style="padding-top:clamp(44px,6vw,64px)">
@@ -800,15 +821,15 @@ function pricingPage() {
         <a class="btn btn-ghost" href="{{rel}}contact/">Get Exact Quote</a>
       </div>
     </div>
-    <p class="muted rv" style="margin-top:26px;font-size:.9rem">Flat roof &amp; silicone coating systems are quoted per square foot after a moisture scan — typically <b>$3.25–$5.50/sq ft</b> for restoration coatings.</p>
+    <p class="muted rv" style="margin-top:26px;font-size:.9rem">Flat roof &amp; silicone coating systems are quoted per square foot after a moisture scan, typically <b>$3.25-$5.50/sq ft</b> for restoration coatings.</p>
   </div>
 </section>
 ${faqHtml(faqs)}
-${ctaBand('Want a real number?', 'Free drone measurement and a line-item quote — most delivered within 48 hours of the scan.')}
+${ctaBand('Want a real number?', 'Free drone measurement and a line-item quote, most delivered within 48 hours of the scan.')}
 `;
   return layout({
     pathSeg: 'pricing', current: 'pricing',
-    title: `Roofing Prices in Las Vegas — Transparent Starting Rates | ${SITE.name}`,
+    title: `Roofing Prices in Las Vegas, Transparent Starting Rates | ${SITE.name}`,
     desc: 'See what roofing really costs in Las Vegas: repairs from $349, tile re-felts from $7.50/sq ft, full replacements from $9,800. Free drone-measured quotes.',
     body,
     schema: [crumbsSchema([['Home', '/'], ['Pricing', '/pricing/']]), faqSchema(faqs)],
@@ -823,7 +844,7 @@ function aboutPage() {
     ${crumbsHtml('{{rel}}', [['Home', ''], ['About', null]])}
     <p class="kicker">About Us</p>
     <h1>The crew rebuilding roofing's <span class="grad-text">reputation</span></h1>
-    <p class="lede muted" style="max-width:640px;font-size:1.1rem">NovaRidge was founded on a simple bet: treat roofing like aerospace — measure everything, document everything — and customers will never go back to guesswork.</p>
+    <p class="lede muted" style="max-width:640px;font-size:1.1rem">NovaRidge was founded on a simple bet: treat roofing like aerospace, measure everything, document everything, and customers will never go back to guesswork.</p>
   </div>
 </div>
 <div class="wrap svc-hero-img rv">${pic('about', 'NovaRidge roofers installing a new roof system', 1100, 1400, true)}</div>
@@ -831,13 +852,13 @@ function aboutPage() {
   <div class="wrap about-grid" style="align-items:start">
     <div class="prose rv">
       <h2>Our story</h2>
-      <p>NovaRidge Roofing was started in 2019 by Adrian Vale, a former aerospace quality-assurance engineer who watched three different contractors misdiagnose the same leak on his mother's Henderson home. The problem wasn't skill — it was process. Nobody measured. Nobody documented. Everybody guessed.</p>
-      <p>So he built the roofing company he couldn't hire: drone scans instead of ladder glances, thermal imaging instead of hunches, signed QA checklists instead of "trust me." Six years later, NovaRidge has completed 2,400+ projects across the Vegas Valley with a 4.9-star average — and still photographs every single deck before a shingle goes on.</p>
+      <p>NovaRidge Roofing was started in 2019 by Adrian Vale, a former aerospace quality-assurance engineer who watched three different contractors misdiagnose the same leak on his mother's Henderson home. The problem wasn't skill, it was process. Nobody measured. Nobody documented. Everybody guessed.</p>
+      <p>So he built the roofing company he couldn't hire: drone scans instead of ladder glances, thermal imaging instead of hunches, signed QA checklists instead of "trust me." Six years later, NovaRidge has completed 2,400+ projects across the Vegas Valley with a 4.9-star average, and still photographs every single deck before a shingle goes on.</p>
       ${pic('about2', 'Terracotta tile roof with a restored wooden dormer, a recent NovaRidge tile project', 1000, 700)}
       <h2>What we believe</h2>
       <ul>
         <li><b>Data beats opinion.</b> Every quote is built from measured, photographed evidence you can see yourself.</li>
-        <li><b>The desert is different.</b> Materials and methods are chosen for 115&deg;F heat, UV, and monsoon wind — not national defaults.</li>
+        <li><b>The desert is different.</b> Materials and methods are chosen for 115&deg;F heat, UV, and monsoon wind, not national defaults.</li>
         <li><b>Local means accountable.</b> One office on Tenaya Way, one Nevada license, and warranties we'll still be here to honor.</li>
         <li><b>Leave it cleaner.</b> Daily magnet sweeps, protected landscaping, and a jobsite your HOA will never email you about.</li>
       </ul>
@@ -863,7 +884,7 @@ ${ctaBand('Meet us on your roof.', 'Book a free inspection and see the NovaRidge
 `;
   return layout({
     pathSeg: 'about', current: 'about',
-    title: `About NovaRidge Roofing — Las Vegas' Data-Driven Roofers | ${SITE.name}`,
+    title: `About NovaRidge Roofing, Las Vegas' Data-Driven Roofers | ${SITE.name}`,
     desc: 'Founded by an aerospace QA engineer, NovaRidge Roofing brings drone scans, thermal imaging, and documented quality to 2,400+ Las Vegas roofs since 2019.',
     body,
     schema: [crumbsSchema([['Home', '/'], ['About', '/about/']])],
@@ -878,17 +899,17 @@ function contactPage() {
     ${crumbsHtml('{{rel}}', [['Home', ''], ['Contact', null]])}
     <p class="kicker">Contact</p>
     <h1>Let's look at your <span class="grad-text">roof</span></h1>
-    <p class="lede muted" style="max-width:640px;font-size:1.1rem">Call, email, or send the form — a real person from our Tenaya Way office responds within 30 minutes during business hours.</p>
+    <p class="lede muted" style="max-width:640px;font-size:1.1rem">Call, email, or send the form, a real person from our Tenaya Way office responds within 30 minutes during business hours.</p>
   </div>
 </div>
-${ctaBand('Talk to a roofing specialist now.', 'Or send the form and we’ll call you — usually in under half an hour.')}
+${ctaBand('Talk to a roofing specialist now.', 'Or send the form and we’ll call you, usually in under half an hour.')}
 <section style="padding-top:0">
   <div class="wrap area-flex">
     <div class="rv">
       <h2>Visit or reach us</h2>
       <ul class="checklist">
         <li>${IC.pin}<span><b>Office.</b> ${SITE.street}, ${SITE.city}, ${SITE.state} ${SITE.zip}</span></li>
-        <li>${IC.bolt}<span><b>Phone.</b> <a href="${SITE.phoneHref}">${SITE.phone}</a> — 24/7 emergency line for active leaks</span></li>
+        <li>${IC.bolt}<span><b>Phone.</b> <a href="${SITE.phoneHref}">${SITE.phone}</a>, 24/7 emergency line for active leaks</span></li>
         <li>${IC.check}<span><b>Email.</b> <a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
         <li>${IC.shield}<span><b>Hours.</b> ${SITE.hours}</span></li>
       </ul>
@@ -900,8 +921,8 @@ ${ctaBand('Talk to a roofing specialist now.', 'Or send the form and we’ll cal
 `;
   return layout({
     pathSeg: 'contact', current: 'contact',
-    title: `Contact NovaRidge Roofing — Free Quotes in Las Vegas | ${SITE.name}`,
-    desc: 'Get a free roof inspection in Las Vegas. Call (702) 555-0184 or send the form — NovaRidge responds within 30 minutes during business hours.',
+    title: `Contact NovaRidge Roofing, Free Quotes in Las Vegas | ${SITE.name}`,
+    desc: 'Get a free roof inspection in Las Vegas. Call (702) 555-0184 or send the form, NovaRidge responds within 30 minutes during business hours.',
     body,
     schema: [crumbsSchema([['Home', '/'], ['Contact', '/contact/']])],
   });
@@ -928,7 +949,7 @@ function privacyPage() {
       <h2>1. Who we are</h2>
       <p>${SITE.legal} ("NovaRidge," "we," "us") operates this website and provides roofing services in the Las Vegas Valley. Our office is located at ${SITE.street}, ${SITE.city}, ${SITE.state} ${SITE.zip}. For any privacy question, contact <a href="mailto:${SITE.email}">${SITE.email}</a> or call ${SITE.phone}.</p>
       <h2>2. Information we collect</h2>
-      <p>When you request a quote, call us, or fill out a form, we collect the information you provide: your name, phone number, email address, property address, and details about your roofing project. Our website also collects standard technical data — IP address, browser type, pages visited, and referring site — through cookies and analytics tools.</p>
+      <p>When you request a quote, call us, or fill out a form, we collect the information you provide: your name, phone number, email address, property address, and details about your roofing project. Our website also collects standard technical data, IP address, browser type, pages visited, and referring site, through cookies and analytics tools.</p>
       <h2>3. How we use your information</h2>
       <ul>
         <li>To respond to your inquiry, schedule inspections, and prepare quotes.</li>
@@ -940,7 +961,7 @@ function privacyPage() {
       <h2>4. Cookies &amp; analytics</h2>
       <p>This site uses cookies and similar technologies (such as Google Analytics and advertising pixels) to understand site traffic and measure campaigns. You can block cookies in your browser settings; the site will continue to work. Analytics data is aggregated and does not identify you personally.</p>
       <h2>5. SMS &amp; phone communications</h2>
-      <p>By submitting your phone number, you agree that we may call or text you about your project. Message and data rates may apply. Reply STOP to any text to opt out at any time — opting out will not affect your service.</p>
+      <p>By submitting your phone number, you agree that we may call or text you about your project. Message and data rates may apply. Reply STOP to any text to opt out at any time, opting out will not affect your service.</p>
       <h2>6. Sharing with service providers</h2>
       <p>We share information only with vendors who help us operate: our CRM and scheduling platform, payment processors, financing partners you ask to be connected with, and permitting authorities. Each is bound to use your data only to deliver their service to us.</p>
       <h2>7. Data retention &amp; security</h2>
@@ -982,7 +1003,7 @@ function termsPage() {
       <h2>1. Agreement</h2>
       <p>By using this website or requesting services from ${SITE.legal} ("NovaRidge," "we," "us"), you agree to these terms. If you sign a written service contract with us, that contract governs the work itself; these terms cover the website and pre-contract interactions like quotes and inspections.</p>
       <h2>2. Estimates &amp; quotes</h2>
-      <p>Free inspections and drone reports are provided without obligation. Written quotes are valid for 30 days and are based on conditions observable at the time of inspection. Hidden conditions discovered during work — such as rotted decking beneath tile — are documented with photos and priced by change order before we proceed.</p>
+      <p>Free inspections and drone reports are provided without obligation. Written quotes are valid for 30 days and are based on conditions observable at the time of inspection. Hidden conditions discovered during work, such as rotted decking beneath tile, are documented with photos and priced by change order before we proceed.</p>
       <h2>3. Scheduling &amp; weather</h2>
       <p>Roofing is weather-dependent. High winds, rain, or extreme heat advisories can shift start dates; we'll communicate schedule changes as soon as we know them, and we never leave a roof exposed overnight without weatherproofing.</p>
       <h2>4. Warranties</h2>
@@ -990,7 +1011,7 @@ function termsPage() {
       <h2>5. Payment</h2>
       <p>Residential projects are typically invoiced with a deposit at scheduling and balance on completion. We accept major cards, checks, ACH, and financing through our lending partners. Late balances may accrue interest at the maximum rate allowed by Nevada law.</p>
       <h2>6. Website content</h2>
-      <p>Content on this site — text, photos, graphics, and pricing indications — is provided for general information and may change without notice. "Starting at" prices are floors from recent representative projects, not binding offers; your quote is the binding document.</p>
+      <p>Content on this site, text, photos, graphics, and pricing indications, is provided for general information and may change without notice. "Starting at" prices are floors from recent representative projects, not binding offers; your quote is the binding document.</p>
       <h2>7. Limitation of liability</h2>
       <p>To the fullest extent permitted by law, NovaRidge's liability arising from use of this website is limited to direct damages and capped at $100. This does not limit liability under a signed service contract, which contains its own terms, or any liability that cannot be limited under Nevada law.</p>
       <h2>8. Disputes</h2>
@@ -1017,12 +1038,12 @@ function thankYouPage() {
     <div class="rv" style="max-width:640px">
       <span class="ty-check">${IC.checkW}</span>
       <p class="kicker">Request received</p>
-      <h1>Thank you — <span class="grad-text">we're on it</span></h1>
+      <h1>Thank you, <span class="grad-text">we're on it</span></h1>
       <p class="lede muted" style="font-size:1.1rem">Your request just landed at our Tenaya Way office. During business hours, a NovaRidge specialist typically calls back within <b>30 minutes</b>.</p>
       <div class="steps" style="margin:2em 0">
         <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>We call you</h3><p>A specialist confirms your address and what you're seeing.</p></div></div>
         <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>Drone scan</h3><p>We schedule your free 4K aerial + thermal inspection.</p></div></div>
-        <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>Your report</h3><p>Photo report and line-item quote — yours to keep either way.</p></div></div>
+        <div class="step"><span class="step-num" aria-hidden="true"></span><div><h3>Your report</h3><p>Photo report and line-item quote, yours to keep either way.</p></div></div>
       </div>
       <p class="muted">Active leak right now? Don't wait for the callback:</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:1em">
@@ -1035,7 +1056,7 @@ function thankYouPage() {
 `;
   return layout({
     pathSeg: 'thank-you', current: '', noindex: true,
-    title: `Thank You — Request Received | ${SITE.name}`,
+    title: `Thank You, Request Received | ${SITE.name}`,
     desc: 'Your request has been received. A NovaRidge Roofing specialist will call you back shortly.',
     body,
   });
@@ -1048,14 +1069,14 @@ function notFoundPage() {
   <div class="wrap">
     <p class="kicker">404</p>
     <h1>This page blew off in the <span class="grad-text">monsoon</span></h1>
-    <p class="lede muted" style="max-width:560px;font-size:1.1rem">The page you're looking for doesn't exist — but your roof still might need us.</p>
+    <p class="lede muted" style="max-width:560px;font-size:1.1rem">The page you're looking for doesn't exist, but your roof still might need us.</p>
     <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:1.6em"><a class="btn btn-yellow" href="/">Back to Home</a><a class="btn btn-ghost" href="${SITE.phoneHref}">${SITE.phone}</a></div>
   </div>
 </div>`;
   return layout({
     pathSeg: '', current: '', noindex: true,
     title: `Page Not Found | ${SITE.name}`,
-    desc: 'The page you requested could not be found. NovaRidge Roofing — Las Vegas roof repair and replacement.',
+    desc: 'The page you requested could not be found. NovaRidge Roofing, Las Vegas roof repair and replacement.',
     body,
   });
 }

@@ -1,4 +1,4 @@
-/* NOVARIDGE ROOFING — design system
+/* NOVARIDGE ROOFING , design system
    Palette: Sage Hint · Mint · Sage · Moss · Evergreen */
 @font-face{font-family:"Roboto";src:url("{{rel}}assets/fonts/roboto-400.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:"Roboto";src:url("{{rel}}assets/fonts/roboto-500.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
@@ -102,6 +102,14 @@ nav.main a[aria-current=page]::after{content:"";position:absolute;left:50%;botto
 .hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(41,61,49,.92) 18%,rgba(41,61,49,.66) 52%,rgba(41,61,49,.3)),linear-gradient(0deg,rgba(41,61,49,.55),transparent 40%)}
 .hero-inner{max-width:760px;color:#fff}
+.hero-layout,.sub-hero-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:clamp(32px,6vw,80px);align-items:center}
+.sub-hero-layout{align-items:start}
+.hero-form{padding:clamp(20px,2.5vw,28px);max-width:480px;justify-self:end;width:100%}
+.hero-form h2{font-size:1.15rem;margin-bottom:.3em;color:var(--ink)}
+.hero-form>p{font-size:.82rem;color:var(--muted);margin:0 0 14px}
+.hero-form .f-field{margin-bottom:9px}
+.hero-form .sms-consent{font-size:.67rem;margin-bottom:12px}
+.hero-form .btn{width:100%}
 .hero-status{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#B7C9B8;margin-bottom:1.5rem}
 .pulse{position:relative;width:9px;height:9px;border-radius:50%;background:#B7C9B8}
 .pulse::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(183,201,184,.55);animation:pulse 2s infinite}
@@ -387,7 +395,8 @@ address a{color:var(--inv)}
   .head-cta .btn{display:none}
   .grid-3,.grid-2,.proj-grid{grid-template-columns:1fr}
   .service-card-grid{grid-template-columns:1fr}
-  .about-grid,.area-flex,.cta-card .inner,.faq-grid{grid-template-columns:1fr}
+  .about-grid,.area-flex,.cta-card .inner,.faq-grid,.hero-layout,.sub-hero-layout{grid-template-columns:1fr}
+  .hero-form{justify-self:start;max-width:620px}
   .chip-tr{right:.6rem}.chip-bl{left:-.4rem}
   .hero{min-height:78svh;padding:90px 0 70px}
 }
