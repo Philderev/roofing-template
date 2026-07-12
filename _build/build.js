@@ -28,6 +28,8 @@ const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name}
 
 const IC = {
   phone: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  email: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#344C3D" stroke-width="1.8"/><path d="m4 7 8 6 8-6" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  clock: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#344C3D" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   shield: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   home: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5V21h13V9.5" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   wrench: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.6L3 17.6 6.4 21l5.5-5.5a4.5 4.5 0 0 0 5.6-6l-3 3-2.5-.5-.5-2.5 3-3Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg>',
@@ -179,6 +181,10 @@ const REVIEWS = [
   ['Alicia R.', 'Henderson', 'A monsoon cell ripped up our ridge caps on a Friday night. They tarped Saturday morning and had the roof permanently repaired by Tuesday, insurance photos and all. Can’t recommend them enough.'],
   ['David & June K.', 'North Las Vegas', 'Full replacement on our 2004 build in Aliante. Crew showed up at 6 AM, done in two days, and our upstairs is noticeably cooler with the new ventilation. Worth every penny.'],
   ['Priya S.', 'Spring Valley', 'They coated the flat roof on our office off Durango with the silicone system. July power bill dropped almost 18% versus last year. The thermal scan report they left us was genuinely impressive.'],
+  ['Elena M.', 'Centennial Hills', 'The inspection found a slow leak around a vent that two other companies missed. NovaRidge showed us the thermal images, explained the repair clearly, and finished it the next morning.'],
+  ['Robert G.', 'Las Vegas', 'From the first estimate through the final cleanup, communication was excellent. We received progress photos every day and the crew treated our property with real care.'],
+  ['Monica L.', 'Enterprise', 'Our tile re-felt was organized, fast, and surprisingly quiet. The team coordinated the permit and HOA approval, then delivered exactly on the schedule they promised.'],
+  ['James P.', 'Paradise', 'They repaired our commercial flat roof without disrupting the business below. The detailed moisture report and warranty documentation made the whole process easy to approve.'],
 ];
 
 const PROJECTS = [
@@ -305,12 +311,7 @@ ${body.replaceAll('{{rel}}', rel)}
 </footer>
 <aside class="contact-float" aria-label="Quick contact">
   <div class="contact-pop" id="contact-pop" hidden>
-    <div class="contact-pop-head">
-      <span class="contact-status" aria-hidden="true"><img src="${rel}assets/img/nrr-2.png" width="3231" height="2550" alt=""></span>
-      <div><strong>Roof help, without the runaround</strong><span>Local team &middot; replies during business hours</span></div>
-    </div>
     <div class="contact-pop-body">
-      <p>Questions, leaks, or quote requests, choose the easiest way to reach our crew.</p>
       <div class="contact-actions">
         <a href="${SITE.phoneHref}"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z"/></svg></span><span><b>Call the office</b><small>${SITE.phone}</small></span></a>
         <a href="sms:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10.8h8M8 8h5"/></svg></span><span><b>Send a text</b><small>Great for photos of damage</small></span></a>
@@ -415,14 +416,12 @@ const crumbsHtml = (rel, items) => `<nav class="crumbs" aria-label="Breadcrumb">
 ).join(' &nbsp;/&nbsp; ')}</nav>`;
 
 const smsConsentHtml = () => `
-  <fieldset class="sms-consents">
-    <legend>Optional SMS consent</legend>
+  <fieldset class="sms-consents" aria-label="SMS consent choices">
     <label class="sms-consent"><input type="checkbox" name="sms_transactional_consent" value="yes"><span>I consent to receive non-marketing text messages from ${SITE.name} regarding project updates, appointment reminders, and service notifications. Message frequency varies. Message and data rates may apply. Reply HELP for assistance or STOP to opt out.</span></label>
     <label class="sms-consent"><input type="checkbox" name="sms_marketing_consent" value="yes"><span>I consent to receive marketing text messages from ${SITE.name} regarding promotions, offers, and roofing services. Message frequency varies. Message and data rates may apply. Reply HELP for assistance or STOP to opt out.</span></label>
-    <p class="consent-note">Consent is optional and is not a condition of purchase.</p>
   </fieldset>`;
 
-const ctaBand = (heading, sub) => `
+const ctaBand = (heading, sub, image = 'proj-replace') => `
 <section class="cta-band" id="quote">
   <div class="wrap">
     <div class="cta-card rv">
@@ -431,6 +430,7 @@ const ctaBand = (heading, sub) => `
           <p class="kicker">Free Inspection &middot; No Obligation</p>
           <h2>${heading}</h2>
           <p class="muted">${sub}</p>
+          <div class="cta-visual">${pic(image, 'Professional roofing project completed by NovaRidge Roofing', 1200, 800)}</div>
           <a class="big-phone" href="${SITE.phoneHref}">${IC.phone} ${SITE.phone}</a>
           <p class="muted" style="font-size:.85rem;margin-top:6px">${SITE.hours} &middot; 24/7 emergency line</p>
         </div>
@@ -490,14 +490,16 @@ const reviewsHtml = () => `
         <p class="muted">Rated 4.9 / 5 across 300+ verified reviews from homeowners and businesses.</p>
       </div>
     </div>
-    <div class="review-grid rv">
-      ${REVIEWS.map(([name, area, text], i) => `
-      <article class="review-card">
-        <div class="reviewer"><div class="avatar" aria-hidden="true">${name[0]}</div><div><b>${name}</b><span>${area} &middot; ${['3 weeks ago', '1 month ago', '2 months ago', '3 months ago'][i]}</span></div></div>
+    <div class="review-marquee rv">
+      <div class="review-grid">
+      ${[...REVIEWS, ...REVIEWS].map(([name, area, text], i) => `
+      <article class="review-card"${i >= REVIEWS.length ? ' aria-hidden="true"' : ''}>
+        <div class="reviewer"><div class="avatar" aria-hidden="true">${name[0]}</div><div><b>${name}</b><span>${area} &middot; ${['3 weeks ago', '1 month ago', '2 months ago', '3 months ago', '4 months ago', '5 months ago', '6 months ago', '7 months ago'][i % REVIEWS.length]}</span></div></div>
         <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>&ldquo;${text}&rdquo;</p>
         <footer class="review-foot"><span>Posted on Google</span><a href="https://www.google.com/search?q=NovaRidge+Roofing+Las+Vegas+reviews" target="_blank" rel="noopener">Read on Google</a></footer>
       </article>`).join('')}
+      </div>
     </div>
   </div>
 </section>`;
@@ -723,7 +725,7 @@ function servicePage(s) {
   </div>
 </section>
 ${faqHtml(s.faqs)}
-${ctaBand(`Ready for ${s.name.toLowerCase()}?`, 'Free drone inspection, photo report, and a line-item quote, usually within 48 hours.')}
+${ctaBand(`Ready for ${s.name.toLowerCase()}?`, 'Free drone inspection, photo report, and a line-item quote, usually within 48 hours.', s.img)}
 `;
   return layout({
     pathSeg: 'services/' + s.slug, current: '',
@@ -773,7 +775,7 @@ function areaPage(a) {
     </div>
   </div>
 </section>
-${ctaBand(`Need a roofer in ${a.name}?`, 'Crews staged nearby, free drone inspection and same-day storm response.')}
+${ctaBand(`Need a roofer in ${a.name}?`, 'Crews staged nearby, free drone inspection and same-day storm response.', 'area-extra')}
 `;
   return layout({
     pathSeg: 'service-areas/' + a.slug, current: '',
@@ -915,8 +917,8 @@ ${ctaBand('Talk to a roofing specialist now.', 'Or send the form and we’ll cal
       <ul class="checklist">
         <li>${IC.pin}<span><b>Office.</b> ${SITE.street}, ${SITE.city}, ${SITE.state} ${SITE.zip}</span></li>
         <li>${IC.phone}<span><b>Phone.</b> <a href="${SITE.phoneHref}">${SITE.phone}</a>, 24/7 emergency line for active leaks</span></li>
-        <li>${IC.check}<span><b>Email.</b> <a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
-        <li>${IC.shield}<span><b>Hours.</b> ${SITE.hours}</span></li>
+        <li>${IC.email}<span><b>Email.</b> <a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
+        <li>${IC.clock}<span><b>Hours.</b> ${SITE.hours}</span></li>
       </ul>
       <p class="muted" style="margin-top:1.4em;font-size:.92rem">Serving Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and Paradise. ${SITE.license}.</p>
     </div>

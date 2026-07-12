@@ -128,8 +128,9 @@ nav.main a[aria-current=page]::after{content:"";position:absolute;left:50%;botto
 .hero-media::after{content:"";position:absolute;inset:0;background:rgba(41,61,49,.62)}
 .hero-inner{max-width:760px;color:#fff}
 .hero-layout,.sub-hero-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:clamp(32px,6vw,80px);align-items:center}
-.sub-hero-layout{align-items:start}
+.sub-hero-layout{grid-template-columns:minmax(0,1fr) minmax(460px,1fr);align-items:start}
 .hero-form{padding:clamp(20px,2.5vw,28px);max-width:480px;justify-self:end;width:100%}
+.sub-hero-layout .hero-form{max-width:560px}
 .hero-form h2{font-size:1.15rem;margin-bottom:.3em;color:var(--ink)}
 .hero-form>p{font-size:.82rem;color:var(--muted);margin:0 0 14px}
 .hero-form .f-field{margin-bottom:9px}
@@ -256,8 +257,11 @@ a.card:hover{text-decoration:none}
 .area-chip:hover{border-color:var(--green);text-decoration:none;transform:translateY(-3px);color:var(--green)}
 
 /* reviews */
-.review-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.review-marquee{overflow:hidden}
+.review-marquee.rv:not(.in){transform:none}
+.review-grid{display:flex;width:max-content;gap:20px}
 .review-card{background:var(--card);border:1px solid var(--line);padding:24px 22px 18px;display:flex;flex-direction:column;gap:16px}
+.review-grid .review-card{width:calc((min(100vw - 48px,1432px) - 60px)/4);flex:none}
 .review-card p{color:var(--ink);font-size:.92rem;line-height:1.55;margin:0;flex:1}
 .reviewer{display:flex;align-items:center;gap:12px;order:-2}
 .avatar{width:40px;height:40px;display:grid;place-items:center;flex:none;font-weight:700;background:var(--green-2);color:#fff;font-size:.9rem}
@@ -267,14 +271,10 @@ a.card:hover{text-decoration:none}
 .review-card>.stars{order:-1;color:var(--yellow-2);font-size:.9rem;line-height:1;letter-spacing:2px}
 .review-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:14px;margin-top:2px;font-size:.76rem;color:var(--muted)}
 .review-foot a{font-weight:600;color:var(--green);white-space:nowrap}
-.review-grid.rv:not(.in){transform:none}
-.review-grid.rv .review-card{opacity:0;transform:translateX(32px)}
-.review-grid.rv.in .review-card{animation:review-fade .65s var(--ease) forwards}
-.review-grid.rv.in .review-card:nth-child(2){animation-delay:.1s}
-.review-grid.rv.in .review-card:nth-child(3){animation-delay:.2s}
-.review-grid.rv.in .review-card:nth-child(4){animation-delay:.3s}
-@keyframes review-fade{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.review-grid.rv .review-card{opacity:1;transform:none}.review-grid.rv.in .review-card{animation:none}}
+.review-marquee.in .review-grid{animation:reviews-scroll 38s linear infinite}
+.review-marquee:hover .review-grid{animation-play-state:paused}
+@keyframes reviews-scroll{to{transform:translateX(calc(-50% - 10px))}}
+@media(prefers-reduced-motion:reduce){.review-marquee.in .review-grid{animation:none}}
 
 /* faq */
 .faq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,3vw,2.75rem);align-items:start}
@@ -310,10 +310,16 @@ details[open] summary .plus::after{transform:rotate(90deg)}
 /* cta band + form */
 .cta-band{padding:clamp(56px,9vw,104px) 0}
 .cta-card{position:relative;overflow:hidden;padding:clamp(28px,5vw,60px);color:#fff;background:#344C3D}
-.cta-card .inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.cta-card .inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:start}
+.cta-card .inner>div:first-child{display:flex;flex-direction:column;align-self:stretch}
+.cta-card .inner>div:first-child .big-phone{margin-top:auto}
+.cta-visual{height:clamp(240px,28vw,410px);margin:24px 0;overflow:hidden;border:1px solid rgba(207,216,203,.35)}
+.cta-visual picture,.cta-visual img{width:100%;height:100%}
+.cta-visual img{object-fit:cover}
 .cta-card .muted{color:#CFD8CB}
-.big-phone{display:inline-flex;align-items:center;gap:12px;margin-top:1.2em;padding:.75em 1.4em;background:#B7C9B8;color:#344C3D;font-size:clamp(1.15rem,2.4vw,1.4rem);font-weight:700;outline:2px solid transparent;outline-offset:2px;transition:outline-color .2s var(--ease),background-color .2s}
+.big-phone{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-top:1.2em;padding:.75em 1.4em;background:#B7C9B8;color:#344C3D;font-size:clamp(1.15rem,2.4vw,1.4rem);font-weight:700;outline:2px solid transparent;outline-offset:2px;transition:outline-color .2s var(--ease),background-color .2s}
 .big-phone:hover{background:#8EA58E;color:#293D31;outline-color:#738A6E;text-decoration:none}
+.cta-card .big-phone+p{text-align:center}
 .lead-form{background:var(--bg);border:1px solid rgba(255,255,255,.25);padding:clamp(22px,3vw,34px);color:var(--ink)}
 .lead-form h3{margin-bottom:1em;text-transform:uppercase}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -414,13 +420,14 @@ address a{color:var(--inv)}
   .nav-bar{gap:12px}
 }
 @media(max-width:1020px){
-  .review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .review-grid .review-card{width:calc((100vw - 68px)/2)}
   .grid-4{grid-template-columns:1fr 1fr}
   .service-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .service-card{grid-template-columns:1fr;min-height:0}.service-card-media{height:220px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:860px){
+  .cta-card .inner>div:first-child .big-phone{margin-top:1.2em}
   .why-media{margin-top:0}
   .faq-media{max-width:100%;justify-self:stretch;margin-top:0}
   .nav-toggle{display:block}
@@ -440,7 +447,7 @@ address a{color:var(--inv)}
   .hero{min-height:78svh;padding:90px 0 70px}
 }
 @media(max-width:560px){
-  .review-grid{grid-template-columns:1fr}
+  .review-grid .review-card{width:calc(100vw - 28px)}
   .announcement .wrap{min-height:54px;font-size:.73rem}
   .announcement-rotator{height:54px}
   .announcement-item{gap:5px;flex-direction:column;padding:6px 0}
@@ -514,6 +521,7 @@ address a{color:var(--inv)}
           <p class="kicker">Free Inspection &middot; No Obligation</p>
           <h2>Talk to a roofing specialist now.</h2>
           <p class="muted">Or send the form and we’ll call you, usually in under half an hour.</p>
+          <div class="cta-visual"><picture><source srcset="../assets/img/proj-replace.webp" type="image/webp"><img src="../assets/img/proj-replace.jpg" alt="Professional roofing project completed by NovaRidge Roofing" width="1200" height="800" loading="lazy" decoding="async"></picture></div>
           <a class="big-phone" href="tel:+17025550184"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> (702) 555-0184</a>
           <p class="muted" style="font-size:.85rem;margin-top:6px">Mon-Sat: 7:00 AM - 6:00 PM &middot; 24/7 emergency line</p>
         </div>
@@ -535,11 +543,9 @@ address a{color:var(--inv)}
             </select>
           </div>
           
-  <fieldset class="sms-consents">
-    <legend>Optional SMS consent</legend>
+  <fieldset class="sms-consents" aria-label="SMS consent choices">
     <label class="sms-consent"><input type="checkbox" name="sms_transactional_consent" value="yes"><span>I consent to receive non-marketing text messages from NovaRidge Roofing regarding project updates, appointment reminders, and service notifications. Message frequency varies. Message and data rates may apply. Reply HELP for assistance or STOP to opt out.</span></label>
     <label class="sms-consent"><input type="checkbox" name="sms_marketing_consent" value="yes"><span>I consent to receive marketing text messages from NovaRidge Roofing regarding promotions, offers, and roofing services. Message frequency varies. Message and data rates may apply. Reply HELP for assistance or STOP to opt out.</span></label>
-    <p class="consent-note">Consent is optional and is not a condition of purchase.</p>
   </fieldset>
           <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
           <p class="form-note">Typical response: under 30 minutes during business hours.</p>
@@ -556,8 +562,8 @@ address a{color:var(--inv)}
       <ul class="checklist">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#344C3D" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#738A6E" stroke-width="1.8"/></svg><span><b>Office.</b> 7255 S Tenaya Way, Suite 140, Las Vegas, NV 89113</span></li>
         <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Phone.</b> <a href="tel:+17025550184">(702) 555-0184</a>, 24/7 emergency line for active leaks</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5.5 12.5 4 4 9-9" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Email.</b> <a href="mailto:hello@novaridgeroofing.com">hello@novaridgeroofing.com</a></span></li>
-        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Hours.</b> Mon-Sat: 7:00 AM - 6:00 PM</span></li>
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#344C3D" stroke-width="1.8"/><path d="m4 7 8 6 8-6" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Email.</b> <a href="mailto:hello@novaridgeroofing.com">hello@novaridgeroofing.com</a></span></li>
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#344C3D" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Hours.</b> Mon-Sat: 7:00 AM - 6:00 PM</span></li>
       </ul>
       <p class="muted" style="margin-top:1.4em;font-size:.92rem">Serving Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and Paradise. NV Contractor Lic. #0091337.</p>
     </div>
@@ -600,12 +606,7 @@ address a{color:var(--inv)}
 </footer>
 <aside class="contact-float" aria-label="Quick contact">
   <div class="contact-pop" id="contact-pop" hidden>
-    <div class="contact-pop-head">
-      <span class="contact-status" aria-hidden="true"><img src="../assets/img/nrr-2.png" width="3231" height="2550" alt=""></span>
-      <div><strong>Roof help, without the runaround</strong><span>Local team &middot; replies during business hours</span></div>
-    </div>
     <div class="contact-pop-body">
-      <p>Questions, leaks, or quote requests, choose the easiest way to reach our crew.</p>
       <div class="contact-actions">
         <a href="tel:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z"/></svg></span><span><b>Call the office</b><small>(702) 555-0184</small></span></a>
         <a href="sms:+17025550184"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10.8h8M8 8h5"/></svg></span><span><b>Send a text</b><small>Great for photos of damage</small></span></a>
