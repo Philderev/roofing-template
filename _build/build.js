@@ -27,13 +27,13 @@ const MARK = (s = 44) => { const id = `mark-gradient-${++markId}`; return `<svg 
 const LOGO = (home) => `<a class="brand" href="${home}" aria-label="${SITE.name}, home"><img class="brand-logo" src="${home}assets/img/nrr-2.png" width="3231" height="2550" alt="${SITE.name}"></a>`;
 
 const IC = {
-  bolt: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  phone: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5 10 8 8.3 9.8c1.1 2.4 3 4.3 5.4 5.4l1.8-1.7 4.5 2.8-.7 3.3c-.2.8-1 1.3-1.8 1.2C9.8 19.8 4.2 14.2 3.1 6.5 3 5.7 3.5 4.9 4.3 4.7l2.9-1.2Z" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   shield: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 5.5V11c0 5-3.4 9.2-8 11-4.6-1.8-8-6-8-11V5.5L12 2Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.6 11.6 2.4 2.4 4.4-4.6" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   home: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5V21h13V9.5" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   wrench: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.6L3 17.6 6.4 21l5.5-5.5a4.5 4.5 0 0 0 5.6-6l-3 3-2.5-.5-.5-2.5 3-3Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/></svg>',
   layers: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z" stroke="#344C3D" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 12.6 7.5 4.2 7.5-4.2M4.5 16.6 12 20.8l7.5-4.2" stroke="#738A6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   sun: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="#738A6E" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round"/></svg>',
-  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="rgba(52,76,61,.4)" stroke-width="1.6"/><path d="m7.8 12.2 2.8 2.8 5.6-6" stroke="#344C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5.5 12.5 4 4 9-9" stroke="#344C3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#344C3D" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#738A6E" stroke-width="1.8"/></svg>',
   badge: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9.5" r="6" stroke="#738A6E" stroke-width="1.7"/><path d="m8.7 14.6-1.5 6 4.8-2.6 4.8 2.6-1.5-6" stroke="#344C3D" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.8 9.4 1.6 1.6 3-3.2" stroke="#738A6E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   drone: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9 5 5m14 0-4 4m-6 6-4 4m14 0-4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="9" width="6" height="6" rx="1.6" stroke="#fff" stroke-width="1.8"/><circle cx="5" cy="5" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="19" cy="5" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="5" cy="19" r="2" stroke="#fff" stroke-width="1.6"/><circle cx="19" cy="19" r="2" stroke="#fff" stroke-width="1.6"/></svg>',
@@ -414,6 +414,14 @@ const crumbsHtml = (rel, items) => `<nav class="crumbs" aria-label="Breadcrumb">
   url ? `<a href="${rel}${url}">${name}</a>` : `<span aria-current="page">${name}</span>`
 ).join(' &nbsp;/&nbsp; ')}</nav>`;
 
+const smsConsentHtml = () => `
+  <fieldset class="sms-consents">
+    <legend>Optional SMS consent</legend>
+    <label class="sms-consent"><input type="checkbox" name="sms_transactional_consent" value="yes"><span>I consent to receive non-marketing text messages from ${SITE.name} regarding project updates, appointment reminders, and service notifications. Message frequency varies. Message and data rates may apply. Reply HELP for assistance or STOP to opt out.</span></label>
+    <label class="sms-consent"><input type="checkbox" name="sms_marketing_consent" value="yes"><span>I consent to receive marketing text messages from ${SITE.name} regarding promotions, offers, and roofing services. Message frequency varies. Message and data rates may apply. Reply HELP for assistance or STOP to opt out.</span></label>
+    <p class="consent-note">Consent is optional and is not a condition of purchase.</p>
+  </fieldset>`;
+
 const ctaBand = (heading, sub) => `
 <section class="cta-band" id="quote">
   <div class="wrap">
@@ -423,15 +431,19 @@ const ctaBand = (heading, sub) => `
           <p class="kicker">Free Inspection &middot; No Obligation</p>
           <h2>${heading}</h2>
           <p class="muted">${sub}</p>
-          <a class="big-phone" href="${SITE.phoneHref}">${IC.bolt} ${SITE.phone}</a>
+          <a class="big-phone" href="${SITE.phoneHref}">${IC.phone} ${SITE.phone}</a>
           <p class="muted" style="font-size:.85rem;margin-top:6px">${SITE.hours} &middot; 24/7 emergency line</p>
         </div>
         <form class="lead-form" id="leadform" data-ty="{{rel}}thank-you/">
           <!-- GHL form embed replaces this block in production -->
           <h3>Get your free roof analysis</h3>
           <div class="f-row">
-            <div class="f-field"><label for="lf-name">Name</label><input id="lf-name" name="name" autocomplete="name" required></div>
+            <div class="f-field"><label for="lf-first">First name</label><input id="lf-first" name="first_name" autocomplete="given-name" required></div>
+            <div class="f-field"><label for="lf-last">Last name</label><input id="lf-last" name="last_name" autocomplete="family-name" required></div>
+          </div>
+          <div class="f-row">
             <div class="f-field"><label for="lf-phone">Phone</label><input id="lf-phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="f-field"><label for="lf-email">Email</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
           </div>
           <div class="f-field"><label for="lf-addr">Property address</label><input id="lf-addr" name="address" autocomplete="street-address"></div>
           <div class="f-field"><label for="lf-svc">What do you need?</label>
@@ -439,10 +451,7 @@ const ctaBand = (heading, sub) => `
               <option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure, inspect it</option>
             </select>
           </div>
-          <label class="sms-consent">
-            <input type="checkbox" name="sms_consent" value="yes">
-            <span>I consent to receive SMS notifications, project updates, and occasional marketing communications from ${SITE.name}. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe at any time.</span>
-          </label>
+          ${smsConsentHtml()}
           <button class="btn btn-primary" type="submit" style="width:100%">Request Free Quote</button>
           <p class="form-note">Typical response: under 30 minutes during business hours.</p>
           <p class="form-legal"><a href="{{rel}}privacy/">Privacy Policy</a><span aria-hidden="true">|</span><a href="{{rel}}terms/">Terms of Service</a></p>
@@ -457,12 +466,16 @@ const heroForm = (id = 'heroform') => `
   <h2>Get a free roof analysis</h2>
   <p>Tell us where to inspect. We typically respond within 30 minutes.</p>
   <div class="f-row">
-    <div class="f-field"><label for="${id}-name">Name</label><input id="${id}-name" name="name" autocomplete="name" required></div>
+    <div class="f-field"><label for="${id}-first">First name</label><input id="${id}-first" name="first_name" autocomplete="given-name" required></div>
+    <div class="f-field"><label for="${id}-last">Last name</label><input id="${id}-last" name="last_name" autocomplete="family-name" required></div>
+  </div>
+  <div class="f-row">
     <div class="f-field"><label for="${id}-phone">Phone</label><input id="${id}-phone" name="phone" type="tel" autocomplete="tel" required></div>
+    <div class="f-field"><label for="${id}-email">Email</label><input id="${id}-email" name="email" type="email" autocomplete="email" required></div>
   </div>
   <div class="f-field"><label for="${id}-addr">Property address</label><input id="${id}-addr" name="address" autocomplete="street-address"></div>
   <div class="f-field"><label for="${id}-svc">What do you need?</label><select id="${id}-svc" name="service"><option>Roof replacement</option><option>Roof repair / leak</option><option>Tile re-felt</option><option>Flat roof / coating</option><option>Not sure, inspect it</option></select></div>
-  <label class="sms-consent"><input type="checkbox" name="sms_consent" value="yes"><span>I consent to receive SMS notifications, project updates, and occasional marketing communications from ${SITE.name}. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe.</span></label>
+  ${smsConsentHtml()}
   <button class="btn btn-primary" type="submit">Request Free Quote</button>
   <p class="form-legal"><a href="{{rel}}privacy/">Privacy Policy</a><span aria-hidden="true">|</span><a href="{{rel}}terms/">Terms of Service</a></p>
 </form>`;
@@ -477,9 +490,9 @@ const reviewsHtml = () => `
         <p class="muted">Rated 4.9 / 5 across 300+ verified reviews from homeowners and businesses.</p>
       </div>
     </div>
-    <div class="grid-2">
+    <div class="review-grid rv">
       ${REVIEWS.map(([name, area, text], i) => `
-      <article class="review-card rv">
+      <article class="review-card">
         <div class="reviewer"><div class="avatar" aria-hidden="true">${name[0]}</div><div><b>${name}</b><span>${area} &middot; ${['3 weeks ago', '1 month ago', '2 months ago', '3 months ago'][i]}</span></div></div>
         <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>&ldquo;${text}&rdquo;</p>
@@ -539,14 +552,6 @@ function homePage() {
   <div class="wrap about-grid">
     <div class="about-media rv">
       ${pic('about', 'NovaRidge crew installing a new roof on a Las Vegas home', 1100, 1400)}
-      <div class="float-chip chip-tr">
-        <span class="ico" aria-hidden="true">${IC.drone}</span>
-        <span><b>4K + FLIR</b><span>every inspection</span></span>
-      </div>
-      <div class="float-chip chip-bl">
-        <span class="ico" aria-hidden="true">${IC.shieldW}</span>
-        <span><b>25-yr</b><span>workmanship warranty</span></span>
-      </div>
     </div>
     <div class="rv">
       <p class="kicker" id="about-h">Who we are</p>
@@ -592,7 +597,7 @@ function homePage() {
 </section>
 
 <section aria-labelledby="why-h">
-  <div class="wrap about-grid">
+  <div class="wrap about-grid why-grid">
     <div class="rv">
       <p class="kicker" id="why-h">Why NovaRidge</p>
       <h2>A roofing company that runs like a <span class="grad-text">flight crew</span></h2>
@@ -654,8 +659,8 @@ function homePage() {
       <h2 id="area-h">Covering the entire Vegas Valley</h2>
       <p class="muted">Headquartered in southwest Las Vegas with crews staged across the valley for fast response.</p>
       <div class="area-list">
-        ${AREAS.map((a) => `<a class="area-chip" href="service-areas/${a.slug}/"><span class="dot"></span>${a.name}</a>`).join('')}
-        <a class="area-chip" href="contact/"><span class="dot"></span>Las Vegas &amp; Spring Valley</a>
+        ${AREAS.map((a) => `<a class="area-chip" href="service-areas/${a.slug}/">${a.name}</a>`).join('')}
+        <a class="area-chip" href="contact/">Las Vegas &amp; Spring Valley</a>
       </div>
     </div>
     <div class="map-panel rv">${VEGAS_MAP}</div>
@@ -670,11 +675,11 @@ ${reviewsHtml()}
       <p class="kicker" id="hfaq-h">FAQ</p>
       <h2>Straight answers, no upsell</h2>
       <p class="muted" style="margin-bottom:1.8rem">The questions valley homeowners ask us most, answered the way we'd want them answered.</p>
-      <div class="faq-media">${pic('faq', 'Tile roof and brick chimney of a Las Vegas area home', 900, 1100)}</div>
+      <div class="faq">
+        ${faqDetails(HOME_FAQS, 0)}
+      </div>
     </div>
-    <div class="rv">
-      ${faqDetails(HOME_FAQS, 0)}
-    </div>
+    <div class="faq-media rv">${pic('faq', 'Tile roof and brick chimney of a Las Vegas area home', 900, 1100)}</div>
   </div>
 </section>
 
@@ -909,7 +914,7 @@ ${ctaBand('Talk to a roofing specialist now.', 'Or send the form and we’ll cal
       <h2>Visit or reach us</h2>
       <ul class="checklist">
         <li>${IC.pin}<span><b>Office.</b> ${SITE.street}, ${SITE.city}, ${SITE.state} ${SITE.zip}</span></li>
-        <li>${IC.bolt}<span><b>Phone.</b> <a href="${SITE.phoneHref}">${SITE.phone}</a>, 24/7 emergency line for active leaks</span></li>
+        <li>${IC.phone}<span><b>Phone.</b> <a href="${SITE.phoneHref}">${SITE.phone}</a>, 24/7 emergency line for active leaks</span></li>
         <li>${IC.check}<span><b>Email.</b> <a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
         <li>${IC.shield}<span><b>Hours.</b> ${SITE.hours}</span></li>
       </ul>
@@ -1047,7 +1052,7 @@ function thankYouPage() {
       </div>
       <p class="muted">Active leak right now? Don't wait for the callback:</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:1em">
-        <a class="btn btn-yellow" href="${SITE.phoneHref}">${IC.bolt} ${SITE.phone}</a>
+        <a class="btn btn-yellow" href="${SITE.phoneHref}">${IC.phone} ${SITE.phone}</a>
         <a class="btn btn-ghost" href="{{rel}}">Back to Home</a>
       </div>
     </div>
