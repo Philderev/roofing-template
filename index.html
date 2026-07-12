@@ -35,7 +35,7 @@
   --line:rgba(52,76,61,.14);--line2:rgba(52,76,61,.3);
   --grad:linear-gradient(120deg,#344C3D,#8EA58E 60%,#738A6E);
   --grad-text:linear-gradient(100deg,#344C3D 0%,#738A6E 55%,#8EA58E 100%);
-  --r:18px;--maxw:1180px;
+  --r:18px;--maxw:1480px;
   --shadow:0 18px 44px rgba(52,76,61,.14);
   --shadow-lg:0 26px 60px rgba(52,76,61,.2);
   --font-body:"Roboto","Segoe UI",Arial,sans-serif;
@@ -59,7 +59,7 @@ h1{font-size:clamp(2.25rem,5.2vw,3.75rem);text-transform:capitalize}
 h2{font-size:clamp(1.75rem,3.5vw,2.5rem);text-transform:capitalize}
 h3{font-size:1.25rem;line-height:1.3}
 p{margin:0 0 1em}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(14px,2vw,24px)}
 .kicker{display:inline-flex;align-items:center;font-family:var(--font-display);font-size:.75rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:1.3em}
 .cta-card .kicker{color:#B7C9B8}
 .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -181,10 +181,10 @@ a.card:hover{text-decoration:none}
 .service-intro{max-width:760px}
 .service-intro h2{max-width:15ch}
 .service-intro .muted{max-width:62ch;margin-top:1rem}
-.service-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.5vw,32px)}
-.service-card{display:grid;grid-template-columns:minmax(180px,.9fr) minmax(0,1.1fr);min-height:330px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.service-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.5vw,24px)}
+.service-card{display:grid;grid-template-columns:1fr;grid-template-rows:210px 1fr;min-height:500px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
 .service-card:hover{text-decoration:none;transform:translateY(-6px);border-color:rgba(52,76,61,.35);box-shadow:var(--shadow-lg)}
-.service-card-media{position:relative;display:block;min-height:100%;overflow:hidden;background:#d6ddd3}
+.service-card-media{position:relative;display:block;min-height:0;overflow:hidden;background:#d6ddd3}
 .service-card-media picture{display:block;height:100%;border-radius:0}
 .service-card-media img{width:100%;height:100%;object-fit:cover;border-radius:0;transition:transform .6s var(--ease)}
 .service-card:hover .service-card-media img{transform:scale(1.045)}
@@ -404,6 +404,7 @@ address a{color:var(--inv)}
 }
 @media(max-width:1020px){
   .grid-4{grid-template-columns:1fr 1fr}
+  .service-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .service-card{grid-template-columns:1fr;min-height:0}.service-card-media{height:220px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
@@ -487,7 +488,7 @@ address a{color:var(--inv)}
 
   <div class="wrap hero-layout">
     <div class="hero-inner">
-      <h1>Roofing, <span class="grad-text">engineered</span> for the desert</h1>
+      <h1>High-Performance Roofing, <span class="grad-text">Engineered Specifying</span> for the Extreme Desert Climate</h1>
       <p class="lede">Drone inspections, thermal diagnostics, and 50-year materials, installed by the most advanced roofing crew in the Vegas Valley.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="contact/">Get a Free Quote</a>

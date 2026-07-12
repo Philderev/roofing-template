@@ -512,7 +512,7 @@ function homePage() {
 
   <div class="wrap hero-layout">
     <div class="hero-inner">
-      <h1>Roofing, <span class="grad-text">engineered</span> for the desert</h1>
+      <h1>High-Performance Roofing, <span class="grad-text">Engineered Specifying</span> for the Extreme Desert Climate</h1>
       <p class="lede">Drone inspections, thermal diagnostics, and 50-year materials, installed by the most advanced roofing crew in the Vegas Valley.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="contact/">Get a Free Quote</a>
